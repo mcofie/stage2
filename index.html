@@ -19,23 +19,35 @@
 </head>
 
 <body>
+    <!-- System Cursor -->
+    <div id="sys-cursor" class="sys-cursor"></div>
+
+    <!-- Boot Sequence Overlay -->
+    <div id="boot-overlay" class="boot-overlay">
+        <div class="boot-content">
+            <div id="boot-text" class="boot-text"></div>
+            <div class="boot-cursor">_</div>
+        </div>
+    </div>
 
     <!-- Infrastructure Ticker -->
     <div class="infra-ticker">
         <div class="ticker-content">
+            <span id="ticker-time">SYSTEM TIME: --:--:-- UTC</span>
+            <span class="separator">///</span>
             <span>SYSTEM STATUS: OPERATIONAL</span>
             <span class="separator">///</span>
-            <span>TOTAL USERS: 1.2M+</span>
+            <span id="ticker-users">TOTAL USERS: 1.2M+</span>
             <span class="separator">///</span>
-            <span>UPTIME: 99.9%</span>
+            <span id="ticker-ping">PING: 24ms</span>
+            <span class="separator">///</span>
+            <span>UPTIME: 99.99%</span>
             <span class="separator">///</span>
             <span>LATEST DEPLOYMENT: GATEPASS V2.0</span>
             <span class="separator">///</span>
             <span>REGION: AFRICA (WEST)</span>
             <span class="separator">///</span>
             <span>EST. 2020</span>
-            <span class="separator">///</span>
-            <span>BUILDING THE FUTURE</span>
         </div>
     </div>
 

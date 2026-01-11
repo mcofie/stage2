@@ -136,6 +136,13 @@ function initMagneticButtons() {
 
 // Call this on load and after modal render
 document.addEventListener('DOMContentLoaded', () => {
+    BootSequence.init();
+    CustomCursor.init();
+    TickerManager.init();
+    CardTilter.init();
+    TextCipher.init();
+    ScrollObserver.init();
+    RevealObserver.init();
     createModal();
     attachCardListeners();
     initMagneticButtons();
@@ -165,6 +172,8 @@ function createModal() {
                 <div class="pitch-indicators"></div>
                 <button class="pitch-nav-btn pitch-next" aria-label="Next">→</button>
             </div>
+            <div class="key-hint key-hint-left">[ ← ] PREV</div>
+            <div class="key-hint key-hint-right">NEXT [ → ]</div>
         </div>
     `;
     document.body.appendChild(modal);
@@ -268,9 +277,18 @@ function renderSlides() {
                     <h2 class="slide-headline">${slide.headline}</h2>
                     <div class="metrics-grid">
                         ${slide.metrics.map(m => `
-                            <div class="metric-item">
-                                <span class="metric-value" style="color: ${currentProduct.color}">${m.value}</span>
-                                <span class="metric-label">${m.label}</span>
+                            <div class="metric-item tech-card">
+                                <div class="tech-header">
+                                    <span class="tech-label">${m.label}</span>
+                                    <span class="tech-id">DT-${Math.floor(Math.random() * 900) + 100}</span>
+                                </div>
+                                <div class="tech-body">
+                                    <span class="metric-value" style="color: ${currentProduct.color}">${m.value}</span>
+                                </div>
+                                <div class="tech-footer">
+                                    <span class="tech-status">● LIVE</span>
+                                    <span class="tech-deco">///</span>
+                                </div>
                             </div>
                         `).join('')}
                     </div>
@@ -280,15 +298,31 @@ function renderSlides() {
             contentHTML = `
                 <div class="slide-content">
                     <h2 class="slide-headline">Market & Reach</h2>
-                    <div class="metrics-grid">
-                        <div class="metric-item">
-                            <span class="metric-value" style="color: ${currentProduct.color}">${slide.market}</span>
-                            <span class="metric-label">${slide.marketLabel}</span>
+                    <div class="market-layout">
+                        <div class="market-main tech-card-large">
+                             <div class="tech-header">
+                                <span class="tech-label">${slide.marketLabel}</span>
+                                <span class="tech-id">TAM-01</span>
+                            </div>
+                            <div class="tech-body">
+                                <span class="metric-value-large" style="color: ${currentProduct.color}">${slide.market}</span>
+                            </div>
+                           <div class="tech-footer">
+                                <span class="tech-data">GROWTH_VECTOR: POSITIV</span>
+                            </div>
                         </div>
-                        <div class="metric-item">
-                            ${slide.flags ? `<span class="metric-flag">${slide.flags}</span>` : ''}
-                            <span class="metric-value" style="color: ${currentProduct.color}">${slide.country}</span>
-                            <span class="metric-label">${slide.countryLabel}</span>
+                        <div class="market-side tech-card">
+                            <div class="tech-header">
+                                <span class="tech-label">${slide.countryLabel}</span>
+                                <span class="tech-id">LOC-AB</span>
+                            </div>
+                             <div class="tech-body region-body">
+                                <span class="metric-flag-large">${slide.flags || '🌐'}</span>
+                                <span class="metric-region-text">${slide.country}</span>
+                            </div>
+                            <div class="tech-footer">
+                                <span class="tech-status">REGION: ACTIVE</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -504,13 +538,21 @@ const originalOpenModal = openModal;
 openModal = function (productId) {
     SoundFX.init();
     SoundFX.playModalOpen();
+    document.body.classList.add('modal-active');
     originalOpenModal(productId);
     updateMuteIcon();
+
+    // Show hints
+    setTimeout(() => {
+        document.querySelectorAll('.key-hint').forEach(el => el.classList.add('visible'));
+    }, 500);
 };
 
 const originalCloseModal = closeModal;
 closeModal = function () {
     SoundFX.playModalClose();
+    document.body.classList.remove('modal-active');
+    document.querySelectorAll('.key-hint').forEach(el => el.classList.remove('visible'));
     originalCloseModal();
 };
 
@@ -539,3 +581,224 @@ function updateMuteIcon() {
         muteBtn.style.opacity = SoundFX.isMuted ? '0.5' : '1';
     }
 }
+
+/* ===================== */
+/* System Upgrades: Boot, Cursor, Ticker, Tilt */
+/* ===================== */
+
+const BootSequence = {
+    lines: [
+        "INITIALIZING STAGE2 KERNEL...",
+        "LOADING ASSETS... [OK]",
+        "ESTABLISHING SECURE CONNECTION...",
+        "VERIFYING IDENTITY PROTOCOLS...",
+        "SYSTEM OPTIMAL.",
+        "WELCOME, VISITOR."
+    ],
+    init() {
+        const overlay = document.getElementById('boot-overlay');
+        const textContainer = document.getElementById('boot-text');
+        if (!overlay || !textContainer) return;
+
+        // Dev mode skip: uncomment to skip boot in dev
+        // if (sessionStorage.getItem('booted')) {
+        //     document.body.classList.add('boot-complete');
+        //     return;
+        // }
+
+        let lineIndex = 0;
+        let charIndex = 0;
+
+        const typeLine = () => {
+            if (lineIndex >= this.lines.length) {
+                setTimeout(() => {
+                    document.body.classList.add('boot-complete');
+                    sessionStorage.setItem('booted', 'true');
+                    // Start ambient sound if desired, or just let user explore
+                }, 500);
+                return;
+            }
+
+            const currentLine = this.lines[lineIndex];
+
+            if (charIndex === 0) {
+                const p = document.createElement('div');
+                p.className = 'boot-line';
+                textContainer.appendChild(p);
+            }
+
+            const currentP = textContainer.lastElementChild;
+            currentP.textContent += currentLine[charIndex];
+            charIndex++;
+
+            if (charIndex < currentLine.length) {
+                setTimeout(typeLine, 10 + Math.random() * 20); // Typing speed
+            } else {
+                lineIndex++;
+                charIndex = 0;
+                setTimeout(typeLine, 100); // Line pause
+            }
+        };
+
+        typeLine();
+    }
+};
+
+const CustomCursor = {
+    el: null,
+    init() {
+        this.el = document.getElementById('sys-cursor');
+        if (!this.el) return;
+
+        document.addEventListener('mousemove', (e) => {
+            this.el.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+        });
+
+        const hoverTargets = document.querySelectorAll('a, button, .project-card, .btn');
+        hoverTargets.forEach(target => {
+            target.addEventListener('mouseenter', () => this.el.classList.add('hovered'));
+            target.addEventListener('mouseleave', () => this.el.classList.remove('hovered'));
+        });
+
+        // Modal specialized cursors
+        document.addEventListener('mousemove', (e) => {
+            if (document.body.classList.contains('modal-active')) {
+                const width = window.innerWidth;
+                this.el.classList.remove('arrow-left', 'arrow-right');
+
+                if (e.clientX < width * 0.3) {
+                    this.el.classList.add('arrow-left', 'hovered');
+                } else if (e.clientX > width * 0.7) {
+                    this.el.classList.add('arrow-right', 'hovered');
+                }
+            }
+        });
+    }
+};
+
+const TickerManager = {
+    init() {
+        const timeEl = document.getElementById('ticker-time');
+        const pingEl = document.getElementById('ticker-ping');
+        const usersEl = document.getElementById('ticker-users');
+
+        if (timeEl) {
+            setInterval(() => {
+                const now = new Date();
+                timeEl.textContent = `SYSTEM TIME: ${now.toISOString().split('T')[1].split('.')[0]} UTC`;
+            }, 1000);
+        }
+
+        if (pingEl) {
+            setInterval(() => {
+                const ping = 20 + Math.floor(Math.random() * 15);
+                pingEl.textContent = `PING: ${ping}ms`;
+            }, 2000);
+        }
+    }
+};
+
+const CardTilter = {
+    init() {
+        const cards = document.querySelectorAll('.project-card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = ((y - centerY) / centerY) * -5; // Max 5deg
+                const rotateY = ((x - centerX) / centerX) * 5;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+            });
+        });
+    }
+};
+
+/* ===================== */
+/* UX Polish: Text Scramble & Scroll Reveal */
+/* ===================== */
+
+const TextCipher = {
+    chars: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()',
+    init() {
+        const triggers = document.querySelectorAll('.hero-title, .project-title, .thesis-header, .brand');
+        
+        triggers.forEach(el => {
+            el.dataset.value = el.innerText;
+            el.classList.add('scramble-hover');
+            
+            el.addEventListener('mouseover', () => this.scramble(el));
+        });
+    },
+    
+    scramble(el) {
+        if (el.dataset.animating === 'true') return;
+        el.dataset.animating = 'true';
+        
+        let iterations = 0;
+        const interval = setInterval(() => {
+            el.innerText = el.innerText.split('')
+                .map((letter, index) => {
+                    if (index < iterations) {
+                        return el.dataset.value[index];
+                    }
+                    return this.chars[Math.floor(Math.random() * 26)];
+                })
+                .join('');
+            
+            if (iterations >= el.dataset.value.length) {
+                clearInterval(interval);
+                el.dataset.animating = 'false';
+                // Ensure exact match at end
+                el.innerText = el.dataset.value; 
+            }
+            
+            iterations += 1 / 2; // Speed control
+        }, 30);
+    }
+};
+
+const ScrollObserver = {
+    init() {
+        const nav = document.querySelector('.navbar');
+        if (!nav) return;
+        
+        const bar = document.createElement('div');
+        bar.className = 'scroll-progress';
+        nav.appendChild(bar);
+        
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            bar.style.width = scrolled + "%";
+        });
+    }
+};
+
+const RevealObserver = {
+    init() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        const targets = document.querySelectorAll('.project-card, .thesis-card, .footer');
+        targets.forEach(el => {
+            el.classList.add('reveal-on-scroll');
+            observer.observe(el);
+        });
+    }
+};

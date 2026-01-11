@@ -1074,3 +1074,330 @@ a:hover {
 .pitch-slide.active .slide-cta-btn {
     animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
 }
+/* ===================== */
+/* System Upgrades (Cursor, Boot, Etc) */
+/* ===================== */
+
+/* 1. Custom Cursor */
+@media (pointer: fine) {
+    body {
+        cursor: none;
+    }
+    
+    a, button, .project-card, .pitch-close, .pitch-mute, .pitch-nav-btn, .pitch-indicator {
+        cursor: none;
+    }
+}
+
+.sys-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background: #000; /* Will invert due to blend mode */
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                height 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.2s ease,
+                border-radius 0.2s ease;
+    mix-blend-mode: exclusion;
+    will-change: transform;
+}
+
+.sys-cursor.hovered {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 0; /* Square on hover as requested */
+    mix-blend-mode: difference;
+}
+
+.sys-cursor.arrow-left::before,
+.sys-cursor.arrow-right::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000; /* Contrast against white cursor */
+    font-size: 24px;
+    font-family: var(--font-mono);
+}
+
+.sys-cursor.arrow-left::before { content: '←'; }
+.sys-cursor.arrow-right::before { content: '→'; }
+
+
+/* 2. Boot Sequence Overlay */
+.boot-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    color: #e0e0e0;
+    z-index: 99999;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+.boot-content {
+    max-width: 600px;
+}
+
+.boot-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 18px;
+    background: #e0e0e0;
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+    margin-left: 4px;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+/* CRT Turn On Animation class */
+body.boot-complete .boot-overlay {
+    animation: crtFadeOut 0.8s forwards ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes crtFadeOut {
+    0% { transform: scaleY(1) scaleX(1); opacity: 1; }
+    50% { transform: scaleY(0.01) scaleX(1); opacity: 1; filter: brightness(2); }
+    60% { transform: scaleY(0.001) scaleX(0.5); opacity: 0.5; }
+    100% { transform: scaleY(0) scaleX(0); opacity: 0; }
+}
+
+
+/* 3. 3D Card Tilt Support */
+.project-card {
+    will-change: transform;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.project-card * {
+    transform-style: preserve-3d; /* propagate */
+}
+
+/* Lift elements on hover */
+.project-card:hover .project-title,
+.project-card:hover .status-pill,
+.project-card:hover .project-btn {
+    transform: translateZ(20px);
+}
+
+
+/* 4. Keyboard Hints in Modal */
+.key-hint {
+    position: absolute;
+    bottom: 40px;
+    padding: 8px 12px;
+    border: 1px solid rgba(0,0,0,0.1);
+    color: #888;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.key-hint.visible {
+    opacity: 1;
+}
+
+.key-hint-left { left: 40px; }
+.key-hint-right { right: 40px; }
+
+@media (max-width: 900px) {
+    .sys-cursor { display: none; } /* Native touch on mobile */
+    .key-hint { display: none; }
+}
+
+/* ===================== */
+/* TECH / DATA HUD STYLES */
+/* ===================== */
+
+.tech-card,
+.tech-card-large {
+    background: rgba(255, 255, 255, 0.5); /* Glass-like */
+    border: 1px solid #000;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    /* Corner flourishes */
+    --c-size: 10px;
+    background-image: 
+        linear-gradient(to right, #000 1px, transparent 1px),
+        linear-gradient(to bottom, #000 1px, transparent 1px);
+    background-size: var(--c-size) var(--c-size), var(--c-size) var(--c-size);
+    background-repeat: no-repeat;
+    background-position: top left, top left;
+}
+
+.tech-card::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 10px;
+    height: 10px;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.tech-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+}
+
+.tech-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #666;
+}
+
+.tech-id {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: #aaa;
+}
+
+.tech-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.region-body {
+    flex-direction: column;
+    gap: 16px;
+}
+
+.metric-value {
+    font-size: 4rem; /* Bigger */
+    font-weight: 400;
+}
+
+.metric-value-large {
+    font-size: 8rem; /* Massive for Market Size */
+    font-family: var(--font-heading);
+    line-height: 0.8;
+}
+
+.metric-flag-large {
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.metric-region-text {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    text-align: center;
+    line-height: 1.1;
+}
+
+.tech-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: #444;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 12px;
+    margin-top: 12px;
+}
+
+.tech-status {
+    color: #40B97C; /* Green */
+}
+
+/* Market Layout specific */
+.market-layout {
+    display: flex;
+    width: 100%;
+    margin-top: 48px;
+    gap: 32px;
+}
+
+.market-main {
+    flex: 2; /* Takes 2/3 */
+}
+
+.market-side {
+    flex: 1; /* Takes 1/3 */
+}
+
+/* Responsive Tech Cards */
+@media (max-width: 900px) {
+    .market-layout {
+        flex-direction: column;
+    }
+    
+    .metric-value-large {
+        font-size: 5rem;
+    }
+    
+    .metric-value {
+        font-size: 3rem;
+    }
+}
+
+/* ===================== */
+/* FINAL POLISH: Scramble, Scroll, Reveal */
+/* ===================== */
+
+/* 1. Scroll Progress Line */
+.scroll-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: #40B97C; /* Green */
+    width: 0%;
+    transition: width 0.1s linear;
+    z-index: 101;
+}
+
+/* 2. Scroll Reveal Animation */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger delays for grid items if needed, or handle in JS */
+
+/* 3. Scramble Effect Cursor */
+.scramble-hover {
+    cursor: help; /* Hint at interaction */
+}
