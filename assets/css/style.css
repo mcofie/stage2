@@ -861,6 +861,16 @@ a:hover {
     transform: none;
 }
 
+.pitch-next {
+    background: #000;
+    color: #fff;
+}
+
+.pitch-next:hover:not(:disabled) {
+    background: #fff;
+    color: #000;
+}
+
 .pitch-nav-btn:disabled {
     opacity: 0.3;
     cursor: default;
@@ -987,6 +997,18 @@ a:hover {
         font-size: 1.1rem;
         width: 100%;
         text-align: center;
+    }
+
+    .pitch-indicator {
+        width: 12px;
+    }
+
+    .pitch-indicator.active {
+        width: 32px;
+    }
+
+    .pitch-indicators {
+        gap: 6px;
     }
 }
 
