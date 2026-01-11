@@ -477,6 +477,17 @@ a {
     text-align: left;
     max-width: 1100px;
     width: 100%;
+    align-items: center;
+    /* Center vertically */
+}
+
+/* Product Focus: Give more space to the visual */
+.pitch-slide-split .slide-half:first-child {
+    flex: 0.8;
+}
+
+.pitch-slide-split .slide-half:last-child {
+    flex: 1.2;
 }
 
 .slide-half {
@@ -493,6 +504,16 @@ a {
     box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
     transform: perspective(1000px) rotateY(-5deg);
     transition: transform 0.5s ease;
+    object-fit: contain;
+    /* Ensure full product is seen */
+    max-height: 70vh;
+    /* Prevent overflow */
+}
+
+/* Title Slide Specifics */
+.pitch-slide-title .slide-visual {
+    max-height: 50vh;
+    margin-top: 4vh;
 }
 
 .pitch-slide.active .slide-visual {
@@ -527,12 +548,31 @@ a {
     margin-bottom: 32px;
 }
 
+.slide-content-focused {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.slide-headline-large {
+    font-size: 5rem;
+    margin-bottom: 30px;
+}
+
+.slide-text-large {
+    font-size: 2.25rem;
+    line-height: 1.4;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.95);
+}
+
 /* Metrics Grid */
 .metrics-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-    margin-top: 32px;
+    margin-top: 48px;
+    /* More space */
 }
 
 .metric-item {
@@ -643,23 +683,203 @@ a {
 
 /* Responsive Modal */
 @media (max-width: 900px) {
+    .pitch-slide {
+        padding: 24px;
+    }
+
     .pitch-slide-split {
         flex-direction: column;
         text-align: center;
-        gap: 30px;
+        gap: 24px;
+        justify-content: center;
     }
 
     .slide-visual {
-        max-height: 300px;
-        width: auto;
+        max-height: 250px;
+        width: 100%;
         margin: 0 auto;
+        order: -1;
+        /* Show image first on mobile if present */
     }
 
     .slide-headline {
-        font-size: 2.5rem;
+        font-size: 3rem;
+    }
+
+    .slide-headline-large {
+        font-size: 3.5rem;
+    }
+
+    .slide-text-large {
+        font-size: 1.5rem;
     }
 
     .metrics-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 32px;
     }
+}
+
+@media (max-width: 600px) {
+    .pitch-modal-content {
+        height: 100%;
+        /* Full screen height on mobile */
+        max-height: none;
+        border-radius: 0;
+    }
+
+    .pitch-close {
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .pitch-mute {
+        top: 20px;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .slide-headline {
+        font-size: 2.25rem;
+    }
+
+    .slide-headline-large {
+        font-size: 2.75rem;
+    }
+
+    .slide-text {
+        font-size: 1.1rem;
+    }
+
+    .slide-text-large {
+        font-size: 1.25rem;
+    }
+
+    .pitch-nav-wrapper {
+        bottom: 24px;
+        gap: 20px;
+    }
+
+    .pitch-nav-btn {
+        width: 48px;
+        height: 48px;
+    }
+
+    .metric-value {
+        font-size: 2rem;
+    }
+
+    .slide-cta-btn {
+        padding: 18px 40px;
+        font-size: 1.1rem;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.metric-flag {
+    display: block;
+    font-size: 3.5rem;
+    margin-bottom: 16px;
+    line-height: 1;
+}
+
+/* Mute Button */
+.pitch-mute {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pitch-mute:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* Slide Content Animations */
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Default state for animated elements (hidden to start) */
+.pitch-slide .slide-tagline,
+.pitch-slide .slide-headline,
+.pitch-slide .slide-text,
+.pitch-slide .metric-item,
+.pitch-slide .slide-cta-btn,
+.pitch-slide .slide-visual {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    /* Fallback */
+}
+
+/* Active State Animations */
+.pitch-slide.active .slide-tagline {
+    animation: slideUpFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s forwards;
+}
+
+.pitch-slide.active .slide-headline {
+    animation: slideUpFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+}
+
+.pitch-slide.active .slide-visual {
+    animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
+}
+
+.pitch-slide.active .slide-text {
+    animation: slideUpFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
+}
+
+.pitch-slide.active .metrics-grid {
+    opacity: 1;
+    /* Grid itself doesn't animate, items do */
+}
+
+/* Stagger metric items */
+.pitch-slide.active .metric-item:nth-child(1) {
+    animation: slideUpFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
+}
+
+.pitch-slide.active .metric-item:nth-child(2) {
+    animation: slideUpFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards;
+}
+
+.pitch-slide.active .metric-item:nth-child(3) {
+    animation: slideUpFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s forwards;
+}
+
+.pitch-slide.active .metric-item:nth-child(4) {
+    animation: slideUpFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s forwards;
+}
+
+.pitch-slide.active .slide-cta-btn {
+    animation: slideUpFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards;
 }
