@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Favicon -->
@@ -20,159 +20,184 @@
 
 <body>
 
+    <!-- Infrastructure Ticker -->
+    <div class="infra-ticker">
+        <div class="ticker-content">
+            <span>SYSTEM STATUS: OPERATIONAL</span>
+            <span class="separator">///</span>
+            <span>TOTAL USERS: 1.2M+</span>
+            <span class="separator">///</span>
+            <span>UPTIME: 99.9%</span>
+            <span class="separator">///</span>
+            <span>LATEST DEPLOYMENT: GATEPASS V2.0</span>
+            <span class="separator">///</span>
+            <span>REGION: AFRICA (WEST)</span>
+            <span class="separator">///</span>
+            <span>EST. 2020</span>
+            <span class="separator">///</span>
+            <span>BUILDING THE FUTURE</span>
+        </div>
+    </div>
+
     <nav class="container navbar">
         <div class="brand">Stage2</div>
-        <div class="nav-links">
-            <a href="mailto:hello@maxwellcofie.com" class="nav-link">Contact</a>
-        </div>
+        <div class="nav-desc">Product Lab <span class="nav-separator">//</span> Accra, GH</div>
     </nav>
 
     <header class="container hero">
-        <h1 class="hero-title">Building the Next Stage of Digital Products.</h1>
-        <p class="hero-subtitle">A collection of ventures, tools, and platforms engineered for impact.</p>
-        <a href="#work" class="btn btn-primary">View Works</a>
+        <h1 class="hero-title">Infrastructure for the African Internet.</h1>
+        <p class="hero-subtitle">Stage2 is a product lab based in Accra. We build digital utilities that solve
+            fragmentation in housing, events, and commerce.</p>
     </header>
+
+    <!-- The Thesis -->
+    <section class="container thesis-section">
+        <div class="thesis-header">OUR THESIS</div>
+        <div class="thesis-grid">
+            <div class="thesis-card">
+                <h3>01. TRUST</h3>
+                <p>We build platforms that verify identity and reduce fraud.</p>
+            </div>
+            <div class="thesis-card">
+                <h3>02. ACCESS</h3>
+                <p>We reduce friction in discovery and payments.</p>
+            </div>
+            <div class="thesis-card">
+                <h3>03. SCALE</h3>
+                <p>We design for cross-border expansion from Day 1.</p>
+            </div>
+        </div>
+    </section>
 
     <main id="work" class="container">
         <div class="projects-grid">
 
             <!-- Amigo Lease -->
             <article class="project-card" data-product="amigo-lease">
-                <div class="card-decoration"></div>
-                <div class="project-content">
-                    <span class="project-year">2025</span>
+                <div class="card-header">
                     <h2 class="project-title">Amigo Lease</h2>
-                    <p class="project-desc">A verified roommate finder simplifying the search for shared living spaces.
-                    </p>
-                    <div class="project-link-wrapper">
-                        <a href="https://amigolease.com" target="_blank" rel="noopener noreferrer" class="project-btn">
-                            Visit Site <span>→</span>
-                        </a>
-                    </div>
+                    <span class="status-pill">Beta • 2025</span>
+                </div>
+                <p class="project-desc">A verified roommate finder simplifying the search for shared living spaces.</p>
+                <div class="project-link-wrapper">
+                    <a href="https://amigolease.com" target="_blank" rel="noopener noreferrer" class="project-btn">
+                        [ Visit Site ]
+                    </a>
                 </div>
             </article>
 
             <!-- GatePass -->
             <article class="project-card" data-product="gatepass">
-                <div class="card-decoration"></div>
-                <div class="project-content">
-                    <span class="project-year">2025</span>
+                <div class="card-header">
                     <h2 class="project-title">GatePass</h2>
-                    <p class="project-desc">The first video-powered marketplace for events, redefining discovery.</p>
-                    <div class="project-link-wrapper">
-                        <a href="https://gatepass.so" target="_blank" rel="noopener noreferrer" class="project-btn">
-                            Visit Site <span>→</span>
-                        </a>
-                    </div>
+                    <span class="status-pill status-active">Active • Scaling</span>
+                </div>
+                <p class="project-desc">The first video-powered marketplace for events, redefining discovery.</p>
+                <div class="project-link-wrapper">
+                    <a href="https://gatepass.so" target="_blank" rel="noopener noreferrer" class="project-btn">
+                        [ Visit Site ]
+                    </a>
                 </div>
             </article>
 
             <!-- HappeningNow -->
             <article class="project-card" data-product="happeningnow">
-                <div class="card-decoration"></div>
-                <div class="project-content">
-                    <span class="project-year">2025</span>
+                <div class="card-header">
                     <h2 class="project-title">HappeningNow</h2>
-                    <p class="project-desc">A real-time "Departure Board" for live events, keeping you in the loop.</p>
-                    <div class="project-link-wrapper">
-                        <a href="https://happeningnow.online/" target="_blank" rel="noopener noreferrer"
-                            class="project-btn">
-                            Visit Site <span>→</span>
-                        </a>
-                    </div>
+                    <span class="status-pill">Experimental</span>
+                </div>
+                <p class="project-desc">A real-time "Departure Board" for live events, keeping you in the loop.</p>
+                <div class="project-link-wrapper">
+                    <a href="https://happeningnow.online/" target="_blank" rel="noopener noreferrer"
+                        class="project-btn">
+                        [ Visit Site ]
+                    </a>
                 </div>
             </article>
 
             <!-- Itinero -->
             <article class="project-card" data-product="itinero">
-                <div class="card-decoration"></div>
-                <div class="project-content">
-                    <span class="project-year">2025</span>
+                <div class="card-header">
                     <h2 class="project-title">Itinero</h2>
-                    <p class="project-desc">AI-powered travel planner specialized for seamless African adventures.</p>
-                    <div class="project-link-wrapper">
-                        <a href="https://tryitinero.com" target="_blank" rel="noopener noreferrer" class="project-btn">
-                            Visit Site <span>→</span>
-                        </a>
-                    </div>
+                    <span class="status-pill">Beta</span>
+                </div>
+                <p class="project-desc">AI-powered travel planner specialized for seamless African adventures.</p>
+                <div class="project-link-wrapper">
+                    <a href="https://tryitinero.com" target="_blank" rel="noopener noreferrer" class="project-btn">
+                        [ Visit Site ]
+                    </a>
                 </div>
             </article>
 
             <!-- LazyPick -->
             <article class="project-card" data-product="lazypick">
-                <div class="card-decoration"></div>
-                <div class="project-content">
-                    <span class="project-year">2025</span>
+                <div class="card-header">
                     <h2 class="project-title">LazyPick</h2>
-                    <p class="project-desc">Solving decision paralysis for movies & food.</p>
-                    <div class="project-link-wrapper">
-                        <a href="https://lazypick.app" target="_blank" rel="noopener noreferrer" class="project-btn">
-                            Visit Site <span>→</span>
-                        </a>
-                    </div>
+                    <span class="status-pill">Active</span>
+                </div>
+                <p class="project-desc">Solving decision paralysis for movies & food.</p>
+                <div class="project-link-wrapper">
+                    <a href="https://lazypick.app" target="_blank" rel="noopener noreferrer" class="project-btn">
+                        [ Visit Site ]
+                    </a>
                 </div>
             </article>
 
             <!-- Motor Ambos -->
             <article class="project-card" data-product="motor-ambos">
-                <div class="card-decoration"></div>
-                <div class="project-content">
-                    <span class="project-year">2025</span>
+                <div class="card-header">
                     <h2 class="project-title">Motor Ambos</h2>
-                    <p class="project-desc">Platform connecting car owners directly with trusted mechanics.</p>
-                    <div class="project-link-wrapper">
-                        <a href="https://motorambos.com" target="_blank" rel="noopener noreferrer" class="project-btn">
-                            Visit Site <span>→</span>
-                        </a>
-                    </div>
+                    <span class="status-pill">Beta</span>
+                </div>
+                <p class="project-desc">Platform connecting car owners directly with trusted mechanics.</p>
+                <div class="project-link-wrapper">
+                    <a href="https://motorambos.com" target="_blank" rel="noopener noreferrer" class="project-btn">
+                        [ Visit Site ]
+                    </a>
                 </div>
             </article>
 
             <!-- RentBase -->
             <article class="project-card" data-product="rentbase">
-                <div class="card-decoration"></div>
-                <div class="project-content">
-                    <span class="project-year">2025</span>
+                <div class="card-header">
                     <h2 class="project-title">RentBase</h2>
-                    <p class="project-desc">The "Carfax for Rentals" in Africa; verifying agents and agreements to
-                        prevent fraud.</p>
-                    <div class="project-link-wrapper">
-                        <a href="https://rentbase.app/" target="_blank" rel="noopener noreferrer" class="project-btn">
-                            Visit Site <span>→</span>
-                        </a>
-                    </div>
+                    <span class="status-pill">Beta • 2025</span>
+                </div>
+                <p class="project-desc">The "Carfax for Rentals" in Africa; verifying agents and agreements to
+                    prevent fraud.</p>
+                <div class="project-link-wrapper">
+                    <a href="https://rentbase.app/" target="_blank" rel="noopener noreferrer" class="project-btn">
+                        [ Visit Site ]
+                    </a>
                 </div>
             </article>
 
             <!-- Stage & Bloom -->
             <article class="project-card" data-product="stage-bloom">
-                <div class="card-decoration"></div>
-                <div class="project-content">
-                    <span class="project-year">2025</span>
+                <div class="card-header">
                     <h2 class="project-title">Stage & Bloom</h2>
-                    <p class="project-desc">A curated vendor discovery platform for exceptional event planning.</p>
-                    <div class="project-link-wrapper">
-                        <a href="https://stageandbloom.co" target="_blank" rel="noopener noreferrer"
-                            class="project-btn">
-                            Visit Site <span>→</span>
-                        </a>
-                    </div>
+                    <span class="status-pill status-active">Active</span>
+                </div>
+                <p class="project-desc">A curated vendor discovery platform for exceptional event planning.</p>
+                <div class="project-link-wrapper">
+                    <a href="https://stageandbloom.co" target="_blank" rel="noopener noreferrer" class="project-btn">
+                        [ Visit Site ]
+                    </a>
                 </div>
             </article>
 
             <!-- Knitted -->
             <article class="project-card" data-product="knitted">
-                <div class="card-decoration"></div>
-                <div class="project-content">
-                    <span class="project-year">2020</span>
+                <div class="card-header">
                     <h2 class="project-title">Knitted</h2>
-                    <p class="project-desc">A Business OS for tailors to record measurements and manage orders
-                        efficiently.</p>
-                    <div class="project-link-wrapper">
-                        <a href="https://getknitted.app" target="_blank" rel="noopener noreferrer" class="project-btn">
-                            Visit Site <span>→</span>
-                        </a>
-                    </div>
+                    <span class="status-pill status-legacy">Legacy • Open Source</span>
+                </div>
+                <p class="project-desc">A Business OS for tailors to record measurements and manage orders
+                    efficiently.</p>
+                <div class="project-link-wrapper">
+                    <a href="https://getknitted.app" target="_blank" rel="noopener noreferrer" class="project-btn">
+                        [ Visit Site ]
+                    </a>
                 </div>
             </article>
 
@@ -180,7 +205,13 @@
     </main>
 
     <footer class="footer container">
-        <p>&copy; 2026 Stage2. All rights reserved.</p>
+        <p class="footer-tagline">Building the next generation of African digital products.</p>
+        <div class="footer-links">
+            <a href="mailto:hello@maxwellcofie.com?subject=Partnership" class="footer-link primary">[ Partner with us
+                ]</a>
+            <a href="https://maxwellcofie.com" class="footer-link secondary">[ Read The Logbook ]</a>
+        </div>
+        <p class="copyright">&copy; 2026 Stage2. All rights reserved.</p>
     </footer>
 
     <script src="assets/js/main.js"></script>

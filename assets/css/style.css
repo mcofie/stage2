@@ -1,17 +1,17 @@
 /* CSS Variables & Reset */
 :root {
-    --primary-green: #40B97C;
-    --primary-green-hover: #36a06a;
-    --text-main: #111111;
-    --text-secondary: #666666;
-    --bg-color: #F8F9FA;
+    --text-main: #000000;
+    --text-secondary: #444444;
+    --bg-color: #FFFFFF;
     --card-bg: #FFFFFF;
-    --radius-pill: 9999px;
-    --radius-large: 48px;
-    /* Increased for a bolder look */
-    --font-heading: 'Space Grotesk', sans-serif;
-    --font-family: 'Inter', sans-serif;
-    --transition-standard: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    --border-color: #000000;
+    --radius-small: 0px;
+    /* Sharp edges */
+    --font-heading: 'Instrument Serif', serif;
+    --font-mono: 'Space Mono', monospace;
+    --font-family: 'Space Mono', monospace;
+    /* Default body to mono */
+    --transition-standard: 0.2s ease;
 }
 
 * {
@@ -23,10 +23,11 @@
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: var(--font-mono);
     background-color: var(--bg-color);
     color: var(--text-main);
-    line-height: 1.6;
+    line-height: 1.5;
+    font-size: 14px;
 }
 
 /* Typography */
@@ -34,22 +35,82 @@ h1,
 h2,
 h3 {
     font-family: var(--font-heading);
-    font-weight: 700;
-    line-height: 1.05;
     color: var(--text-main);
+    line-height: 1.1;
+    font-weight: 400;
+    /* Serif handles the weight */
 }
 
 a {
     text-decoration: none;
     color: inherit;
+    transition: opacity 0.2s;
+}
+
+a:hover {
+    opacity: 0.7;
 }
 
 /* Layout */
 .container {
-    max-width: 1440px;
-    /* Wider container for modern screens */
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 24px;
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    min-height: 100vh;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+    /* Space for ticker */
+}
+
+/* Infrastructure Ticker */
+.infra-ticker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 32px;
+    background: #000;
+    color: #fff;
+    z-index: 1000;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    border-bottom: 1px solid #333;
+}
+
+.ticker-content {
+    white-space: nowrap;
+    animation: ticker 30s linear infinite;
+    padding-left: 100%;
+    /* Start off-screen */
+    display: flex;
+    gap: 32px;
+}
+
+.ticker-content span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.separator {
+    color: var(--primary-green, #40B97C);
+    margin: 0 10px;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 /* Navbar */
@@ -57,193 +118,289 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 32px 40px;
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
-    top: 0;
-    background: rgba(248, 249, 250, 0.85);
-    /* Increased transparency */
-    backdrop-filter: blur(12px);
+    top: 32px;
+    /* Below ticker */
+    background: #fff;
     z-index: 100;
+    min-height: auto;
 }
 
 .brand {
     font-family: var(--font-heading);
-    font-size: 1.75rem;
-    font-weight: 700;
-    letter-spacing: -0.03em;
+    font-style: italic;
+    font-size: 1.8rem;
+    letter-spacing: -0.02em;
 }
 
-.nav-link {
-    font-weight: 500;
-    font-size: 1.1rem;
-    margin-left: 24px;
-    transition: color 0.2s;
-    position: relative;
+.nav-desc {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
 }
 
-.nav-link::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: var(--primary-green);
-    transition: width 0.3s;
-    margin-top: 4px;
-}
-
-.nav-link:hover {
-    color: var(--primary-green);
-}
-
-.nav-link:hover::after {
-    width: 100%;
+.nav-separator {
+    color: #ddd;
+    margin: 0 8px;
 }
 
 /* Hero Section */
 .hero {
-    padding: 140px 0 100px;
-    text-align: center;
-    opacity: 0;
-    animation: fadeIn 0.8s ease-out forwards;
+    padding: 120px 40px 100px;
+    border-bottom: 1px solid var(--border-color);
+    opacity: 1;
+    /* Ensure visibility */
+    transform: none;
+    /* Ensure no scale issues */
 }
 
 .hero-title {
-    font-size: 5rem;
-    /* Even bigger */
-    max-width: 900px;
-    margin: 0 auto 32px;
-    letter-spacing: -0.04em;
-    background: linear-gradient(180deg, #111 0%, #333 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 5.5rem;
+    max-width: 1000px;
+    margin: 0 auto 32px 0;
+    letter-spacing: -0.03em;
+    color: var(--text-main);
+    line-height: 0.95;
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
-    color: var(--text-secondary);
-    max-width: 650px;
-    margin: 0 auto 48px;
-    font-weight: 400;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 18px 40px;
-    border-radius: var(--radius-pill);
-    font-weight: 600;
+    font-family: var(--font-mono);
     font-size: 1.1rem;
-    text-align: center;
-    cursor: pointer;
-    transition: all var(--transition-standard);
-    border: none;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.6;
+    margin: 0;
 }
 
-.btn-primary {
-    background-color: var(--primary-green);
-    color: white;
+/* Thesis Section */
+.thesis-section {
+    border-bottom: 1px solid var(--border-color);
 }
 
-.btn-primary:hover {
-    background-color: var(--primary-green-hover);
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px rgba(64, 185, 124, 0.3);
+.thesis-header {
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 40px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    background: #fafafa;
 }
 
-/* Projects Grid */
+.thesis-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.thesis-card {
+    padding: 40px;
+    border-right: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.thesis-card::before {
+    content: attr(data-index);
+    position: absolute;
+    top: -40px;
+    right: -20px;
+    font-family: var(--font-heading);
+    font-size: 12rem;
+    color: rgba(0, 0, 0, 0.03);
+    z-index: 0;
+    pointer-events: none;
+    line-height: 1;
+}
+
+/* Use nth-child to generate content if manual data attr not allowed in html yet - wait, I can simulate */
+.thesis-card:nth-child(1)::before {
+    content: '01';
+}
+
+.thesis-card:nth-child(2)::before {
+    content: '02';
+}
+
+.thesis-card:nth-child(3)::before {
+    content: '03';
+}
+
+.thesis-card:last-child {
+    border-right: none;
+}
+
+.thesis-card h3 {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    color: var(--text-main);
+    z-index: 1;
+    font-weight: 700;
+}
+
+.thesis-card p {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    line-height: 1.1;
+    z-index: 1;
+}
+
+/* Projects Grid (Lab View) */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 40px;
-    padding-bottom: 120px;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 1px solid var(--border-color);
 }
 
 /* Project Card */
 .project-card {
     background-color: var(--card-bg);
-    border-radius: var(--radius-large);
-    padding: 48px;
+    padding: 40px;
+    border-bottom: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 440px;
-    transition: all var(--transition-standard);
-    border: 1px solid rgba(0, 0, 0, 0.03);
-    position: relative;
-    overflow: hidden;
-    opacity: 0;
-    animation: fadeIn 0.8s ease-out forwards;
-    animation-delay: 0.2s;
-    /* Stagger effect handled via JS ideally, but simple delay works */
+    min-height: 380px;
+    opacity: 1;
+    /* Reset any old opacity */
+    animation: none;
+    /* Reset old animations */
+    transform: none;
+    cursor: pointer;
 }
 
-/* Stagger animation for children using nth-child (simple version) */
-.project-card:nth-child(2) {
-    animation-delay: 0.3s;
+.project-card:nth-last-child(-n+2) {
+    border-bottom: none;
+    /* Remove bottom border for last row items */
 }
 
-.project-card:nth-child(3) {
-    animation-delay: 0.4s;
+.project-card:nth-child(even) {
+    border-right: none;
 }
 
-.project-card:nth-child(4) {
-    animation-delay: 0.5s;
-}
-
-.project-card:nth-child(5) {
-    animation-delay: 0.6s;
-}
-
+/* High Contrast Hover */
 .project-card:hover {
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.06);
-    border-color: rgba(64, 185, 124, 0.2);
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
 }
 
-.project-content {
-    z-index: 2;
-    position: relative;
+.project-card:hover .project-title,
+.project-card:hover h2,
+.project-card:hover h3 {
+    color: #fff;
 }
 
-.project-year {
-    display: inline-block;
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--primary-green);
-    margin-bottom: 16px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    background: rgba(64, 185, 124, 0.1);
-    padding: 6px 12px;
-    border-radius: 20px;
+.project-card:hover .project-desc {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.project-card:hover .status-pill {
+    border-color: #fff;
+    color: #fff;
+}
+
+.project-card:hover .project-btn {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
 }
 
 .project-title {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    letter-spacing: -0.03em;
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.status-pill {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 99px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Pulse Dot */
+.status-pill::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #444;
+}
+
+.status-active::before {
+    background-color: #40B97C;
+    box-shadow: 0 0 8px #40B97C;
+    animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.status-active {
+    background: transparent;
+    /* Changed to transparant for the hover effect */
+    color: #000;
+}
+
+.status-legacy {
+    color: #888;
+    border-color: #ccc;
+    text-decoration: line-through;
+}
+
+.status-legacy::before {
+    background-color: #aaa;
 }
 
 .project-desc {
-    font-size: 1.15rem;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
     color: var(--text-secondary);
-    margin-bottom: 40px;
-    max-width: 95%;
-    line-height: 1.5;
+    max-width: 90%;
+    margin-bottom: 32px;
+    transition: color 0.3s ease;
 }
 
 .project-link-wrapper {
@@ -251,95 +408,138 @@ a {
 }
 
 .project-btn {
-    background-color: var(--text-main);
-    color: white;
-    padding: 16px 32px;
-    border-radius: var(--radius-pill);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-main);
+    text-transform: uppercase;
+    font-weight: 700;
+    background: transparent;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    transition: color 0.3s ease;
 }
 
 .project-btn:hover {
-    background-color: #000;
-    transform: translateX(5px);
-}
-
-/* Decorative Circle for Cards */
-.card-decoration {
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(64, 185, 124, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
-    border-radius: 50%;
-    z-index: 1;
-    transition: transform 0.6s ease;
-}
-
-.project-card:hover .card-decoration {
-    transform: scale(1.4) translate(-20px, 20px);
+    text-decoration: underline;
+    background: transparent;
+    transform: none;
 }
 
 /* Footer */
 .footer {
-    padding: 80px 0;
-    text-align: center;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    color: var(--text-secondary);
-    font-family: var(--font-heading);
+    padding: 80px 40px;
+    border-top: none;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
+.footer-tagline {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    border-bottom: 1px solid #000;
+    padding-bottom: 2px;
+}
+
+.copyright {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* Responsive Landing Page */
+@media (max-width: 900px) {
     .container {
-        padding: 0 24px;
+        padding: 0;
+        border: none;
+        box-shadow: none;
     }
 
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 4rem;
+    }
+
+    .thesis-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .thesis-card {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
     }
 
     .projects-grid {
         grid-template-columns: 1fr;
     }
+
+    .project-card {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .navbar,
+    .hero,
+    .thesis-header,
+    .thesis-card,
+    .project-card,
+    .footer {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .hero {
-        padding: 80px 0 60px;
+        padding: 80px 20px 60px;
     }
 
     .hero-title {
-        font-size: 2.75rem;
+        font-size: 3rem;
     }
 
     .hero-subtitle {
-        font-size: 1.1rem;
-    }
-
-    .project-card {
-        padding: 32px;
-        border-radius: 32px;
-        min-height: auto;
-    }
-
-    .project-title {
-        font-size: 2.25rem;
+        font-size: 1rem;
     }
 
     .navbar {
-        padding: 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 20px;
+    }
+
+    .nav-desc {
+        font-size: 0.7rem;
+    }
+
+    .thesis-card,
+    .project-card {
+        padding: 32px 20px;
+    }
+
+    .footer {
+        padding: 60px 20px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 20px;
     }
 }
 
 /* ===================== */
-/* Pitch Deck Modal - Enhanced */
+/* Pitch Deck Modal - Venture Studio Theme */
 /* ===================== */
 
 .pitch-modal {
@@ -348,44 +548,29 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #050505;
-    /* Fallback */
+    background: #ffffff;
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
     overflow: hidden;
 }
 
-/* Dynamic Background Gradient */
+/* Optional: Subtle grid background for the 'blueprint' feel */
 .pitch-modal::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150vw;
-    height: 150vh;
-    background: radial-gradient(circle, var(--modal-accent, rgba(64, 185, 124, 0.2)) 0%, rgba(5, 5, 5, 1) 50%);
-    opacity: 0.6;
-    transition: background 1s ease;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
     z-index: 0;
-    animation: pulseGradient 8s infinite alternate;
-}
-
-@keyframes pulseGradient {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.5;
-    }
-
-    100% {
-        transform: translate(-50%, -50%) scale(1.1);
-        opacity: 0.7;
-    }
+    pointer-events: none;
 }
 
 .pitch-modal.active {
@@ -396,40 +581,49 @@ a {
 .pitch-modal-content {
     width: 100%;
     max-width: 1200px;
-    height: 85vh;
+    height: 90vh;
     max-height: 800px;
     display: flex;
     flex-direction: column;
     position: relative;
     padding: 0;
-    /* Remove padding to allow full-bleed layouts */
     z-index: 2;
 }
 
-/* Close Button */
-.pitch-close {
+/* Close & Mute Buttons - Utilitarian Style */
+.pitch-close,
+.pitch-mute {
     position: absolute;
     top: 30px;
-    right: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    color: white;
-    font-size: 1.5rem;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #000000;
+    color: #000000;
+    font-size: 1.2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 0;
+    /* Sharp */
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: all 0.2s ease;
     z-index: 20;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.pitch-close:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: rotate(90deg) scale(1.1);
+.pitch-close {
+    right: 40px;
+}
+
+.pitch-mute {
+    left: 40px;
+}
+
+.pitch-close:hover,
+.pitch-mute:hover {
+    background: #000000;
+    color: #ffffff;
+    transform: none;
 }
 
 /* Slides Container */
@@ -452,42 +646,43 @@ a {
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transform: scale(0.95);
-    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transform: translateY(20px);
+    /* Slide up effect instead of scale */
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
     padding: 40px;
+    overflow-y: auto;
+    /* Enable scrolling if content is too tall on small screens */
 }
 
 .pitch-slide.active {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0);
     pointer-events: auto;
 }
 
 /* Layout: Standard (Centered) */
 .pitch-slide-standard .slide-content {
     text-align: center;
-    max-width: 800px;
+    max-width: 900px;
 }
 
-/* Layout: Split (Text Left, Image Right) */
+/* Layout: Split */
 .pitch-slide-split {
     flex-direction: row;
-    gap: 60px;
+    gap: 80px;
     text-align: left;
     max-width: 1100px;
     width: 100%;
     align-items: center;
-    /* Center vertically */
 }
 
-/* Product Focus: Give more space to the visual */
 .pitch-slide-split .slide-half:first-child {
-    flex: 0.8;
+    flex: 1;
 }
 
 .pitch-slide-split .slide-half:last-child {
-    flex: 1.2;
+    flex: 1;
 }
 
 .slide-half {
@@ -500,50 +695,47 @@ a {
 .slide-visual {
     width: 100%;
     height: auto;
-    border-radius: 20px;
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
-    transform: perspective(1000px) rotateY(-5deg);
-    transition: transform 0.5s ease;
-    object-fit: contain;
-    /* Ensure full product is seen */
-    max-height: 70vh;
-    /* Prevent overflow */
+    border: 1px solid #000;
+    /* Framed images */
+    box-shadow: 10px 10px 0px rgba(0, 0, 0, 1);
+    /* Brutalist shadow */
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    max-height: 60vh;
 }
 
-/* Title Slide Specifics */
 .pitch-slide-title .slide-visual {
     max-height: 50vh;
-    margin-top: 4vh;
 }
 
-.pitch-slide.active .slide-visual {
-    transform: perspective(1000px) rotateY(0deg);
-}
-
-/* Slide Typography */
+/* Slide Typography - Inverted */
 .slide-headline {
     font-family: var(--font-heading);
-    font-size: 4rem;
-    color: white;
+    font-size: 4.5rem;
+    color: #000000;
     margin-bottom: 24px;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    text-shadow: none;
 }
 
 .slide-tagline {
-    font-size: 1.5rem;
-    color: var(--accent-color, var(--primary-green));
-    font-weight: 600;
+    font-size: 1rem;
+    color: #000;
+    font-family: var(--font-mono);
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     display: block;
+    border-bottom: 2px solid #000;
+    display: inline-block;
+    padding-bottom: 4px;
 }
 
 .slide-text {
-    font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.8);
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    color: #444;
     line-height: 1.6;
     margin-bottom: 32px;
 }
@@ -555,74 +747,90 @@ a {
 }
 
 .slide-headline-large {
-    font-size: 5rem;
-    margin-bottom: 30px;
+    font-size: 6rem;
+    margin-bottom: 40px;
 }
 
 .slide-text-large {
-    font-size: 2.25rem;
-    line-height: 1.4;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.95);
+    font-size: 2rem;
+    line-height: 1.3;
+    font-family: var(--font-heading);
+    color: #000;
 }
 
-/* Metrics Grid */
+/* Metrics Grid - Cards Style */
 .metrics-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 32px;
     margin-top: 48px;
-    /* More space */
+    width: 100%;
 }
 
 .metric-item {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 24px;
-    border-radius: 16px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    padding: 32px;
     text-align: center;
+    border-radius: 0;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1);
 }
 
 .metric-value {
     display: block;
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-family: var(--font-heading);
-    font-weight: 700;
-    color: white;
+    font-weight: 400;
+    color: #000;
+    line-height: 1;
+    margin-bottom: 8px;
 }
 
 .metric-label {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.6);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: #666;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+}
+
+.metric-flag {
+    display: block;
+    font-size: 4rem;
+    margin-bottom: 16px;
+    line-height: 1;
 }
 
 /* CTA Slide Button */
 .slide-cta-btn {
     display: inline-block;
-    background: var(--accent-color, var(--primary-green));
-    color: #000;
+    background: #000;
+    color: #fff;
     padding: 24px 56px;
-    border-radius: var(--radius-pill);
-    font-size: 1.25rem;
+    border-radius: 0;
+    /* Sharp */
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    text-transform: uppercase;
     font-weight: 700;
-    margin-top: 32px;
-    transition: all 0.3s ease;
+    margin-top: 40px;
+    transition: all 0.2s ease;
     text-decoration: none;
-    box-shadow: 0 0 20px var(--accent-color-glow, rgba(64, 185, 124, 0.4));
+    box-shadow: none;
+    border: 1px solid #000;
 }
 
 .slide-cta-btn:hover {
-    transform: scale(1.05) translateY(-2px);
-    box-shadow: 0 10px 40px var(--accent-color-glow, rgba(64, 185, 124, 0.6));
-    background: white;
+    background: #fff;
+    color: #000;
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0px #000;
 }
 
 /* Navigation & Indicators */
 .pitch-nav-wrapper {
     position: absolute;
-    bottom: 30px;
+    bottom: 40px;
     left: 0;
     width: 100%;
     display: flex;
@@ -633,65 +841,69 @@ a {
 }
 
 .pitch-nav-btn {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
+    background: #fff;
+    border: 1px solid #000;
+    color: #000;
     font-size: 1.25rem;
     width: 56px;
     height: 56px;
-    border-radius: 50%;
+    border-radius: 0;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .pitch-nav-btn:hover:not(:disabled) {
-    background: white;
-    border-color: white;
-    color: black;
-    transform: scale(1.1);
+    background: #000;
+    color: #fff;
+    transform: none;
 }
 
 .pitch-nav-btn:disabled {
-    opacity: 0.2;
+    opacity: 0.3;
     cursor: default;
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: #ccc;
+    color: #ccc;
 }
 
 .pitch-indicators {
     display: flex;
-    gap: 16px;
+    gap: 12px;
 }
 
 .pitch-indicator {
     width: 40px;
     height: 4px;
-    /* Bars instead of dots */
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
+    border-radius: 0;
+    background: #eee;
+    border: 1px solid #ddd;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .pitch-indicator.active {
-    background: white;
+    background: #000;
+    border-color: #000;
     width: 60px;
 }
 
-/* Responsive Modal */
+/* Responsive Modal Adjustments */
 @media (max-width: 900px) {
     .pitch-slide {
         padding: 24px;
+        flex-direction: column;
+        justify-content: flex-start;
+        /* Stack from top */
+        padding-top: 100px;
+        /* Space for top buttons */
     }
 
     .pitch-slide-split {
         flex-direction: column;
         text-align: center;
         gap: 24px;
-        justify-content: center;
     }
 
     .slide-visual {
@@ -699,7 +911,6 @@ a {
         width: 100%;
         margin: 0 auto;
         order: -1;
-        /* Show image first on mobile if present */
     }
 
     .slide-headline {
@@ -724,25 +935,24 @@ a {
 @media (max-width: 600px) {
     .pitch-modal-content {
         height: 100%;
-        /* Full screen height on mobile */
         max-height: none;
-        border-radius: 0;
+    }
+
+    .pitch-close,
+    .pitch-mute {
+        top: 20px;
+        width: 44px;
+        /* Slightly easier tap target */
+        height: 44px;
+        background: rgba(255, 255, 255, 0.9);
     }
 
     .pitch-close {
-        top: 20px;
         right: 20px;
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
     }
 
     .pitch-mute {
-        top: 20px;
         left: 20px;
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
     }
 
     .slide-headline {
@@ -753,22 +963,14 @@ a {
         font-size: 2.75rem;
     }
 
-    .slide-text {
-        font-size: 1.1rem;
-    }
-
+    .slide-text,
     .slide-text-large {
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
 
     .pitch-nav-wrapper {
         bottom: 24px;
         gap: 20px;
-    }
-
-    .pitch-nav-btn {
-        width: 48px;
-        height: 48px;
     }
 
     .metric-value {
@@ -783,40 +985,7 @@ a {
     }
 }
 
-.metric-flag {
-    display: block;
-    font-size: 3.5rem;
-    margin-bottom: 16px;
-    line-height: 1;
-}
-
-/* Mute Button */
-.pitch-mute {
-    position: absolute;
-    top: 30px;
-    left: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    color: white;
-    font-size: 1.5rem;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-    z-index: 20;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.pitch-mute:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1);
-}
-
-/* Slide Content Animations */
+/* Animation Keyframes */
 @keyframes slideUpFade {
     from {
         opacity: 0;
@@ -829,7 +998,6 @@ a {
     }
 }
 
-/* Default state for animated elements (hidden to start) */
 .pitch-slide .slide-tagline,
 .pitch-slide .slide-headline,
 .pitch-slide .slide-text,
@@ -838,48 +1006,44 @@ a {
 .pitch-slide .slide-visual {
     opacity: 0;
     transition: opacity 0.3s ease;
-    /* Fallback */
 }
 
-/* Active State Animations */
 .pitch-slide.active .slide-tagline {
-    animation: slideUpFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s forwards;
+    animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
 }
 
 .pitch-slide.active .slide-headline {
-    animation: slideUpFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+    animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
 
 .pitch-slide.active .slide-visual {
-    animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
+    animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
 }
 
 .pitch-slide.active .slide-text {
-    animation: slideUpFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
+    animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
 }
 
 .pitch-slide.active .metrics-grid {
     opacity: 1;
-    /* Grid itself doesn't animate, items do */
 }
 
-/* Stagger metric items */
 .pitch-slide.active .metric-item:nth-child(1) {
-    animation: slideUpFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
+    animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
 }
 
 .pitch-slide.active .metric-item:nth-child(2) {
-    animation: slideUpFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards;
+    animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
 }
 
 .pitch-slide.active .metric-item:nth-child(3) {
-    animation: slideUpFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s forwards;
+    animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
 }
 
 .pitch-slide.active .metric-item:nth-child(4) {
-    animation: slideUpFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s forwards;
+    animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
 }
 
 .pitch-slide.active .slide-cta-btn {
-    animation: slideUpFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards;
+    animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
 }
