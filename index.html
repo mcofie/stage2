@@ -1,81 +1,543 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Stage 2 Labs</title>
+    <meta name="description" content="Stage2 is an Accra-based product studio turning market curiosity into high-impact digital ventures.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇬🇭</text></svg>">
-    <!-- Google Fonts: Geist -->
+    
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;460;500;600&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg: #ffffff;
-            --text-primary: #111111;
-            --text-secondary: #737373;
-            --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --font-inter: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --body-bg: #fdfdfc;
+            --body-color: #111111;
+            --muted-color: rgba(0, 0, 0, 0.4);
+            --border-color: #f2f2f2;
+            --underline-color: #d9d9d9;
+            --underline-hover: #666666;
+            --divider-color: #ededed;
         }
 
         @media (prefers-color-scheme: dark) {
             :root {
-                --bg: #0f0f0f;
-                --text-primary: #f2f2f2;
-                --text-secondary: #8a8a8a;
+                --body-bg: #0d0d0d;
+                --body-color: #f2f2f2;
+                --muted-color: rgba(255, 255, 255, 0.4);
+                --border-color: #1e1e1e;
+                --underline-color: #333333;
+                --underline-hover: #888888;
+                --divider-color: #222222;
             }
         }
 
-        * {
+        *, *:before, *:after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        body {
-            background-color: var(--bg);
-            color: var(--text-primary);
-            font-family: var(--font-sans);
-            min-height: 100vh;
-            min-height: 100dvh;
+        html {
+            background: var(--body-bg);
+            color: var(--body-color);
+            font-size: 16px;
+            text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
         }
 
-        .inscription {
+        body {
+            font-family: var(--font-inter);
+            min-height: 100%;
+            overflow-y: scroll;
+        }
+
+        /* Top soft gradient mask */
+        .container {
+            max-width: 36.375rem;
+            margin: 0 auto;
+            padding: 5rem 1rem 2.5rem;
+            position: relative;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 2rem 1.5rem 2.5rem;
+            }
+        }
+
+        .container:before {
+            content: "";
+            pointer-events: none;
+            z-index: 9;
             position: fixed;
             top: 0;
             left: 0;
-            padding: clamp(1.25rem, 4vw, 2.5rem);
-            padding-top: calc(clamp(1.25rem, 4vw, 2.5rem) + env(safe-area-inset-top, 0px));
-            padding-left: calc(clamp(1.25rem, 4vw, 2.5rem) + env(safe-area-inset-left, 0px));
+            right: 0;
+            height: 8rem;
+            background: linear-gradient(180deg, var(--body-bg) 0%, hsla(0, 0%, 100%, 0) 100%);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .container:before {
+                background: linear-gradient(180deg, var(--body-bg) 0%, rgba(13, 13, 13, 0) 100%);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .container:before {
+                height: 2.5rem;
+            }
+        }
+
+        /* Stagger In Animation */
+        @keyframes staggerIn {
+            0% {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .article > * {
+            animation: staggerIn .5s ease both;
+        }
+        .article > :first-child { animation-delay: 0s; }
+        .article > :nth-child(2) { animation-delay: .05s; }
+        .article > :nth-child(3) { animation-delay: .1s; }
+        .article > :nth-child(4) { animation-delay: .15s; }
+        .post-list {
+            animation: staggerIn .5s ease both;
+            animation-delay: .2s;
+        }
+        .footer {
+            animation: staggerIn .5s ease both;
+            animation-delay: .25s;
+        }
+
+        /* Header / Inscription */
+        .article > header {
             display: flex;
             flex-direction: column;
-            gap: 0.2rem;
-            user-select: none;
+            gap: .25rem;
+            padding: 0 0 .5rem;
         }
 
-        .inscription-title {
-            font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+        .article > header h1 {
+            color: var(--body-color);
+            font-size: .875rem;
             font-weight: 500;
-            letter-spacing: -0.02em;
-            line-height: 1.35;
-            color: var(--text-primary);
+            line-height: 1.25rem;
+            letter-spacing: -.00563rem;
         }
 
-        .inscription-location {
-            font-size: clamp(0.85rem, 1.5vw, 0.925rem);
-            font-weight: 400;
-            letter-spacing: -0.01em;
+        .article > header time,
+        .article > header .subtitle {
+            color: var(--muted-color);
+            font-size: .875rem;
+            font-weight: 460;
+            line-height: 1.25rem;
+            letter-spacing: -.00563rem;
+        }
+
+        /* Paragraphs */
+        .article > p {
+            padding-top: 1rem;
+            font-size: .875rem;
+            font-weight: 460;
+            line-height: 1.25rem;
+            letter-spacing: -.00563rem;
+            color: var(--body-color);
+        }
+
+        /* Benji-style underlined links */
+        .basic-link {
+            position: relative;
+            display: inline;
+            color: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+            text-decoration: none;
+            transition: all .2s ease;
+        }
+
+        .basic-link:before {
+            pointer-events: none;
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            border-radius: 2px;
+            background: var(--underline-color);
+            opacity: 1;
+            transition: inherit;
+        }
+
+        .basic-link:hover:before {
+            background: var(--underline-hover);
+        }
+
+        /* Section / Table List */
+        .post-list {
+            padding: 3rem 0 0;
+        }
+
+        .post-list-title {
+            color: var(--muted-color);
+            font-size: .875rem;
+            font-weight: 460;
+            letter-spacing: -.00563rem;
+            padding-bottom: .5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .post-list > ul {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+        }
+
+        .post-list > ul > li {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .post-list > ul > li:last-child {
+            border-bottom: none;
+        }
+
+        .post-list > ul > li > ul {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+        }
+
+        .post-list > ul > li > ul > li > a {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: .735rem 0 .735rem 6.75rem;
+            text-decoration: none;
+            color: inherit;
+            transition: padding-bottom .2s ease;
+        }
+
+        @media screen and (max-width: 520px) {
+            .post-list > ul > li > ul > li > a {
+                padding-left: 3.5rem;
+            }
+        }
+
+        .post-list > ul > li > ul > li > a:after {
+            content: "";
+            border-bottom: 1px solid var(--border-color);
+            position: absolute;
+            bottom: 0;
+            left: 6.75rem;
+            right: 0;
+        }
+
+        @media screen and (max-width: 520px) {
+            .post-list > ul > li > ul > li > a:after {
+                left: 3.5rem;
+            }
+        }
+
+        .post-list > ul > li > ul > li:last-child > a:after {
+            display: none;
+        }
+
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            min-width: 0;
+            flex: 1;
+        }
+
+        .post-list > ul > li > ul > li > a h2 {
+            display: inline-flex;
+            align-items: center;
+            color: var(--body-color);
+            font-size: .875rem;
+            font-weight: 460;
+            letter-spacing: -.00563rem;
+            transition: opacity .14s ease;
+        }
+
+        .post-list > ul > li > ul > li > a h2:after {
+            content: "↗";
+            font-size: 0.8em;
+            opacity: 0;
+            transform: translate(-3px, 2px);
+            transition: opacity .14s ease, transform .14s ease;
+        }
+
+        .post-list > ul > li > ul > li > a:hover h2:after {
+            opacity: 0.65;
+            transform: translate(2px, -1px);
+        }
+
+        /* Micro-descriptions appearing on hover */
+        .product-desc {
+            font-size: .775rem;
             line-height: 1.35;
-            color: var(--text-secondary);
+            color: var(--muted-color);
+            letter-spacing: -.003rem;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transform: translateY(-3px);
+            transition: max-height .22s cubic-bezier(0.16, 1, 0.3, 1), opacity .18s ease, transform .18s ease, margin-top .18s ease;
+            margin-top: 0;
+            padding-right: 1.5rem;
+        }
+
+        .post-list > ul > li > ul > li > a:hover .product-desc {
+            max-height: 3rem;
+            opacity: 0.9;
+            transform: translateY(0);
+            margin-top: .25rem;
+        }
+
+        .post-list > ul > li > ul > li > a .meta {
+            color: var(--muted-color);
+            font-size: .875rem;
+            font-weight: 460;
+            line-height: normal;
+            letter-spacing: -.00563rem;
+            flex-shrink: 0;
+            padding-top: .05rem;
+        }
+
+        .post-list > ul > li > ul > li > a .meta .tag {
+            transition: opacity .14s ease;
+            display: inline-block;
+        }
+
+        .post-list > ul > li > ul > li > a .meta .year {
+            position: absolute;
+            left: 0;
+            top: .735rem;
+            visibility: hidden;
+            color: var(--muted-color);
+        }
+
+        .post-list > ul > li > ul > li:first-child > a .meta .year {
+            visibility: visible;
+        }
+
+        /* Hover dimming effect */
+        @media screen and (min-width: 520px) {
+            .post-list > ul:hover > li > ul > li > a h2,
+            .post-list > ul:hover > li > ul > li > a .meta .tag {
+                opacity: .3;
+            }
+            .post-list > ul:hover > li > ul > li > a .meta .year {
+                opacity: 1;
+            }
+        }
+
+        .post-list > ul > li > ul > li > a:hover h2,
+        .post-list > ul > li > ul > li > a:hover .meta .tag {
+            opacity: 1;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 2.5rem 0 5rem;
+        }
+
+        .footer-container {
+            max-width: 36.375rem;
+            margin: 0 auto;
+        }
+
+        .footer-container:before {
+            content: "";
+            display: block;
+            height: 1px;
+            width: 3.125rem;
+            background: var(--divider-color);
+            margin: 0 0 2.375rem;
+        }
+
+        .footer-container p {
+            color: var(--muted-color);
+            font-size: .8125rem;
+            font-weight: 460;
+            letter-spacing: -.0025rem;
+            font-variant-numeric: tabular-nums;
         }
     </style>
 </head>
 <body>
-    <div class="inscription">
-        <span class="inscription-title">Stage 2 Labs</span>
-        <span class="inscription-location">Accra, Ghana</span>
+    <div class="container">
+        <article class="article">
+            <header>
+                <h1>Stage 2 Labs</h1>
+                <p class="subtitle">Product Design Studio</p>
+            </header>
+
+            <p>An Accra-based product studio turning market curiosity into high-impact digital ventures. We de-risk innovation by rigorously testing assumptions, conducting deep field research, and building resilient software engineered to solve real-world frictions.</p>
+
+            <p>Our ventures include <a class="basic-link" target="_blank" rel="noopener noreferrer" href="https://getvellum.org">Vellum</a>, <a class="basic-link" target="_blank" rel="noopener noreferrer" href="https://graydocket.com">GrayDocket</a>, <a class="basic-link" target="_blank" rel="noopener noreferrer" href="https://amigolease.com">Amigo Lease</a>, <a class="basic-link" target="_blank" rel="noopener noreferrer" href="https://gatepass.so">GatePass</a>, <a class="basic-link" target="_blank" rel="noopener noreferrer" href="https://tryitinero.com">Itinero</a>, <a class="basic-link" target="_blank" rel="noopener noreferrer" href="https://lazypick.app">LazyPick</a>, <a class="basic-link" target="_blank" rel="noopener noreferrer" href="https://motorambos.com">Motor Ambos</a>, and <a class="basic-link" target="_blank" rel="noopener noreferrer" href="https://minutes2match.com/">Minutes 2 Match</a>.</p>
+        </article>
+
+        <section class="post-list">
+            <h3 class="post-list-title">Products</h3>
+            <ul>
+                <!-- 2026 -->
+                <li>
+                    <ul>
+                        <li>
+                            <a href="https://getvellum.org" target="_blank" rel="noopener noreferrer">
+                                <div class="product-info">
+                                    <h2>Vellum</h2>
+                                    <p class="product-desc">Digital-first estate planning platform bridging modern asset management and law.</p>
+                                </div>
+                                <span class="meta">
+                                    <span class="tag">Platform</span>
+                                    <span class="year">2026</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://graydocket.com" target="_blank" rel="noopener noreferrer">
+                                <div class="product-info">
+                                    <h2>GrayDocket</h2>
+                                    <p class="product-desc">Business-in-a-Box automating company incorporation, tax, and banking.</p>
+                                </div>
+                                <span class="meta">
+                                    <span class="tag">Platform</span>
+                                    <span class="year">2026</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 2025 -->
+                <li>
+                    <ul>
+                        <li>
+                            <a href="https://amigolease.com" target="_blank" rel="noopener noreferrer">
+                                <div class="product-info">
+                                    <h2>Amigo Lease</h2>
+                                    <p class="product-desc">Verified roommate matching platform for urban living and shared spaces.</p>
+                                </div>
+                                <span class="meta">
+                                    <span class="tag">Marketplace</span>
+                                    <span class="year">2025</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://gatepass.so" target="_blank" rel="noopener noreferrer">
+                                <div class="product-info">
+                                    <h2>GatePass</h2>
+                                    <p class="product-desc">Video-first marketplace for discovering and booking live events.</p>
+                                </div>
+                                <span class="meta">
+                                    <span class="tag">Marketplace</span>
+                                    <span class="year">2025</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://tryitinero.com" target="_blank" rel="noopener noreferrer">
+                                <div class="product-info">
+                                    <h2>Itinero</h2>
+                                    <p class="product-desc">AI-powered travel ecosystem for Africa with curated itineraries.</p>
+                                </div>
+                                <span class="meta">
+                                    <span class="tag">AI Travel</span>
+                                    <span class="year">2025</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://lazypick.app" target="_blank" rel="noopener noreferrer">
+                                <div class="product-info">
+                                    <h2>LazyPick</h2>
+                                    <p class="product-desc">Recommendation engine solving choice paralysis in entertainment and dining.</p>
+                                </div>
+                                <span class="meta">
+                                    <span class="tag">Lifestyle</span>
+                                    <span class="year">2025</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://motorambos.com" target="_blank" rel="noopener noreferrer">
+                                <div class="product-info">
+                                    <h2>Motor Ambos</h2>
+                                    <p class="product-desc">Digital vehicle management and automotive service platform.</p>
+                                </div>
+                                <span class="meta">
+                                    <span class="tag">Service</span>
+                                    <span class="year">2025</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 2024 -->
+                <li>
+                    <ul>
+                        <li>
+                            <a href="https://minutes2match.com/" target="_blank" rel="noopener noreferrer">
+                                <div class="product-info">
+                                    <h2>Minutes 2 Match</h2>
+                                    <p class="product-desc">Curated speed dating and live matchmaking event series.</p>
+                                </div>
+                                <span class="meta">
+                                    <span class="tag">Events</span>
+                                    <span class="year">2024</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <p><span id="accra-time"></span> in Accra, Ghana</p>
+            </div>
+        </footer>
     </div>
+
+    <script>
+        function updateAccraTime() {
+            try {
+                const el = document.getElementById('accra-time');
+                if (!el) return;
+                const now = new Date();
+                const timeString = new Intl.DateTimeFormat('en-US', {
+                    timeZone: 'Africa/Accra',
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true
+                }).format(now).toLowerCase();
+                el.textContent = timeString;
+            } catch (e) {}
+        }
+        updateAccraTime();
+        setInterval(updateAccraTime, 1000);
+    </script>
 </body>
 </html>
