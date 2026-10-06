@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4254dac8-31db-4758-a1a6-89a6066b7619" name="Changes" comment="initial">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/product-doc.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/product-doc.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/amigo-lease.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/amigo-lease.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/gatepass.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/gatepass.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/graydocket.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/graydocket.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/itinero.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/itinero.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/lazypick.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/lazypick.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/minutes-2-match.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/minutes-2-match.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/motor-ambos.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/motor-ambos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/vellum.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/vellum.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +79,7 @@
       <workItem from="1768317880811" duration="17000" />
       <workItem from="1791231818484" duration="2338000" />
       <workItem from="1791268075020" duration="1386000" />
-      <workItem from="1791279823981" duration="845000" />
+      <workItem from="1791279823981" duration="1767000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <option name="closed" value="true" />
@@ -170,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1791271011296</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="initial">
+      <option name="closed" value="true" />
+      <created>1791282227650</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1791282227650</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
