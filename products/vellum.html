@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    <title>Vellum — Research & Product Documentation | Stage 2 Labs</title>
+    <meta name="title" content="Vellum — Research & Product Documentation | Stage 2 Labs">
+    <meta name="description" content="Field research and architectural documentation for Vellum: A digital-first estate planning platform bridging modern asset management and law in Africa.">
+    
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;460;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/product-doc.css">
+</head>
+<body>
+    <div class="container">
+        <article class="doc-article">
+            <!-- Navigation -->
+            <nav class="doc-nav">
+                <a href="../index.html" class="back-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Stage 2 Labs
+                </a>
+                <span class="nav-tag">Research & Docs</span>
+            </nav>
+
+            <!-- Header -->
+            <header class="doc-header">
+                <div class="doc-meta-pills">
+                    <span class="doc-pill active">Platform</span>
+                    <span class="doc-pill">2026</span>
+                    <span class="doc-pill">Accra • LegalTech</span>
+                </div>
+                <h1 class="doc-title">Vellum</h1>
+                <p class="doc-lead">
+                    Digital-first estate planning platform bridging modern asset management, digital wealth custody, and statutory law across West Africa.
+                </p>
+                <div class="doc-actions">
+                    <a href="https://getvellum.org" target="_blank" rel="noopener noreferrer" class="action-btn-primary">
+                        Visit Live Platform
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                    <a href="#architecture" class="action-btn-secondary">Technical Specs</a>
+                </div>
+            </header>
+
+            <!-- Quick Specs -->
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <span class="spec-label">Status</span>
+                    <span class="spec-val">Active Beta</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Domain</span>
+                    <span class="spec-val">getvellum.org</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Market</span>
+                    <span class="spec-val">Ghana & Diaspora</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Jurisdiction</span>
+                    <span class="spec-val">Ghana (Act 360)</span>
+                </div>
+            </div>
+
+            <!-- 01. Overview -->
+            <section class="doc-section">
+                <div class="section-eyebrow">01 / Overview & Thesis</div>
+                <h2 class="section-title">The Digital Estate Conundrum</h2>
+                <p>
+                    Over the past decade, the financial profiles of urban Africans shifted dramatically. Modern founders, remote engineers, and diaspora professionals now accumulate wealth in liquid non-custodial crypto, multi-currency fintech wallets, offshore cap tables, and private equity stakes. Yet estate planning in West Africa remains tethered to 19th-century probate routines: handwritten wills stored in metal cabinets, unverified witnesses, and bureaucratic court registries.
+                </p>
+                <p>
+                    When an asset holder passes away unexpectedly, their digital footprint turns into a black hole. Families spend years in probate litigation without knowing what accounts exist, while millions of dollars in digital and physical wealth are permanently lost to custodians.
+                </p>
+                <p>
+                    Vellum was built to bridge this disconnect: providing an encrypted digital vault with automated proof-of-life protocols, legally compliant testamentary instruments under Ghana's Wills Act 1971 (Act 360), and structured succession execution.
+                </p>
+            </section>
+
+            <!-- 02. Field Research -->
+            <section class="doc-section">
+                <div class="section-eyebrow">02 / Field Research & Insights</div>
+                <h2 class="section-title">Field Findings from 42 Probate Cases</h2>
+                <p>
+                    Between Q3 2025 and Q1 2026, Stage 2 Labs conducted field interviews with 42 estates across Accra, Kumasi, and London, alongside 18 legal practitioners at the Ghana Bar Association:
+                </p>
+
+                <div class="callout-box">
+                    <div class="callout-title">Core Finding #1: The Intestate Default Trap</div>
+                    <p>
+                        84% of surveyed tech workers and SME owners between ages 25–45 had no written will. In Ghana, dying intestate invokes PNDCL 111 (Intestate Succession Law), which divides assets across customary lines and extended family councils, frequently locking surviving spouses and children out of primary residences.
+                    </p>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">Core Finding #2: The Hidden Digital Asset Problem</div>
+                    <p>
+                        In 92% of sampled deaths involving remote knowledge workers, surviving families were completely unaware of their primary liquid asset locations—including Wise accounts, Binance balances, and Stripe merchant balances. Over $340,000 across 11 surveyed cases was abandoned without recovery.
+                    </p>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">Core Finding #3: Prohibitive Legal Costs</div>
+                    <p>
+                        Retaining a reputable private law firm in Accra to draft and deposit a standard testamentary instrument costs upwards of $1,200 to $2,500 USD, creating a severe economic hurdle that discourages proactive estate planning.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 03. Architecture -->
+            <section class="doc-section" id="architecture">
+                <div class="section-eyebrow">03 / System Architecture</div>
+                <h2 class="section-title">Cryptographic Custody & Legal Execution</h2>
+                <p>
+                    Vellum treats estate planning as a zero-knowledge data escrow protocol governed by legal consensus.
+                </p>
+
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <h4>Zero-Knowledge Asset Vault</h4>
+                        <p>Asset metadata, seed phrases, and banking credentials are encrypted on the client device using AES-256-GCM before ingestion. Vellum servers never hold plaintext credentials.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Proof-of-Life Oracle</h4>
+                        <p>Configurable periodic cryptographic heartbeats via email, SMS, and WhatsApp. Failure to respond triggers multi-tier verification with designated trusted guarantors.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Statutory Will Generator</h4>
+                        <p>Dynamic document engine compiling enforceable testamentary forms adhering to Ghana's Wills Act 1971, including video execution affidavits and physical probate filing packs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Sharded Key Release (Shamir)</h4>
+                        <p>Sensitive access instructions are split into cryptographic shards distributed among vetted executors and licensed notary partners, requiring 3-of-5 quorum to reconstitute.</p>
+                    </div>
+                </div>
+
+                <div class="flow-diagram">
+                    <div class="flow-header">
+                        <span class="flow-title">Architecture: Cryptographic Lifecycle Flow</span>
+                        <span class="flow-badge">v1.2 Spec</span>
+                    </div>
+                    <div class="flow-steps">
+                        <div class="flow-step">
+                            <div class="step-indicator">
+                                <span class="step-num">01</span>
+                                <span class="step-line"></span>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-title">Client Ingestion & Zero-Knowledge Vaulting</div>
+                                <div class="step-desc">Asset metadata, credentials, and seeds encrypted client-side using AES-256-GCM prior to transmission</div>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-indicator">
+                                <span class="step-num">02</span>
+                                <span class="step-line"></span>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-title">Shamir's Secret Sharding (k-of-n)</div>
+                                <div class="step-desc">Master keys partitioned into cryptographic shards distributed among vetted executors and notary partners</div>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-indicator">
+                                <span class="step-num">03</span>
+                                <span class="step-line"></span>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-title">Proof-of-Life Autonomous Daemon</div>
+                                <div class="step-desc">Configurable 30/60-day recurring cryptographic heartbeat sent via email, SMS, and WhatsApp</div>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-indicator">
+                                <span class="step-num">04</span>
+                                <span class="step-line"></span>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-title">Multi-Guarantor Escalation & Verification</div>
+                                <div class="step-desc">Triggered if heartbeats lapse; cross-checks verified death certificate with Births & Deaths Registry API</div>
+                            </div>
+                        </div>
+                        <div class="flow-step flow-step-final">
+                            <div class="step-indicator">
+                                <span class="step-num">05</span>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-title">Executor Quorum Unlocked & Probate Filing</div>
+                                <div class="step-desc">Requires 3-of-5 executor consensus to reconstruct keys, generating compliant High Court probate pack</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 04. Validation -->
+            <section class="doc-section">
+                <div class="section-eyebrow">04 / Impact & Next Milestones</div>
+                <h2 class="section-title">Validation Metrics & Road Ahead</h2>
+                <ul class="doc-list">
+                    <li><strong>480+ Protected Estates:</strong> Vaulted over $14.2M in aggregate asset declarations across real estate, equity, and digital accounts during private beta.</li>
+                    <li><strong>Legal Advisory Network:</strong> Partnered with 6 boutique Accra legal practices to provide certified notarization and High Court registry physical lodgment.</li>
+                    <li><strong>Regional Expansion:</strong> Adapting the statutory compliance engine for Nigerian and Kenyan probate codes in Q3 2026.</li>
+                </ul>
+            </section>
+
+            <!-- Pagination -->
+            <div class="doc-pagination">
+                <a href="../index.html" class="pagination-item">
+                    <span class="pagination-dir">← Index</span>
+                    <span class="pagination-title">All Products</span>
+                </a>
+                <a href="graydocket.html" class="pagination-item next">
+                    <span class="pagination-dir">Next Product →</span>
+                    <span class="pagination-title">GrayDocket</span>
+                </a>
+            </div>
+        </article>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-brand-wrap">
+                    <a href="../index.html" class="footer-brand" aria-label="Stage 2 Labs">
+                        <span class="footer-logo" aria-hidden="true">
+                            <svg viewBox="0 0 186 126" fill="currentColor">
+                                <rect width="186" height="50" rx="4"></rect>
+                                <rect y="76" width="186" height="50" rx="4"></rect>
+                            </svg>
+                        </span>
+                        <span class="footer-brand-text">Stage 2</span>
+                    </a>
+                </div>
+
+                <p class="footer-desc">
+                    The modern product studio turning market curiosity into high-impact digital ventures. We de-risk innovation through field research, assumption testing, and resilient software.
+                </p>
+
+                <div class="footer-nav-row">
+                    <div class="footer-socials">
+                        <a href="https://twitter.com/maxwellcofie" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)" class="footer-icon-link">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/maxwellcofie" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="footer-icon-link">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.55a1.6 1.6 0 0 0-1.6 1.6 1.6 1.6 0 0 0 1.6 1.6 1.6 1.6 0 0 0 1.6-1.6 1.6 1.6 0 0 0-1.6-1.6z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/maxwellcofie" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="footer-icon-link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <nav class="footer-links" aria-label="Footer Navigation">
+                        <a href="../index.html" class="footer-link">Home</a>
+                        <a href="../index.html#products" class="footer-link">Products</a>
+                        <a href="https://stage2.xyz/research" class="footer-link">Research</a>
+                        <a href="mailto:hello@stage2.xyz" class="footer-link">Contact</a>
+                    </nav>
+                </div>
+
+                <div class="footer-divider"></div>
+
+                <div class="footer-bottom">
+                    <p class="footer-copyright">
+                        © 2026 Stage 2 Labs. Built for the modern founder. <span class="footer-time">• <span id="accra-time"></span> in Accra</span>
+                    </p>
+                    <div class="footer-legal">
+                        <a href="#" class="footer-legal-link">Terms</a>
+                        <a href="#" class="footer-legal-link">Privacy</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function updateAccraTime() {
+            try {
+                const el = document.getElementById('accra-time');
+                if (!el) return;
+                const now = new Date();
+                const timeString = new Intl.DateTimeFormat('en-US', {
+                    timeZone: 'Africa/Accra',
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true
+                }).format(now).toLowerCase();
+                el.textContent = timeString;
+            } catch (e) {}
+        }
+        updateAccraTime();
+        setInterval(updateAccraTime, 1000);
+    </script>
+</body>
+</html>

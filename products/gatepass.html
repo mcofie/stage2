@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    <title>GatePass — Research & Product Documentation | Stage 2 Labs</title>
+    <meta name="title" content="GatePass — Research & Product Documentation | Stage 2 Labs">
+    <meta name="description" content="Field research and architectural documentation for GatePass: Video-first marketplace for discovering and booking live events across Africa.">
+    
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;460;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/product-doc.css">
+</head>
+<body>
+    <div class="container">
+        <article class="doc-article">
+            <!-- Navigation -->
+            <nav class="doc-nav">
+                <a href="../index.html" class="back-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Stage 2 Labs
+                </a>
+                <span class="nav-tag">Research & Docs</span>
+            </nav>
+
+            <!-- Header -->
+            <header class="doc-header">
+                <div class="doc-meta-pills">
+                    <span class="doc-pill active">Marketplace</span>
+                    <span class="doc-pill">2025</span>
+                    <span class="doc-pill">Accra & Lagos • EventTech</span>
+                </div>
+                <h1 class="doc-title">GatePass</h1>
+                <p class="doc-lead">
+                    Video-first marketplace for live event discovery and ticketing, featuring dynamic encrypted QR access and offline-resilient gate scanners.
+                </p>
+                <div class="doc-actions">
+                    <a href="https://gatepass.so" target="_blank" rel="noopener noreferrer" class="action-btn-primary">
+                        Visit Live Platform
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                    <a href="#gate-protocol" class="action-btn-secondary">Scanner Architecture</a>
+                </div>
+            </header>
+
+            <!-- Quick Specs -->
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <span class="spec-label">Status</span>
+                    <span class="spec-val">Scaling</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Domain</span>
+                    <span class="spec-val">gatepass.so</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Market</span>
+                    <span class="spec-val">West Africa</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Ticketing Rail</span>
+                    <span class="spec-val">Dynamic QR Mesh</span>
+                </div>
+            </div>
+
+            <!-- 01. Overview -->
+            <section class="doc-section">
+                <div class="section-eyebrow">01 / The Discovery Problem</div>
+                <h2 class="section-title">Beyond Static Event Flyers</h2>
+                <p>
+                    West Africa is the epicenter of global Afrobeats culture, live festivals, and vibrant pop-ups. Yet ticketing in Accra and Lagos was stuck in 2012: grainy 1080x1080 JPEG flyers shared on Instagram Stories, confusing Google Forms, static PDF barcodes easily duplicated via WhatsApp screenshots, and massive 45-minute bottlenecks at event entrances.
+                </p>
+                <p>
+                    Flyers fail to capture the energy, crowd, sound, and vibe of an event. Meanwhile, ticket fraud at high-profile concerts (Detty December in Ghana, Gidi Fest in Lagos) ran rampant, leaving fans locked outside while promoters suffered financial bleed.
+                </p>
+                <p>
+                    GatePass replaces static flyers with an immersive, TikTok-style short-form video discovery feed where attending is one tap away, secured by cryptographic anti-fraud QR codes that function even during total cellular grid congestion.
+                </p>
+            </section>
+
+            <!-- 02. Field Research -->
+            <section class="doc-section">
+                <div class="section-eyebrow">02 / Field Research & Festival Audits</div>
+                <h2 class="section-title">Entrance Audits Across 8 Major Festivals</h2>
+                <p>
+                    During the December 2024–January 2025 concert season in Accra, our engineers conducted on-site telemetry across 8 events:
+                </p>
+
+                <div class="callout-box">
+                    <div class="callout-title">Discovery Friction: The Instagram Drop-off</div>
+                    <p>
+                        81% of concertgoers discovered events through video recaps from creators rather than the promoter's graphic flyer. However, the path from watching an exciting video clip to securing a ticket averaged 5 friction-filled redirects.
+                    </p>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">Gate Chaos: Cellular Congestion Blackouts</div>
+                    <p>
+                        When 5,000 to 15,000 attendees gather at open-air beachfronts (Labadi Beach, Untamed Empire), cellular towers experience severe packet loss. Cloud-only ticket scanners freeze, forcing security to abandon digital checks and rely on visual paper wristbands.
+                    </p>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">The "Screenshot" Scalping Black Market</div>
+                    <p>
+                        Over 14% of entry disputes involved duplicate static PDF barcodes sold multiple times by scalpers outside the gates.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 03. Architecture & Scanner Mesh -->
+            <section class="doc-section" id="gate-protocol">
+                <div class="section-eyebrow">03 / Technical Architecture</div>
+                <h2 class="section-title">Cryptographic Anti-Fraud & Local Mesh Scanning</h2>
+                <p>
+                    GatePass combines consumer video streaming with mission-critical event operations:
+                </p>
+
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <h4>Video Discovery Feed</h4>
+                        <p>HLS video streaming optimized for low-bandwidth mobile connections, featuring synchronized 1-click Mobile Money checkout overlays.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>TOTP Dynamic QR Tickets</h4>
+                        <p>Tickets generate cryptographic time-based one-time passwords (TOTP) cycling every 15 seconds. Screenshots sent via WhatsApp fail validation instantly.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Local Wi-Fi / Bluetooth Mesh</h4>
+                        <p>Gate scanners synchronize scanned ticket digests peer-to-peer over local Bluetooth Low Energy and ad-hoc Wi-Fi, preventing double-entry with zero cellular internet.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Instant Settlement Rails</h4>
+                        <p>Direct integration with MTN MoMo, Telecel Cash, and global cards with real-time promoter revenue split dashboards.</p>
+                    </div>
+                </div>
+
+                <div class="flow-diagram">
+                    <div class="flow-header">
+                        <span class="flow-title">Offline Mesh Validation Architecture</span>
+                        <span class="flow-badge">Zero-Internet Resilience</span>
+                    </div>
+                    <div class="flow-steps">
+                        <div class="flow-step">
+                            <div class="step-indicator">
+                                <span class="step-num">01</span>
+                                <span class="step-line"></span>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-title">Dynamic Cryptographic Token Ingestion</div>
+                                <div class="step-desc">Attendee mobile wallet generates dynamic HMAC-SHA256 encrypted QR ticket refreshed every 15s</div>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-indicator">
+                                <span class="step-num">02</span>
+                                <span class="step-line"></span>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-title">Ultra-Fast Gate Scanner Read (&lt; 80ms)</div>
+                                <div class="step-desc">Camera reads token, validates signature against pre-cached local public key, and flags ticket as redeemed</div>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-indicator">
+                                <span class="step-num">03</span>
+                                <span class="step-line"></span>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-title">Local SQLite Buffer Storage</div>
+                                <div class="step-desc">Redemption record committed immediately to high-speed local device storage ring buffer</div>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-indicator">
+                                <span class="step-num">04</span>
+                                <span class="step-line"></span>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-title">BLE & Ad-Hoc Wi-Fi Peer Broadcast</div>
+                                <div class="step-desc">Propagates redeemed ticket ID to all turnstile scanners across entrance gates within 100ms with zero internet</div>
+                            </div>
+                        </div>
+                        <div class="flow-step flow-step-final">
+                            <div class="step-indicator">
+                                <span class="step-num">05</span>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-title">Asynchronous Cloud Ledger Sync</div>
+                                <div class="step-desc">Background daemon synchronizes audited redemption records once cellular network congestion eases</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 04. Validation -->
+            <section class="doc-section">
+                <div class="section-eyebrow">04 / Traction & Impact</div>
+                <h2 class="section-title">Operational Validation</h2>
+                <ul class="doc-list">
+                    <li><strong>85,000+ Tickets Processed:</strong> Deployed across major music festivals, nightlife venues, and indie community markets.</li>
+                    <li><strong>Check-in Speed:</strong> Average gate scan time reduced from 14.5 seconds to 1.8 seconds per guest.</li>
+                    <li><strong>Zero Duplicate Entries:</strong> Eliminated counterfeit screenshot admissions across all partner venues.</li>
+                </ul>
+            </section>
+
+            <!-- Pagination -->
+            <div class="doc-pagination">
+                <a href="amigo-lease.html" class="pagination-item">
+                    <span class="pagination-dir">← Previous Product</span>
+                    <span class="pagination-title">Amigo Lease</span>
+                </a>
+                <a href="itinero.html" class="pagination-item next">
+                    <span class="pagination-dir">Next Product →</span>
+                    <span class="pagination-title">Itinero</span>
+                </a>
+            </div>
+        </article>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-brand-wrap">
+                    <a href="../index.html" class="footer-brand" aria-label="Stage 2 Labs">
+                        <span class="footer-logo" aria-hidden="true">
+                            <svg viewBox="0 0 186 126" fill="currentColor">
+                                <rect width="186" height="50" rx="4"></rect>
+                                <rect y="76" width="186" height="50" rx="4"></rect>
+                            </svg>
+                        </span>
+                        <span class="footer-brand-text">Stage 2</span>
+                    </a>
+                </div>
+
+                <p class="footer-desc">
+                    The modern product studio turning market curiosity into high-impact digital ventures. We de-risk innovation through field research, assumption testing, and resilient software.
+                </p>
+
+                <div class="footer-nav-row">
+                    <div class="footer-socials">
+                        <a href="https://twitter.com/maxwellcofie" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)" class="footer-icon-link">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/maxwellcofie" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="footer-icon-link">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.55a1.6 1.6 0 0 0-1.6 1.6 1.6 1.6 0 0 0 1.6 1.6 1.6 1.6 0 0 0 1.6-1.6 1.6 1.6 0 0 0-1.6-1.6z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/maxwellcofie" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="footer-icon-link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <nav class="footer-links" aria-label="Footer Navigation">
+                        <a href="../index.html" class="footer-link">Home</a>
+                        <a href="../index.html#products" class="footer-link">Products</a>
+                        <a href="https://stage2.xyz/research" class="footer-link">Research</a>
+                        <a href="mailto:hello@stage2.xyz" class="footer-link">Contact</a>
+                    </nav>
+                </div>
+
+                <div class="footer-divider"></div>
+
+                <div class="footer-bottom">
+                    <p class="footer-copyright">
+                        © 2026 Stage 2 Labs. Built for the modern founder. <span class="footer-time">• <span id="accra-time"></span> in Accra</span>
+                    </p>
+                    <div class="footer-legal">
+                        <a href="#" class="footer-legal-link">Terms</a>
+                        <a href="#" class="footer-legal-link">Privacy</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function updateAccraTime() {
+            try {
+                const el = document.getElementById('accra-time');
+                if (!el) return;
+                const now = new Date();
+                const timeString = new Intl.DateTimeFormat('en-US', {
+                    timeZone: 'Africa/Accra',
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true
+                }).format(now).toLowerCase();
+                el.textContent = timeString;
+            } catch (e) {}
+        }
+        updateAccraTime();
+        setInterval(updateAccraTime, 1000);
+    </script>
+</body>
+</html>

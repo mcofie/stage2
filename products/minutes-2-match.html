@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    <title>Minutes 2 Match — Research & Product Documentation | Stage 2 Labs</title>
+    <meta name="title" content="Minutes 2 Match — Research & Product Documentation | Stage 2 Labs">
+    <meta name="description" content="Field research and architectural documentation for Minutes 2 Match: Curated speed dating and live matchmaking event series in Accra.">
+    
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;460;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/product-doc.css">
+</head>
+<body>
+    <div class="container">
+        <article class="doc-article">
+            <!-- Navigation -->
+            <nav class="doc-nav">
+                <a href="../index.html" class="back-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Stage 2 Labs
+                </a>
+                <span class="nav-tag">Research & Docs</span>
+            </nav>
+
+            <!-- Header -->
+            <header class="doc-header">
+                <div class="doc-meta-pills">
+                    <span class="doc-pill active">Events</span>
+                    <span class="doc-pill">2024</span>
+                    <span class="doc-pill">Accra • Social Dynamics</span>
+                </div>
+                <h1 class="doc-title">Minutes 2 Match</h1>
+                <p class="doc-lead">
+                    Curated live speed dating and intimate matchmaking series designed to bypass algorithmic dating app fatigue through structured physical encounters and private digital scoring.
+                </p>
+                <div class="doc-actions">
+                    <a href="https://minutes2match.com/" target="_blank" rel="noopener noreferrer" class="action-btn-primary">
+                        Visit Live Platform
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                    <a href="#event-mechanics" class="action-btn-secondary">Match Protocol</a>
+                </div>
+            </header>
+
+            <!-- Quick Specs -->
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <span class="spec-label">Status</span>
+                    <span class="spec-val">Active Cohorts</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Domain</span>
+                    <span class="spec-val">minutes2match.com</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Market</span>
+                    <span class="spec-val">Accra, Ghana</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Format</span>
+                    <span class="spec-val">Live In-Person + Digital App</span>
+                </div>
+            </div>
+
+            <!-- 01. Overview -->
+            <section class="doc-section">
+                <div class="section-eyebrow">01 / The Human Friction</div>
+                <h2 class="section-title">The Dating App Fatigue Epidemic</h2>
+                <p>
+                    Online dating in African metropolitan hubs is broken. Tinder, Bumble, and Hinge suffer from extreme match inflation: users swipe endlessly, trade small-talk messages for weeks on WhatsApp, and rarely meet in person. For accomplished career professionals—lawyers, doctors, startup executives, and entrepreneurs—public dating apps carry heavy social stigma, privacy risks, and low signal-to-noise ratios.
+                </p>
+                <p>
+                    Meanwhile, traditional social venues in Accra (loud nightclubs, crowded lounges) are hostile to meaningful conversation due to overpowering decibels, posturing, and unclear relationship intentionality.
+                </p>
+                <p>
+                    Minutes 2 Match reconstructs romance as a high-trust, curated salon: vetted cohorts, structured 7-minute rotations, intentional icebreaker prompts, and a discreet web scorecard that reveals mutual interest only after the evening concludes.
+                </p>
+            </section>
+
+            <!-- 02. Field Research -->
+            <section class="doc-section">
+                <div class="section-eyebrow">02 / Field Research & Dating Psychology</div>
+                <h2 class="section-title">Insights from 14 Live Cohorts</h2>
+                <p>
+                    Stage 2 Labs designed and operated 14 sold-out matchmaking evenings across premium boutique venues in Accra:
+                </p>
+
+                <div class="callout-box">
+                    <div class="callout-title">Insight #1: The 7-Minute Chemistry Horizon</div>
+                    <p>
+                        Field observations proved that human romantic chemistry, micro-expressions, posture, and voice timbre are subconsciously evaluated within the first 180 seconds. 7 minutes proved the optimal duration: long enough to discover mutual values, yet short enough to prevent awkward pauses if chemistry is absent.
+                    </p>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">Insight #2: Psychological Safety via Silent Voting</div>
+                    <p>
+                        94% of female participants noted that in-person rejections or aggressive contact number requests at bars are uncomfortable. By eliminating phone number exchanges during the event and using private digital scorecards, pressure is entirely removed.
+                    </p>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">Insight #3: Cohort Vetting is Critical</div>
+                    <p>
+                        The single highest predictor of event satisfaction was cohort alignment: balancing life stages, intellectual curiosity, and intentionality (e.g., long-term relationships vs. casual dating).
+                    </p>
+                </div>
+            </section>
+
+            <!-- 03. Architecture & Scoring Protocol -->
+            <section class="doc-section" id="event-mechanics">
+                <div class="section-eyebrow">03 / Platform Architecture</div>
+                <h2 class="section-title">Discreet Live Web Scorecard & Matching Engine</h2>
+                <p>
+                    Minutes 2 Match pairs intimate hospitality with real-time graph algorithms:
+                </p>
+
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <h4>Cohort Curation Algorithm</h4>
+                        <p>Pre-event screening questionnaire filtering for verified identity, career trajectory, relationship goals, and personal interests to guarantee balanced demographic cohorts.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Real-Time Table Web App</h4>
+                        <p>Each attendee receives a personal private web dashboard keyed to their seat number. At the ring of each bell, users tap "Pass", "Friend", or "Match" with private notes.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Mutual Consensus Resolution</h4>
+                        <p>At midnight following the event, the matching engine resolves mutual pairings. Contact details are shared only when both parties reciprocate interest.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Post-Event Concierge</h4>
+                        <p>Integrated date-planning concierge providing matched pairs with curated dinner reservations and exclusive partner venue discounts.</p>
+                    </div>
+                </div>
+
+                <div class="flow-diagram">
+                    <div class="flow-header">
+                        <span class="flow-title">Live Event State Machine</span>
+                        <span class="flow-badge">Zero Social Pressure</span>
+                    </div>
+                    <div class="flow-steps">
+                        <div class="flow-step">
+                            <div class="step-indicator">
+                                <span class="step-num">01</span>
+                                <span class="step-line"></span>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-title">Curated Cohort Ingestion & Vetting</div>
+                                <div class="step-desc">20 Men + 20 Women matched for age cohort, intellectual alignment, and relationship intentionality</div>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-indicator">
+                                <span class="step-num">02</span>
+                                <span class="step-line"></span>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-title">Confidential Seat Assignment & Briefing</div>
+                                <div class="step-desc">Arrival cocktail briefing; guests assigned confidential numeric table stations (1..20)</div>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-indicator">
+                                <span class="step-num">03</span>
+                                <span class="step-line"></span>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-title">Structured 7-Minute Conversation Rotations</div>
+                                <div class="step-desc">Physical bell sounds every 7 minutes prompting men to rotate to station N+1 across 20 rounds</div>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-indicator">
+                                <span class="step-num">04</span>
+                                <span class="step-line"></span>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-title">Silent Real-Time Mobile Scorecard</div>
+                                <div class="step-desc">Attendees discreetly tap Match, Friendship, or Pass on private web app with zero in-person pressure</div>
+                            </div>
+                        </div>
+                        <div class="flow-step flow-step-final">
+                            <div class="step-indicator">
+                                <span class="step-num">05</span>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-title">Midnight Mutual Intersection Query (00:00 GMT)</div>
+                                <div class="step-desc">Automated engine computes reciprocal matches; mutual pairings receive SMS WhatsApp introduction</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 04. Validation -->
+            <section class="doc-section">
+                <div class="section-eyebrow">04 / Impact & Results</div>
+                <h2 class="section-title">Match Outcomes & Impact</h2>
+                <ul class="doc-list">
+                    <li><strong>14 Sold-Out Events:</strong> Over 560 vetted singles hosted across Accra with a 98% attendance rate.</li>
+                    <li><strong>68% Mutual Match Rate:</strong> More than two-thirds of attendees departed with at least one verified mutual match.</li>
+                    <li><strong>11 Confirmed Long-Term Relationships:</strong> Including 3 engagements among early cohort participants.</li>
+                </ul>
+            </section>
+
+            <!-- Pagination -->
+            <div class="doc-pagination">
+                <a href="motor-ambos.html" class="pagination-item">
+                    <span class="pagination-dir">← Previous Product</span>
+                    <span class="pagination-title">Motor Ambos</span>
+                </a>
+                <a href="../index.html" class="pagination-item next">
+                    <span class="pagination-dir">All Products →</span>
+                    <span class="pagination-title">Studio Index</span>
+                </a>
+            </div>
+        </article>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-brand-wrap">
+                    <a href="../index.html" class="footer-brand" aria-label="Stage 2 Labs">
+                        <span class="footer-logo" aria-hidden="true">
+                            <svg viewBox="0 0 186 126" fill="currentColor">
+                                <rect width="186" height="50" rx="4"></rect>
+                                <rect y="76" width="186" height="50" rx="4"></rect>
+                            </svg>
+                        </span>
+                        <span class="footer-brand-text">Stage 2</span>
+                    </a>
+                </div>
+
+                <p class="footer-desc">
+                    The modern product studio turning market curiosity into high-impact digital ventures. We de-risk innovation through field research, assumption testing, and resilient software.
+                </p>
+
+                <div class="footer-nav-row">
+                    <div class="footer-socials">
+                        <a href="https://twitter.com/maxwellcofie" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)" class="footer-icon-link">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/maxwellcofie" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="footer-icon-link">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.55a1.6 1.6 0 0 0-1.6 1.6 1.6 1.6 0 0 0 1.6 1.6 1.6 1.6 0 0 0 1.6-1.6 1.6 1.6 0 0 0-1.6-1.6z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/maxwellcofie" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="footer-icon-link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <nav class="footer-links" aria-label="Footer Navigation">
+                        <a href="../index.html" class="footer-link">Home</a>
+                        <a href="../index.html#products" class="footer-link">Products</a>
+                        <a href="https://stage2.xyz/research" class="footer-link">Research</a>
+                        <a href="mailto:hello@stage2.xyz" class="footer-link">Contact</a>
+                    </nav>
+                </div>
+
+                <div class="footer-divider"></div>
+
+                <div class="footer-bottom">
+                    <p class="footer-copyright">
+                        © 2026 Stage 2 Labs. Built for the modern founder. <span class="footer-time">• <span id="accra-time"></span> in Accra</span>
+                    </p>
+                    <div class="footer-legal">
+                        <a href="#" class="footer-legal-link">Terms</a>
+                        <a href="#" class="footer-legal-link">Privacy</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function updateAccraTime() {
+            try {
+                const el = document.getElementById('accra-time');
+                if (!el) return;
+                const now = new Date();
+                const timeString = new Intl.DateTimeFormat('en-US', {
+                    timeZone: 'Africa/Accra',
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true
+                }).format(now).toLowerCase();
+                el.textContent = timeString;
+            } catch (e) {}
+        }
+        updateAccraTime();
+        setInterval(updateAccraTime, 1000);
+    </script>
+</body>
+</html>
