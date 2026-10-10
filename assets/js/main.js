@@ -80,18 +80,6 @@ const pitchDecks = {
             { type: "cta", headline: "Plan Your Perfect Event", link: "https://stageandbloom.co", linkText: "Browse Stage & Bloom" }
         ]
     },
-    "lazypick": {
-        name: "LazyPick",
-        color: "#FFD93D",
-        slides: [
-            { type: "title", headline: "LazyPick", tagline: "End Decision Paralysis" },
-            { type: "split", headline: "The Problem", content: "We waste hours scrolling Netflix/UberEats. 'What do you want?' is the most annoying question." },
-            { type: "split", headline: "The Solution", content: "Tinder for Movies & Food. Swipe on options. When you match with friends, it's a go." },
-            { type: "market", market: "Global", marketLabel: "Streaming Habits", country: "Worldwide", countryLabel: "Reach", flags: "🌎" },
-            { type: "metrics", headline: "Engagement", metrics: [{ value: "15s", label: "Avg Decision Time" }, { value: "100%", label: "Argument Free" }] },
-            { type: "cta", headline: "Stop Scrolling, Start Living", link: "https://lazypick.app", linkText: "Get LazyPick" }
-        ]
-    },
     "knitted": {
         name: "Knitted",
         color: "#F0E68C",
