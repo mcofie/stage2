@@ -766,6 +766,74 @@ body {
     }
 }
 
+/* Flowcharts */
+.fc-scroll {
+    overflow-x: auto;
+}
+
+.fc {
+    display: block;
+    width: 100%;
+    min-width: 25rem;
+    max-width: 30rem;
+    height: auto;
+    margin: 0 auto;
+    font-family: var(--font-inter);
+}
+
+.fc-proc {
+    fill: var(--body-bg);
+    stroke: var(--border-color-strong);
+}
+
+.fc-term {
+    fill: var(--body-color);
+}
+
+.fc-dec {
+    fill: var(--accent-bg);
+    stroke: var(--body-color);
+}
+
+.fc-text,
+.fc-term-text {
+    font-size: 10.5px;
+    font-weight: 500;
+    fill: var(--body-color);
+}
+
+.fc-term-text {
+    font-weight: 600;
+    fill: var(--body-bg);
+}
+
+.fc-lane {
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    fill: var(--muted-color);
+}
+
+.fc-edge {
+    fill: none;
+    stroke: var(--underline-hover);
+    stroke-width: 1.1;
+}
+
+.fc-edge.dashed {
+    stroke-dasharray: 4 3;
+}
+
+.fc-arrowhead {
+    fill: var(--underline-hover);
+}
+
+.fc-edge-label {
+    font-size: 9.5px;
+    font-weight: 600;
+    fill: var(--muted-color);
+}
+
 /* Wireframes */
 .wf {
     margin: 1.5rem 0;

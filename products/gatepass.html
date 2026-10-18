@@ -161,6 +161,53 @@
             <section class="doc-section" id="how-it-works">
                 <div class="section-eyebrow">03 / How It Works</div>
                 <h2 class="section-title">The attendee checkout</h2>
+                <figure class="flow-diagram fc-figure">
+                    <div class="flow-header">
+                        <span class="flow-title">GatePass checkout and part-pay flow</span>
+                        <span class="flow-badge">Flowchart</span>
+                    </div>
+                    <div class="fc-scroll">
+                        <svg class="fc" viewBox="0 0 460 578" role="img" aria-label="GatePass checkout and part-pay flow" xmlns="http://www.w3.org/2000/svg">
+                        <defs><marker id="fc-arrow" viewBox="0 0 8 8" refX="7.5" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="fc-arrowhead" d="M0 0 L8 4 L0 8 Z"/></marker></defs>
+                        <path class="fc-edge" d="M230 51 L230 85" marker-end="url(#fc-arrow)"/>
+                        <path class="fc-edge" d="M230 127 L230 157" marker-end="url(#fc-arrow)"/>
+                        <path class="fc-edge" d="M230 199 L230 217" marker-end="url(#fc-arrow)"/>
+                        <path class="fc-edge" d="M155 250 L65 250 L65 301" marker-end="url(#fc-arrow)"/>
+                        <text class="fc-edge-label" text-anchor="end" x="149" y="245">No</text>
+                        <path class="fc-edge" d="M305 250 L392 250 L392 301" marker-end="url(#fc-arrow)"/>
+                        <text class="fc-edge-label" x="311" y="245">Yes</text>
+                        <path class="fc-edge" d="M392 343 L392 361" marker-end="url(#fc-arrow)"/>
+                        <path class="fc-edge dashed" d="M392 427 L392 445" marker-end="url(#fc-arrow)"/>
+                        <text class="fc-edge-label" x="398" y="438">Missed</text>
+                        <path class="fc-edge" d="M328 394 L230 394 L230 445" marker-end="url(#fc-arrow)"/>
+                        <text class="fc-edge-label" text-anchor="end" x="322" y="389">Yes</text>
+                        <path class="fc-edge" d="M65 343 L65 466 L142 466" marker-end="url(#fc-arrow)"/>
+                        <path class="fc-edge" d="M230 487 L230 521" marker-end="url(#fc-arrow)"/>
+                        <rect class="fc-term" x="142" y="17" width="176" height="34" rx="17"/>
+                        <text class="fc-term-text" text-anchor="middle" dominant-baseline="central"><tspan x="230" y="34">Watch the event video</tspan></text>
+                        <rect class="fc-proc" x="142" y="85" width="176" height="42" rx="5"/>
+                        <text class="fc-text" text-anchor="middle" dominant-baseline="central"><tspan x="230" y="99.5">Select tickets</tspan><tspan x="230" y="112.5">+ promo code</tspan></text>
+                        <rect class="fc-proc" x="142" y="157" width="176" height="42" rx="5"/>
+                        <text class="fc-text" text-anchor="middle" dominant-baseline="central"><tspan x="230" y="171.5">Add-ons &amp;</tspan><tspan x="230" y="184.5">attendee details</tspan></text>
+                        <polygon class="fc-dec" points="230,217 305,250 230,283 155,250"/>
+                        <text class="fc-text" text-anchor="middle" dominant-baseline="central"><tspan x="230" y="243.5">Use</tspan><tspan x="230" y="256.5">part-pay?</tspan></text>
+                        <rect class="fc-proc" x="6" y="301" width="118" height="42" rx="5"/>
+                        <text class="fc-text" text-anchor="middle" dominant-baseline="central"><tspan x="65" y="315.5">Pay in full</tspan><tspan x="65" y="328.5">MoMo · card</tspan></text>
+                        <rect class="fc-proc" x="327" y="301" width="130" height="42" rx="5"/>
+                        <text class="fc-text" text-anchor="middle" dominant-baseline="central"><tspan x="392" y="315.5">First instalment;</tspan><tspan x="392" y="328.5">ticket reserved</tspan></text>
+                        <polygon class="fc-dec" points="392,361 456,394 392,427 328,394"/>
+                        <text class="fc-text" text-anchor="middle" dominant-baseline="central"><tspan x="392" y="387.5">Final payment</tspan><tspan x="392" y="400.5">made?</tspan></text>
+                        <rect class="fc-proc" x="327" y="445" width="130" height="42" rx="5"/>
+                        <text class="fc-text" text-anchor="middle" dominant-baseline="central"><tspan x="392" y="459.5">Reservation</tspan><tspan x="392" y="472.5">may be forfeited</tspan></text>
+                        <rect class="fc-proc" x="142" y="445" width="176" height="42" rx="5"/>
+                        <text class="fc-text" text-anchor="middle" dominant-baseline="central"><tspan x="230" y="459.5">Ticket issued:</tspan><tspan x="230" y="472.5">email + My tickets</tspan></text>
+                        <rect class="fc-term" x="142" y="521" width="176" height="34" rx="17"/>
+                        <text class="fc-term-text" text-anchor="middle" dominant-baseline="central"><tspan x="230" y="538">Shown at the door</tspan></text>
+                        </svg>
+                    </div>
+                    <figcaption class="wf-caption">Rounded ends mark where the journey starts and finishes, diamonds are decisions, and dashed lines show loops and alternative paths.</figcaption>
+                </figure>
+
                 <div class="flow-diagram">
                     <div class="flow-header">
                         <span class="flow-title">GatePass Checkout Flow</span>
