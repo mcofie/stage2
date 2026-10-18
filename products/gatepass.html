@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     
-    <title>GatePass — Research & Product Documentation | Stage 2 Labs</title>
-    <meta name="title" content="GatePass — Research & Product Documentation | Stage 2 Labs">
-    <meta name="description" content="Field research and architectural documentation for GatePass: Video-first marketplace for discovering and booking live events across Africa.">
+    <title>GatePass — Problem, Solution & Wireframes | Stage 2 Labs</title>
+    <meta name="title" content="GatePass — Problem, Solution & Wireframes | Stage 2 Labs">
+    <meta name="description" content="GatePass is the operating system for modern events: video-first discovery, fast checkout, part-payment plans and mobile money payouts for organizers across Africa.">
     
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,11 +36,11 @@
                 <div class="doc-meta-pills">
                     <span class="doc-pill active">Marketplace</span>
                     <span class="doc-pill">2025</span>
-                    <span class="doc-pill">Accra & Lagos • EventTech</span>
+                    <span class="doc-pill">Ghana & Africa • EventTech</span>
                 </div>
                 <h1 class="doc-title">GatePass</h1>
                 <p class="doc-lead">
-                    Video-first marketplace for live event discovery and ticketing, featuring dynamic encrypted QR access and offline-resilient gate scanners.
+                    The operating system for modern events. Attendees discover events through video and book in seconds, with the option to pay in parts. Organizers sell, message attendees and get paid to bank or mobile money.
                 </p>
                 <div class="doc-actions">
                     <a href="https://gatepass.so" target="_blank" rel="noopener noreferrer" class="action-btn-primary">
@@ -50,7 +50,7 @@
                             <polyline points="7 7 17 7 17 17"></polyline>
                         </svg>
                     </a>
-                    <a href="#gate-protocol" class="action-btn-secondary">Scanner Architecture</a>
+                    <a href="#wireframes" class="action-btn-secondary">View Wireframes</a>
                 </div>
             </header>
 
@@ -58,7 +58,7 @@
             <div class="specs-grid">
                 <div class="spec-item">
                     <span class="spec-label">Status</span>
-                    <span class="spec-val">Scaling</span>
+                    <span class="spec-val">Live</span>
                 </div>
                 <div class="spec-item">
                     <span class="spec-label">Domain</span>
@@ -66,154 +66,253 @@
                 </div>
                 <div class="spec-item">
                     <span class="spec-label">Market</span>
-                    <span class="spec-val">West Africa</span>
+                    <span class="spec-val">Ghana-first, pan-African</span>
                 </div>
                 <div class="spec-item">
-                    <span class="spec-label">Ticketing Rail</span>
-                    <span class="spec-val">Dynamic QR Mesh</span>
+                    <span class="spec-label">Payouts</span>
+                    <span class="spec-val">Next business day</span>
                 </div>
             </div>
 
-            <!-- 01. Overview -->
+            <!-- 01. The Problem -->
             <section class="doc-section">
-                <div class="section-eyebrow">01 / The Discovery Problem</div>
-                <h2 class="section-title">Beyond Static Event Flyers</h2>
+                <div class="section-eyebrow">01 / The Problem</div>
+                <h2 class="section-title">Great events, sold with tools that don't fit</h2>
                 <p>
-                    West Africa is the epicenter of global Afrobeats culture, live festivals, and vibrant pop-ups. Yet ticketing in Accra and Lagos was stuck in 2012: grainy 1080x1080 JPEG flyers shared on Instagram Stories, confusing Google Forms, static PDF barcodes easily duplicated via WhatsApp screenshots, and massive 45-minute bottlenecks at event entrances.
+                    Events in Accra and across the continent are mostly promoted with static flyers on Instagram and WhatsApp, then sold through a patchwork of payment links, bank transfers and spreadsheets. The flyer can't show what the night actually feels like, and the checkout often doesn't match how people pay.
                 </p>
                 <p>
-                    Flyers fail to capture the energy, crowd, sound, and vibe of an event. Meanwhile, ticket fraud at high-profile concerts (Detty December in Ghana, Gidi Fest in Lagos) ran rampant, leaving fans locked outside while promoters suffered financial bleed.
-                </p>
-                <p>
-                    GatePass replaces static flyers with an immersive, TikTok-style short-form video discovery feed where attending is one tap away, secured by cryptographic anti-fraud QR codes that function even during total cellular grid congestion.
-                </p>
-            </section>
-
-            <!-- 02. Field Research -->
-            <section class="doc-section">
-                <div class="section-eyebrow">02 / Field Research & Festival Audits</div>
-                <h2 class="section-title">Entrance Audits Across 8 Major Festivals</h2>
-                <p>
-                    During the December 2024–January 2025 concert season in Accra, our engineers conducted on-site telemetry across 8 events:
+                    For organizers, every market brings a different payment provider, SMS gateway and currency, and it is hard to tell which promotion actually sold tickets.
                 </p>
 
                 <div class="callout-box">
-                    <div class="callout-title">Discovery Friction: The Instagram Drop-off</div>
+                    <div class="callout-title">Flyers don't sell the experience</div>
                     <p>
-                        81% of concertgoers discovered events through video recaps from creators rather than the promoter's graphic flyer. However, the path from watching an exciting video clip to securing a ticket averaged 5 friction-filled redirects.
+                        A static poster says when and where, not the crowd, the sound or the energy that makes someone commit.
                     </p>
                 </div>
 
                 <div class="callout-box">
-                    <div class="callout-title">Gate Chaos: Cellular Congestion Blackouts</div>
+                    <div class="callout-title">Full price, upfront</div>
                     <p>
-                        When 5,000 to 15,000 attendees gather at open-air beachfronts (Labadi Beach, Untamed Empire), cellular towers experience severe packet loss. Cloud-only ticket scanners freeze, forcing security to abandon digital checks and rely on visual paper wristbands.
+                        Premium tickets for conferences and festivals are a big one-off spend, so many people wait or never buy.
                     </p>
                 </div>
 
                 <div class="callout-box">
-                    <div class="callout-title">The "Screenshot" Scalping Black Market</div>
+                    <div class="callout-title">Fragmented payments</div>
                     <p>
-                        Over 14% of entry disputes involved duplicate static PDF barcodes sold multiple times by scalpers outside the gates.
+                        Mobile money in Ghana, M-Pesa in East Africa, cards abroad: organizers juggle providers or lose buyers at checkout.
+                    </p>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">No feedback loop</div>
+                    <p>
+                        Without proper tracking, organizers can't see which ad or post drove purchases.
                     </p>
                 </div>
             </section>
 
-            <!-- 03. Architecture & Scanner Mesh -->
-            <section class="doc-section" id="gate-protocol">
-                <div class="section-eyebrow">03 / Technical Architecture</div>
-                <h2 class="section-title">Cryptographic Anti-Fraud & Local Mesh Scanning</h2>
+            <!-- 02. The Solution -->
+            <section class="doc-section">
+                <div class="section-eyebrow">02 / The Solution</div>
+                <h2 class="section-title">Discover through video, book in seconds</h2>
                 <p>
-                    GatePass combines consumer video streaming with mission-critical event operations:
+                    GatePass leads with video so an event can show its atmosphere, then makes buying a ticket a short, mobile-friendly flow. A built-in part-pay option lets attendees reserve a ticket today and finish paying over time.
+                </p>
+                <p>
+                    Behind the storefront, organizers can use GatePass's own payments with no keys needed, or connect the payment, SMS and email providers that already work in their market.
                 </p>
 
-                <div class="feature-cards">
-                    <div class="feature-card">
-                        <h4>Video Discovery Feed</h4>
-                        <p>HLS video streaming optimized for low-bandwidth mobile connections, featuring synchronized 1-click Mobile Money checkout overlays.</p>
+                <div class="ps-table">
+                    <div class="ps-row ps-head">
+                        <div class="ps-cell">Problem</div>
+                        <div class="ps-cell">How we solve it</div>
                     </div>
-                    <div class="feature-card">
-                        <h4>TOTP Dynamic QR Tickets</h4>
-                        <p>Tickets generate cryptographic time-based one-time passwords (TOTP) cycling every 15 seconds. Screenshots sent via WhatsApp fail validation instantly.</p>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Static flyers</strong>Low intent, easy to scroll past.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Video-first discovery</strong>Events are browsed through video, with booking one tap away.</div>
                     </div>
-                    <div class="feature-card">
-                        <h4>Local Wi-Fi / Bluetooth Mesh</h4>
-                        <p>Gate scanners synchronize scanned ticket digests peer-to-peer over local Bluetooth Low Energy and ad-hoc Wi-Fi, preventing double-entry with zero cellular internet.</p>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Upfront price barrier</strong>Buyers delay or drop off.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Part-pay plans</strong>The ticket is reserved today and issued after the final payment.</div>
                     </div>
-                    <div class="feature-card">
-                        <h4>Instant Settlement Rails</h4>
-                        <p>Direct integration with MTN MoMo, Telecel Cash, and global cards with real-time promoter revenue split dashboards.</p>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Patchy checkout</strong>Wrong payment method, lost sale.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Local payment rails</strong>Mobile money, cards, bank transfer, USSD, M-Pesa and more, by market.</div>
+                    </div>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Slow, manual payouts</strong>Waiting on transfers.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Next-day settlement</strong>Sales settle to bank or mobile money the next business day.</div>
+                    </div>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Guessing what worked</strong>No attribution.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Conversion tracking</strong>Meta pixel / Conversions API and Google Analytics on event pages.</div>
+                    </div>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Paper lists at the door</strong>Slow, error-prone check-in.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Digital tickets</strong>Emailed instantly, kept in My tickets, and shown at the door.</div>
                     </div>
                 </div>
+            </section>
 
+            <!-- 03. How It Works -->
+            <section class="doc-section" id="how-it-works">
+                <div class="section-eyebrow">03 / How It Works</div>
+                <h2 class="section-title">The attendee checkout</h2>
                 <div class="flow-diagram">
                     <div class="flow-header">
-                        <span class="flow-title">Offline Mesh Validation Architecture</span>
-                        <span class="flow-badge">Zero-Internet Resilience</span>
+                        <span class="flow-title">GatePass Checkout Flow</span>
+                        <span class="flow-badge">Full pay or part-pay</span>
                     </div>
                     <div class="flow-steps">
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">01</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Dynamic Cryptographic Token Ingestion</div>
-                                <div class="step-desc">Attendee mobile wallet generates dynamic HMAC-SHA256 encrypted QR ticket refreshed every 15s</div>
+                                <div class="step-title">Discover the event</div>
+                                <div class="step-desc">Watch the event video, see price, date, location and whether part-pay is available.</div>
                             </div>
                         </div>
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">02</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Ultra-Fast Gate Scanner Read (&lt; 80ms)</div>
-                                <div class="step-desc">Camera reads token, validates signature against pre-cached local public key, and flags ticket as redeemed</div>
+                                <div class="step-title">Select tickets</div>
+                                <div class="step-desc">Choose a ticket type and quantity, and apply a promo code if you have one.</div>
                             </div>
                         </div>
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">03</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Local SQLite Buffer Storage</div>
-                                <div class="step-desc">Redemption record committed immediately to high-speed local device storage ring buffer</div>
+                                <div class="step-title">Add-ons and attendee details</div>
+                                <div class="step-desc">Optional extras, then name, email, phone and any questions the organizer asks.</div>
                             </div>
                         </div>
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">04</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">BLE & Ad-Hoc Wi-Fi Peer Broadcast</div>
-                                <div class="step-desc">Propagates redeemed ticket ID to all turnstile scanners across entrance gates within 100ms with zero internet</div>
+                                <div class="step-title">Pay in full or in parts</div>
+                                <div class="step-desc">Pay with mobile money or card. With part-pay the ticket is reserved now and issued after the last instalment.</div>
                             </div>
                         </div>
                         <div class="flow-step flow-step-final">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">05</span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Asynchronous Cloud Ledger Sync</div>
-                                <div class="step-desc">Background daemon synchronizes audited redemption records once cellular network congestion eases</div>
+                                <div class="step-title">Show this at the door</div>
+                                <div class="step-desc">Tickets arrive by email and in My tickets. Virtual tickets carry the stream link when the organizer adds it.</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 04. Validation -->
+            <!-- 04. Wireframes -->
+            <section class="doc-section" id="wireframes">
+                <div class="section-eyebrow">04 / Wireframes</div>
+                <h2 class="section-title">Key screens</h2>
+                <p>
+                    Wireframes of the attendee path from a video-first event page to the ticket shown at the gate.
+                </p>
+
+                <figure class="wf">
+                    <div class="flow-header">
+                        <span class="flow-title">Attendee journey</span>
+                        <span class="flow-badge">4 screens</span>
+                    </div>
+                    <div class="wf-screens">
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-img tall">event video ▶</div>
+                                <div class="wf-t lg">Event title</div>
+                                <div class="wf-t sm">Organizer · Dec 4–5 · Accra</div>
+                                <div class="wf-row"><span class="wf-t">From GH₵120</span><span class="wf-chip">Part-pay available</span></div>
+                                <div class="wf-spacer"></div>
+                                <div class="wf-btn">Get tickets</div>
+                            </div>
+                            <div class="wf-screen-label">Event page<span>Video-first discovery</span></div>
+                        </div>
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-t lg">Select tickets</div>
+                                <div class="wf-box on"><div class="wf-row"><span class="wf-t">Regular</span><span class="wf-t">− 1 +</span></div><span class="wf-t sm">GH₵120</span></div>
+                                <div class="wf-box"><div class="wf-row"><span class="wf-t">VIP</span><span class="wf-t">− 0 +</span></div><span class="wf-ln w30"></span></div>
+                                <div class="wf-input">Promo code</div>
+                                <div class="wf-spacer"></div>
+                                <div class="wf-btn">Continue with add-ons</div>
+                            </div>
+                            <div class="wf-screen-label">Ticket selection<span>Tiers + promo code</span></div>
+                        </div>
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-t lg">How would you like to pay?</div>
+                                <div class="wf-box"><span class="wf-t">Pay in full</span></div>
+                                <div class="wf-box on"><span class="wf-t">Part-pay</span><span class="wf-t sm">Reserved today, issued after final payment</span></div>
+                                <div class="wf-row"><span class="wf-t sm">Service &amp; payment fees</span><span class="wf-ln w30"></span></div>
+                                <div class="wf-wrap"><span class="wf-chip on">Mobile money</span><span class="wf-chip">Card</span></div>
+                                <div class="wf-btn">Pay securely</div>
+                            </div>
+                            <div class="wf-screen-label">Payment<span>Full or part-pay</span></div>
+                        </div>
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-t lg" style="text-align:center">You're in</div>
+                                <div class="wf-t sm" style="text-align:center">We've emailed your tickets.</div>
+                                <div class="wf-qr"></div>
+                                <div class="wf-t" style="text-align:center">Show this at the door</div>
+                                <div class="wf-box"><div class="wf-row"><span class="wf-t sm">Regular × 1</span><span class="wf-t sm">Dec 4</span></div></div>
+                                <div class="wf-btn ghost">My tickets</div>
+                            </div>
+                            <div class="wf-screen-label">Ticket<span>Shown at the gate</span></div>
+                        </div>
+                    </div>
+                    <figcaption class="wf-caption">Part-pay is a deliberate design choice: it turns a single large purchase into a commitment people can make the moment they are excited, without waiting for payday.</figcaption>
+                </figure>
+            </section>
+
+            <!-- 05. Key Features -->
             <section class="doc-section">
-                <div class="section-eyebrow">04 / Traction & Impact</div>
-                <h2 class="section-title">Operational Validation</h2>
-                <ul class="doc-list">
-                    <li><strong>85,000+ Tickets Processed:</strong> Deployed across major music festivals, nightlife venues, and indie community markets.</li>
-                    <li><strong>Check-in Speed:</strong> Average gate scan time reduced from 14.5 seconds to 1.8 seconds per guest.</li>
-                    <li><strong>Zero Duplicate Entries:</strong> Eliminated counterfeit screenshot admissions across all partner venues.</li>
-                </ul>
+                <div class="section-eyebrow">05 / Key Features</div>
+                <h2 class="section-title">Built for organizers and attendees</h2>
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <h4>Video discovery</h4>
+                        <p>Event pages lead with video so people can feel the event before they buy.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Part-payment plans</h4>
+                        <p>Instalments per ticket type, with clear terms when a payment is missed.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Pan-African payments</h4>
+                        <p>Mobile money and cards in Ghana, M-Pesa in East Africa, Telebirr in Ethiopia, plus PayPal and Stripe for international buyers.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Fast payouts</h4>
+                        <p>Use GatePass payments with no setup and receive sales in your bank or mobile money the next business day.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Attendee messaging</h4>
+                        <p>Tickets by email, with SMS and email delivered through providers that work locally.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Ticket controls</h4>
+                        <p>Promo codes, add-ons, attendee questions, virtual tickets and ad conversion tracking.</p>
+                    </div>
+                </div>
             </section>
 
             <!-- Pagination -->

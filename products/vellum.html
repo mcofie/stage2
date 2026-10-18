@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     
-    <title>Vellum — Research & Product Documentation | Stage 2 Labs</title>
-    <meta name="title" content="Vellum — Research & Product Documentation | Stage 2 Labs">
-    <meta name="description" content="Field research and architectural documentation for Vellum: A digital-first estate planning platform bridging modern asset management and law in Africa.">
+    <title>Vellum — Problem, Solution & Wireframes | Stage 2 Labs</title>
+    <meta name="title" content="Vellum — Problem, Solution & Wireframes | Stage 2 Labs">
+    <meta name="description" content="Vellum helps Ghanaian families create a will, protect digital assets like mobile money and online accounts, and leave clear instructions for loved ones.">
     
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,11 +36,11 @@
                 <div class="doc-meta-pills">
                     <span class="doc-pill active">Platform</span>
                     <span class="doc-pill">2026</span>
-                    <span class="doc-pill">Accra • LegalTech</span>
+                    <span class="doc-pill">Ghana • LegalTech</span>
                 </div>
                 <h1 class="doc-title">Vellum</h1>
                 <p class="doc-lead">
-                    Digital-first estate planning platform bridging modern asset management, digital wealth custody, and statutory law across West Africa.
+                    Wills and digital legacy for Ghanaian families. Vellum helps you write a will, plan for your mobile money, savings and online accounts, and leave clear instructions for the people you love.
                 </p>
                 <div class="doc-actions">
                     <a href="https://getvellum.org" target="_blank" rel="noopener noreferrer" class="action-btn-primary">
@@ -50,7 +50,7 @@
                             <polyline points="7 7 17 7 17 17"></polyline>
                         </svg>
                     </a>
-                    <a href="#architecture" class="action-btn-secondary">Technical Specs</a>
+                    <a href="#wireframes" class="action-btn-secondary">View Wireframes</a>
                 </div>
             </header>
 
@@ -58,7 +58,7 @@
             <div class="specs-grid">
                 <div class="spec-item">
                     <span class="spec-label">Status</span>
-                    <span class="spec-val">Active Beta</span>
+                    <span class="spec-val">Live</span>
                 </div>
                 <div class="spec-item">
                     <span class="spec-label">Domain</span>
@@ -66,154 +66,265 @@
                 </div>
                 <div class="spec-item">
                     <span class="spec-label">Market</span>
-                    <span class="spec-val">Ghana & Diaspora</span>
+                    <span class="spec-val">Ghana</span>
                 </div>
                 <div class="spec-item">
-                    <span class="spec-label">Jurisdiction</span>
-                    <span class="spec-val">Ghana (Act 360)</span>
+                    <span class="spec-label">Support</span>
+                    <span class="spec-val">Guided, via WhatsApp</span>
                 </div>
             </div>
 
-            <!-- 01. Overview -->
+            <!-- 01. The Problem -->
             <section class="doc-section">
-                <div class="section-eyebrow">01 / Overview & Thesis</div>
-                <h2 class="section-title">The Digital Estate Conundrum</h2>
+                <div class="section-eyebrow">01 / The Problem</div>
+                <h2 class="section-title">When there is no will, families are left to guess</h2>
                 <p>
-                    Over the past decade, the financial profiles of urban Africans shifted dramatically. Modern founders, remote engineers, and diaspora professionals now accumulate wealth in liquid non-custodial crypto, multi-currency fintech wallets, offshore cap tables, and private equity stakes. Yet estate planning in West Africa remains tethered to 19th-century probate routines: handwritten wills stored in metal cabinets, unverified witnesses, and bureaucratic court registries.
+                    Most people put off a will because they assume it is only for the wealthy, or for people who own a house. In practice, the cost of not having one lands on the family. Accounts freeze, relatives disagree about what you would have wanted, and courts make decisions that should have been yours.
                 </p>
                 <p>
-                    When an asset holder passes away unexpectedly, their digital footprint turns into a black hole. Families spend years in probate litigation without knowing what accounts exist, while millions of dollars in digital and physical wealth are permanently lost to custodians.
+                    Modern lives also carry a layer older estate planning ignores: mobile money wallets, online accounts, photos and passwords that can be lost for good if no one is given the keys.
                 </p>
-                <p>
-                    Vellum was built to bridge this disconnect: providing an encrypted digital vault with automated proof-of-life protocols, legally compliant testamentary instruments under Ghana's Wills Act 1971 (Act 360), and structured succession execution.
-                </p>
+
+                <div class="callout-box">
+                    <div class="callout-title">Frozen money</div>
+                    <p>
+                        Bank and mobile money accounts can stay locked until the court grants letters of administration, which can take months.
+                    </p>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">Partners left exposed</div>
+                    <p>
+                        Even a spouse must share what you leave with your parents and wider family, and a partner you have not married may get nothing.
+                    </p>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">Land and house disputes</div>
+                    <p>
+                        Family houses and land are a common source of disputes, and widows and children can end up pushed out.
+                    </p>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">Children and pets</div>
+                    <p>
+                        Your family or a court may have to decide who raises your children, and no one is named to take your pets in.
+                    </p>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">Lost digital life</div>
+                    <p>
+                        Online accounts and photos can be locked away for good, and relatives can end up arguing over your funeral at the hardest time.
+                    </p>
+                </div>
             </section>
 
-            <!-- 02. Field Research -->
+            <!-- 02. The Solution -->
             <section class="doc-section">
-                <div class="section-eyebrow">02 / Field Research & Insights</div>
-                <h2 class="section-title">Field Findings from 42 Probate Cases</h2>
+                <div class="section-eyebrow">02 / The Solution</div>
+                <h2 class="section-title">Your wishes, all in one place</h2>
                 <p>
-                    Between Q3 2025 and Q1 2026, Stage 2 Labs conducted field interviews with 42 estates across Accra, Kumasi, and London, alongside 18 legal practitioners at the Ghana Bar Association:
+                    Vellum replaces the intimidating lawyer's-office first step with a short, plain-language conversation. It asks about your life (partner, children, property, pets), shows you what would happen without a will, and then guides you to put your wishes in writing, one simple step at a time.
+                </p>
+                <p>
+                    The message is deliberate: <em>you don't need a house or savings</em> to make a will. It is not about expecting the worst, it is about making sure everyone knows exactly what you would want.
                 </p>
 
-                <div class="callout-box">
-                    <div class="callout-title">Core Finding #1: The Intestate Default Trap</div>
-                    <p>
-                        84% of surveyed tech workers and SME owners between ages 25–45 had no written will. In Ghana, dying intestate invokes PNDCL 111 (Intestate Succession Law), which divides assets across customary lines and extended family councils, frequently locking surviving spouses and children out of primary residences.
-                    </p>
-                </div>
-
-                <div class="callout-box">
-                    <div class="callout-title">Core Finding #2: The Hidden Digital Asset Problem</div>
-                    <p>
-                        In 92% of sampled deaths involving remote knowledge workers, surviving families were completely unaware of their primary liquid asset locations—including Wise accounts, Binance balances, and Stripe merchant balances. Over $340,000 across 11 surveyed cases was abandoned without recovery.
-                    </p>
-                </div>
-
-                <div class="callout-box">
-                    <div class="callout-title">Core Finding #3: Prohibitive Legal Costs</div>
-                    <p>
-                        Retaining a reputable private law firm in Accra to draft and deposit a standard testamentary instrument costs upwards of $1,200 to $2,500 USD, creating a severe economic hurdle that discourages proactive estate planning.
-                    </p>
+                <div class="ps-table">
+                    <div class="ps-row ps-head">
+                        <div class="ps-cell">Problem</div>
+                        <div class="ps-cell">How we solve it</div>
+                    </div>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Savings and mobile money</strong>Locked until letters of administration are granted.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Named executor</strong>Your executor knows what you have and who it is for.</div>
+                    </div>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Your partner</strong>Has to share with the wider family, or may get nothing if unmarried.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Explicit provision</strong>You decide exactly what your partner receives.</div>
+                    </div>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>House or family land</strong>A frequent source of disputes.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Written instructions</strong>You decide who it goes to, in writing.</div>
+                    </div>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Your children</strong>Family or a court decides who raises them.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Named guardian</strong>You name the guardian you trust.</div>
+                    </div>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Online accounts and photos</strong>Locked away for good.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Digital legacy</strong>Someone you trust gets the keys.</div>
+                    </div>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Funeral and final wishes</strong>Relatives argue over what you would have wanted.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Final instructions</strong>Everyone knows exactly what you would want.</div>
+                    </div>
                 </div>
             </section>
 
-            <!-- 03. Architecture -->
-            <section class="doc-section" id="architecture">
-                <div class="section-eyebrow">03 / System Architecture</div>
-                <h2 class="section-title">Cryptographic Custody & Legal Execution</h2>
-                <p>
-                    Vellum treats estate planning as a zero-knowledge data escrow protocol governed by legal consensus.
-                </p>
-
-                <div class="feature-cards">
-                    <div class="feature-card">
-                        <h4>Zero-Knowledge Asset Vault</h4>
-                        <p>Asset metadata, seed phrases, and banking credentials are encrypted on the client device using AES-256-GCM before ingestion. Vellum servers never hold plaintext credentials.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h4>Proof-of-Life Oracle</h4>
-                        <p>Configurable periodic cryptographic heartbeats via email, SMS, and WhatsApp. Failure to respond triggers multi-tier verification with designated trusted guarantors.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h4>Statutory Will Generator</h4>
-                        <p>Dynamic document engine compiling enforceable testamentary forms adhering to Ghana's Wills Act 1971, including video execution affidavits and physical probate filing packs.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h4>Sharded Key Release (Shamir)</h4>
-                        <p>Sensitive access instructions are split into cryptographic shards distributed among vetted executors and licensed notary partners, requiring 3-of-5 quorum to reconstitute.</p>
-                    </div>
-                </div>
-
+            <!-- 03. How It Works -->
+            <section class="doc-section" id="how-it-works">
+                <div class="section-eyebrow">03 / How It Works</div>
+                <h2 class="section-title">A guided intake instead of a blank legal form</h2>
                 <div class="flow-diagram">
                     <div class="flow-header">
-                        <span class="flow-title">Architecture: Cryptographic Lifecycle Flow</span>
-                        <span class="flow-badge">v1.2 Spec</span>
+                        <span class="flow-title">Vellum Onboarding Flow</span>
+                        <span class="flow-badge">Mobile-first</span>
                     </div>
                     <div class="flow-steps">
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">01</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Client Ingestion & Zero-Knowledge Vaulting</div>
-                                <div class="step-desc">Asset metadata, credentials, and seeds encrypted client-side using AES-256-GCM prior to transmission</div>
+                                <div class="step-title">Answer a few life questions</div>
+                                <div class="step-desc">Do you have a partner? Children? A house or land, including one you are still building? Any pets?</div>
                             </div>
                         </div>
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">02</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Shamir's Secret Sharding (k-of-n)</div>
-                                <div class="step-desc">Master keys partitioned into cryptographic shards distributed among vetted executors and notary partners</div>
+                                <div class="step-title">Choose what matters most</div>
+                                <div class="step-desc">Multi-select priorities: savings and mobile money, online accounts and photos, who looks after the children, who cares for the pets.</div>
                             </div>
                         </div>
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">03</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Proof-of-Life Autonomous Daemon</div>
-                                <div class="step-desc">Configurable 30/60-day recurring cryptographic heartbeat sent via email, SMS, and WhatsApp</div>
+                                <div class="step-title">See "the honest truth"</div>
+                                <div class="step-desc">A personalised side-by-side of what happens without a will versus with one, based only on your answers.</div>
                             </div>
                         </div>
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">04</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Multi-Guarantor Escalation & Verification</div>
-                                <div class="step-desc">Triggered if heartbeats lapse; cross-checks verified death certificate with Births & Deaths Registry API</div>
+                                <div class="step-title">Share where to send next steps</div>
+                                <div class="step-desc">A phone number (with a WhatsApp option). Answers are shared privately with the Vellum team.</div>
                             </div>
                         </div>
                         <div class="flow-step flow-step-final">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">05</span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Executor Quorum Unlocked & Probate Filing</div>
-                                <div class="step-desc">Requires 3-of-5 executor consensus to reconstruct keys, generating compliant High Court probate pack</div>
+                                <div class="step-title">Put your wishes in writing</div>
+                                <div class="step-desc">The team guides you through drafting the will, digital asset plan and final instructions.</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 04. Validation -->
+            <!-- 04. Wireframes -->
+            <section class="doc-section" id="wireframes">
+                <div class="section-eyebrow">04 / Wireframes</div>
+                <h2 class="section-title">Key screens</h2>
+                <p>
+                    Low-fidelity wireframes of the core intake journey, from landing page to the personalised "honest truth" screen.
+                </p>
+
+                <figure class="wf">
+                    <div class="flow-header">
+                        <span class="flow-title">Intake journey</span>
+                        <span class="flow-badge">4 screens</span>
+                    </div>
+                    <div class="wf-screens">
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-row"><span class="wf-t">Vellum</span><span class="wf-ln w30"></span></div>
+                                <div class="wf-img tall">family illustration</div>
+                                <div class="wf-t lg">Wills and digital legacy</div>
+                                <div class="wf-ln"></div>
+                                <div class="wf-ln w70"></div>
+                                <div class="wf-spacer"></div>
+                                <div class="wf-btn">Get started</div>
+                                <div class="wf-btn ghost">Learn more</div>
+                            </div>
+                            <div class="wf-screen-label">Landing<span>Promise + single CTA</span></div>
+                        </div>
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-progress"><span style="width:35%"></span></div>
+                                <div class="wf-t lg">Do you have a partner?</div>
+                                <div class="wf-t sm">Married under any rites, engaged, or living together</div>
+                                <div class="wf-box on"><span class="wf-t">Yes</span></div>
+                                <div class="wf-box"><span class="wf-t">No</span><span class="wf-t sm">Including separated, divorced or widowed</span></div>
+                                <div class="wf-spacer"></div>
+                                <div class="wf-btn">Continue</div>
+                            </div>
+                            <div class="wf-screen-label">Life questions<span>One question per screen</span></div>
+                        </div>
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-progress"><span style="width:65%"></span></div>
+                                <div class="wf-t lg">What matters most to you?</div>
+                                <div class="wf-t sm">Choose as many as you like.</div>
+                                <div class="wf-box on"><span class="wf-t">My savings and mobile money</span></div>
+                                <div class="wf-box on"><span class="wf-t">My online accounts and photos</span></div>
+                                <div class="wf-box"><span class="wf-t">Who looks after my children</span></div>
+                                <div class="wf-box"><span class="wf-t">Who cares for my pets</span></div>
+                                <div class="wf-btn">Continue</div>
+                            </div>
+                            <div class="wf-screen-label">Priorities<span>Multi-select</span></div>
+                        </div>
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-t lg">Here's the honest truth</div>
+                                <div class="wf-box"><span class="wf-t sm">Without a will</span><span class="wf-t">Accounts can stay locked for months</span></div>
+                                <div class="wf-box on"><span class="wf-t sm">With Vellum</span><span class="wf-t">Your executor knows what you have</span></div>
+                                <div class="wf-box"><span class="wf-t sm">Without a will</span><span class="wf-ln w70"></span></div>
+                                <div class="wf-spacer"></div>
+                                <div class="wf-btn">Put my wishes in writing</div>
+                            </div>
+                            <div class="wf-screen-label">The honest truth<span>Without vs. with a will</span></div>
+                        </div>
+                    </div>
+                    <figcaption class="wf-caption">Each answer changes the "honest truth" screen, so people only see the consequences relevant to their own family.</figcaption>
+                </figure>
+            </section>
+
+            <!-- 05. Key Features -->
             <section class="doc-section">
-                <div class="section-eyebrow">04 / Impact & Next Milestones</div>
-                <h2 class="section-title">Validation Metrics & Road Ahead</h2>
-                <ul class="doc-list">
-                    <li><strong>480+ Protected Estates:</strong> Vaulted over $14.2M in aggregate asset declarations across real estate, equity, and digital accounts during private beta.</li>
-                    <li><strong>Legal Advisory Network:</strong> Partnered with 6 boutique Accra legal practices to provide certified notarization and High Court registry physical lodgment.</li>
-                    <li><strong>Regional Expansion:</strong> Adapting the statutory compliance engine for Nigerian and Kenyan probate codes in Q3 2026.</li>
-                </ul>
+                <div class="section-eyebrow">05 / Key Features</div>
+                <h2 class="section-title">What Vellum covers</h2>
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <h4>Will</h4>
+                        <p>Decide who receives your house, land, savings and mobile money, and exactly what your partner receives.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Digital legacy</h4>
+                        <p>Plan for online accounts, photos and passwords so someone you trust gets the keys.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Guardianship & pets</h4>
+                        <p>Name the guardian for your children and the next loving home for your pets.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Final instructions</h4>
+                        <p>Record funeral and other wishes so relatives are not left to argue at the hardest time.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Human guidance</h4>
+                        <p>A real team follows up on phone or WhatsApp to walk you through the next steps.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Private by default</h4>
+                        <p>Intake answers and contact details are shared only with the Vellum team.</p>
+                    </div>
+                </div>
             </section>
 
             <!-- Pagination -->

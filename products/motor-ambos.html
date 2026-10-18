@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     
-    <title>Motor Ambos — Research & Product Documentation | Stage 2 Labs</title>
-    <meta name="title" content="Motor Ambos — Research & Product Documentation | Stage 2 Labs">
-    <meta name="description" content="Field research and architectural documentation for Motor Ambos: Digital vehicle management and vetted mechanic service platform in Ghana.">
+    <title>Motor Ambos — Problem, Solution & Wireframes | Stage 2 Labs</title>
+    <meta name="title" content="Motor Ambos — Problem, Solution & Wireframes | Stage 2 Labs">
+    <meta name="description" content="Motor Ambos keeps car papers and renewal reminders in one place and finds nearby roadside help for drivers and fleets in Ghana.">
     
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,11 +36,11 @@
                 <div class="doc-meta-pills">
                     <span class="doc-pill active">Service</span>
                     <span class="doc-pill">2025</span>
-                    <span class="doc-pill">Accra • AutoTech & Transparency</span>
+                    <span class="doc-pill">Ghana • Mobility</span>
                 </div>
                 <h1 class="doc-title">Motor Ambos</h1>
                 <p class="doc-lead">
-                    Digital vehicle management and automotive service platform connecting car owners directly with vetted workshops, genuine spare parts, and immutable maintenance logs.
+                    Stay legal. Get help fast. Motor Ambos keeps your car papers and renewal reminders in one place and finds nearby roadside help for drivers and fleets in Ghana.
                 </p>
                 <div class="doc-actions">
                     <a href="https://motorambos.com" target="_blank" rel="noopener noreferrer" class="action-btn-primary">
@@ -50,7 +50,7 @@
                             <polyline points="7 7 17 7 17 17"></polyline>
                         </svg>
                     </a>
-                    <a href="#service-engine" class="action-btn-secondary">Technical Architecture</a>
+                    <a href="#wireframes" class="action-btn-secondary">View Wireframes</a>
                 </div>
             </header>
 
@@ -58,7 +58,7 @@
             <div class="specs-grid">
                 <div class="spec-item">
                     <span class="spec-label">Status</span>
-                    <span class="spec-val">Active Beta</span>
+                    <span class="spec-val">Live</span>
                 </div>
                 <div class="spec-item">
                     <span class="spec-label">Domain</span>
@@ -69,151 +69,265 @@
                     <span class="spec-val">Ghana</span>
                 </div>
                 <div class="spec-item">
-                    <span class="spec-label">Network</span>
-                    <span class="spec-val">30+ Vetted Workshops</span>
+                    <span class="spec-label">Driver app</span>
+                    <span class="spec-val">Free</span>
                 </div>
             </div>
 
-            <!-- 01. Overview -->
+            <!-- 01. The Problem -->
             <section class="doc-section">
-                <div class="section-eyebrow">01 / The Automotive Aftermarket Friction</div>
-                <h2 class="section-title">The Information Asymmetry of Car Repairs</h2>
+                <div class="section-eyebrow">01 / The Problem</div>
+                <h2 class="section-title">Two moments every driver dreads</h2>
                 <p>
-                    Owning a car in Accra is fraught with distrust. The local aftermarket revolves around informal roadside workshops and the sprawling parts hub of Abossey Okai. While Ghanaian mechanics are exceptionally skilled at improvising repairs, the customer experience is broken: lack of diagnostic transparency, opaque parts markups, proliferation of dangerous counterfeit brake pads and suspension components, and zero unified vehicle service histories.
+                    Car ownership in Ghana comes with recurring paperwork: insurance, roadworthy certificates and licences, each with its own expiry date. They are easy to forget until a police check or an accident makes them urgent.
                 </p>
                 <p>
-                    When car owners drop off their vehicle, they rarely receive itemized quotes or guarantees. When buying or selling a used vehicle, buyers cannot verify if oil changes were conducted on time or if the odometer was tampered with.
-                </p>
-                <p>
-                    Motor Ambos transforms vehicle ownership into a transparent digital experience: digitized service passports, upfront parts pricing, mobile diagnostic bookings, and automated roadworthiness and insurance compliance renewals.
-                </p>
-            </section>
-
-            <!-- 02. Field Research -->
-            <section class="doc-section">
-                <div class="section-eyebrow">02 / Field Research & Workshop Audits</div>
-                <h2 class="section-title">Field Audit Across 60 Drivers and 22 Garages</h2>
-                <p>
-                    Our research team spent 6 weeks embedded in automotive workshops across Kokomlemle, Dansoman, and Spintex Road:
+                    The other moment is a breakdown. A flat battery or a dead engine on the roadside usually means calling around for "a guy," with no idea who is close, who is reliable or what it will cost.
                 </p>
 
                 <div class="callout-box">
-                    <div class="callout-title">Discovery #1: The Counterfeit Spare Parts Threat</div>
+                    <div class="callout-title">Expired papers</div>
                     <p>
-                        Over 65% of surveyed car owners unknowingly had counterfeit or degraded refurbished parts installed (e.g. spark plugs, ball joints) marketed as "original OEM," leading to recurring breakdowns within 90 days.
+                        Renewal dates for insurance, roadworthy and licence slip by because nothing reminds you in time.
                     </p>
                 </div>
 
                 <div class="callout-box">
-                    <div class="callout-title">Discovery #2: Overbilling & "Trial-and-Error" Mechanics</div>
+                    <div class="callout-title">Stranded and guessing</div>
                     <p>
-                        84% of drivers reported paying for diagnostic "guesses" where mechanics replaced parts that were not faulty without solving the root check-engine code.
+                        When the car breaks down, drivers don't know who is nearby or what the call-out fee will be until after they call.
                     </p>
                 </div>
 
                 <div class="callout-box">
-                    <div class="callout-title">Discovery #3: The Secondary Market Penalty</div>
+                    <div class="callout-title">Fleets on spreadsheets</div>
                     <p>
-                        Used vehicles in Ghana suffer an arbitrary 25–40% price discount on resale solely because sellers have zero verifiable paper trail or digital records proving maintenance rigor.
+                        Operators track papers and issues for every vehicle and driver by hand.
+                    </p>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">Mechanics hard to find</div>
+                    <p>
+                        Good independent mechanics have no simple way to be found by drivers nearby.
                     </p>
                 </div>
             </section>
 
-            <!-- 03. Architecture -->
-            <section class="doc-section" id="service-engine">
-                <div class="section-eyebrow">03 / Platform Architecture</div>
-                <h2 class="section-title">Digital Passport & Escrow Repair Workflow</h2>
+            <!-- 02. The Solution -->
+            <section class="doc-section">
+                <div class="section-eyebrow">02 / The Solution</div>
+                <h2 class="section-title">Papers, reminders and roadside help in one app</h2>
                 <p>
-                    Motor Ambos separates diagnosis, parts procurement, and mechanic labor to eliminate misaligned incentives:
+                    Motor Ambos gives every car a digital glovebox: papers, service and fuel logs, and text-message reminders before anything expires. When something goes wrong, the same app shares your location and lists nearby providers by distance and call-out fee.
+                </p>
+                <p>
+                    A QR sticker on the car makes help reachable even when you can't think straight: scanning it opens roadside help with the car's details already filled in, with a printed phone number as backup.
                 </p>
 
-                <div class="feature-cards">
-                    <div class="feature-card">
-                        <h4>Immutable Digital Service Passport</h4>
-                        <p>Every maintenance event, part serial number, OBD-II diagnostic report, and mileage reading is cryptographically logged against the vehicle's chassis VIN.</p>
+                <div class="ps-table">
+                    <div class="ps-row ps-head">
+                        <div class="ps-cell">Problem</div>
+                        <div class="ps-cell">How we solve it</div>
                     </div>
-                    <div class="feature-card">
-                        <h4>Genuine Parts Escrow Rail</h4>
-                        <p>Parts are sourced directly from certified Tier-1 distributors with QR verification seals. Funds for labor are held in escrow and released only upon driver road-test approval.</p>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Forgotten renewals</strong>Fines and lapsed cover.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Papers + SMS reminders</strong>Insurance, roadworthy and licence tracked, with reminders before they expire.</div>
                     </div>
-                    <div class="feature-card">
-                        <h4>Standardized Diagnostic Telemetry</h4>
-                        <p>Mechanics upload standard OBD-II trouble codes (DTCs). Motor Ambos auto-generates transparent breakdown explanations for the driver with fixed labor tariffs.</p>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Who do I call?</strong>Calling around while stranded.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Roadside network</strong>Choose the help you need, share your location, and see nearby providers.</div>
                     </div>
-                    <div class="feature-card">
-                        <h4>Statutory Compliance Reminders</h4>
-                        <p>Automated alerts for DVLA Roadworthy certificate renewals, insurance expiries, and scheduled transmission fluid changes via WhatsApp bots.</p>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Unknown cost</strong>Surprise fees.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Fees up front</strong>Call-out fees are shown before you call, when the provider lists one.</div>
+                    </div>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Panic in the moment</strong>Typing details on the roadside.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>QR car sticker</strong>Scan to open help with the car pre-filled, or call the printed number.</div>
+                    </div>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Manual fleet admin</strong>Spreadsheets and phone calls.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Fleet access</strong>Vehicle status, driver invites, renewals and driver-reported issues.</div>
                     </div>
                 </div>
+            </section>
 
+            <!-- 03. How It Works -->
+            <section class="doc-section" id="how-it-works">
+                <div class="section-eyebrow">03 / How It Works</div>
+                <h2 class="section-title">From breakdown to help</h2>
                 <div class="flow-diagram">
                     <div class="flow-header">
-                        <span class="flow-title">Vehicle Repair & Maintenance Lifecycle</span>
-                        <span class="flow-badge">Zero Asymmetry Pipeline</span>
+                        <span class="flow-title">Roadside Help Flow</span>
+                        <span class="flow-badge">Drivers & fleets</span>
                     </div>
                     <div class="flow-steps">
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">01</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Driver Issue Telemetry & Mobile Dispatch</div>
-                                <div class="step-desc">Driver logs warning code or issue via app; certified mobile diagnostics unit dispatched to vehicle location</div>
+                                <div class="step-title">Scan the sticker or open the app</div>
+                                <div class="step-desc">The QR sticker opens roadside help with the car already filled in. A printed number is the backup.</div>
                             </div>
                         </div>
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">02</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Standardized OBD-II Diagnostic Telemetry Scan</div>
-                                <div class="step-desc">Certified technician reads standardized trouble codes (DTCs) and uploads diagnostic report directly to cloud</div>
+                                <div class="step-title">Choose the help you need</div>
+                                <div class="step-desc">Pick the kind of help you need, such as battery trouble.</div>
                             </div>
                         </div>
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">03</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Transparent Quotation & OEM Parts Escrow</div>
-                                <div class="step-desc">System auto-generates transparent breakdown with genuine OEM parts sourced directly with escrow lock</div>
+                                <div class="step-title">Share your location</div>
+                                <div class="step-desc">Motor Ambos finds providers near you.</div>
                             </div>
                         </div>
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">04</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Vetted Garage Repair & Driver Road Test</div>
-                                <div class="step-desc">Work executed under standardized labor rates; driver conducts physical road test before escrow is disbursed</div>
+                                <div class="step-title">Compare providers</div>
+                                <div class="step-desc">Listed by distance and call-out fee, so you know the cost before you call.</div>
                             </div>
                         </div>
                         <div class="flow-step flow-step-final">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">05</span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Immutable Digital Vehicle Passport Entry</div>
-                                <div class="step-desc">Maintenance history, replaced part serial numbers, and mileage stamped permanently to vehicle chassis VIN</div>
+                                <div class="step-title">Contact directly</div>
+                                <div class="step-desc">Call the provider straight from the app and get back on the road.</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 04. Validation -->
+            <!-- 04. Wireframes -->
+            <section class="doc-section" id="wireframes">
+                <div class="section-eyebrow">04 / Wireframes</div>
+                <h2 class="section-title">Key screens</h2>
+                <p>
+                    Wireframes of the driver app's two core jobs (staying legal and getting help) and the fleet view for operators.
+                </p>
+
+                <figure class="wf">
+                    <div class="flow-header">
+                        <span class="flow-title">Driver app</span>
+                        <span class="flow-badge">4 screens</span>
+                    </div>
+                    <div class="wf-screens">
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-t lg">My car</div>
+                                <div class="wf-img">vehicle</div>
+                                <div class="wf-row"><span class="wf-t">Insurance</span><span class="wf-chip">Ready</span></div>
+                                <div class="wf-row"><span class="wf-t">Roadworthy</span><span class="wf-chip on">Renew soon</span></div>
+                                <div class="wf-row"><span class="wf-t">Licence</span><span class="wf-chip">Ready</span></div>
+                                <div class="wf-spacer"></div>
+                                <div class="wf-btn ghost">Get roadside help</div>
+                            </div>
+                            <div class="wf-screen-label">My car<span>Papers at a glance</span></div>
+                        </div>
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-t lg">What do you need?</div>
+                                <div class="wf-box on"><span class="wf-t">Battery trouble?</span></div>
+                                <div class="wf-box"><span class="wf-ln w50"></span></div>
+                                <div class="wf-box"><span class="wf-ln w70"></span></div>
+                                <div class="wf-box"><span class="wf-ln w50"></span></div>
+                                <div class="wf-spacer"></div>
+                                <div class="wf-btn">Share my location</div>
+                            </div>
+                            <div class="wf-screen-label">What's wrong?<span>Choose the help</span></div>
+                        </div>
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-img">map</div>
+                                <div class="wf-box"><div class="wf-row"><span class="wf-t">Mechanic A</span><span class="wf-t sm">1.2 km</span></div><div class="wf-row"><span class="wf-t sm">Call-out fee</span><span class="wf-ln w30"></span></div></div>
+                                <div class="wf-box"><div class="wf-row"><span class="wf-t">Mechanic B</span><span class="wf-t sm">2.8 km</span></div><div class="wf-row"><span class="wf-t sm">Call-out fee</span><span class="wf-ln w30"></span></div></div>
+                                <div class="wf-btn">Call</div>
+                            </div>
+                            <div class="wf-screen-label">Nearby providers<span>Distance + fee</span></div>
+                        </div>
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-t lg" style="text-align:center">Need help?</div>
+                                <div class="wf-qr"></div>
+                                <div class="wf-t" style="text-align:center">Scan or call the number</div>
+                                <div class="wf-ln w70" style="align-self:center"></div>
+                                <div class="wf-spacer"></div>
+                                <div class="wf-t sm" style="text-align:center">Opens roadside help with this car pre-filled</div>
+                            </div>
+                            <div class="wf-screen-label">QR sticker<span>On the windscreen</span></div>
+                        </div>
+                    </div>
+                    <figcaption class="wf-caption">The status tags on "My car" are the product's heartbeat: they turn expiry dates into a simple Ready / Renew soon signal.</figcaption>
+                </figure>
+
+                <figure class="wf">
+                    <div class="flow-header">
+                        <span class="flow-title">Fleet dashboard</span>
+                        <span class="flow-badge">Web</span>
+                    </div>
+                    <div class="wf-screens wide">
+                        <div class="wf-screen">
+                            <div class="wf-frame browser">
+                                <div class="wf-row"><span class="wf-t lg">Fleet</span><div class="wf-row"><span class="wf-btn ghost">Invite driver</span><span class="wf-btn">Add vehicle</span></div></div>
+                                <div class="wf-box"><div class="wf-row"><span class="wf-t">Vehicle 01</span><span class="wf-t sm">Driver assigned</span><span class="wf-chip">Ready</span></div></div>
+                                <div class="wf-box"><div class="wf-row"><span class="wf-t">Vehicle 02</span><span class="wf-t sm">Roadworthy due</span><span class="wf-chip on">Renew soon</span></div></div>
+                                <div class="wf-box"><div class="wf-row"><span class="wf-t">Vehicle 03</span><span class="wf-t sm">Issue reported by driver</span><span class="wf-chip on">Attention</span></div></div>
+                            </div>
+                            <div class="wf-screen-label">Fleet overview<span>For operators, on web or phone</span></div>
+                        </div>
+                    </div>
+                    <figcaption class="wf-caption">Fleets see every vehicle's status in one list, invite drivers, handle renewals and respond to issues drivers report from the road.</figcaption>
+                </figure>
+            </section>
+
+            <!-- 05. Key Features -->
             <section class="doc-section">
-                <div class="section-eyebrow">04 / Traction & Impact</div>
-                <h2 class="section-title">Field Traction</h2>
-                <ul class="doc-list">
-                    <li><strong>1,200+ Registered Vehicles:</strong> Managing maintenance schedules for private car owners and commercial delivery fleets in Accra.</li>
-                    <li><strong>32 Certified Partner Workshops:</strong> Fully onboarded garages operating on transparent digital billing and standardized diagnostic protocols.</li>
-                    <li><strong>30% Reduction in Repair Costs:</strong> Direct parts sourcing and elimination of unnecessary replacement parts saved owners an average of GH₵ 1,800/year.</li>
-                </ul>
+                <div class="section-eyebrow">05 / Key Features</div>
+                <h2 class="section-title">Who it's for</h2>
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <h4>Drivers</h4>
+                        <p>Free app for papers, service and fuel logs, reminders and roadside help.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Fleet operators</h4>
+                        <p>Vehicle status, driver invites, renewals and reported issues, from phone or web dashboard.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Mechanics</h4>
+                        <p>Join the roadside network and get found by nearby drivers.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Renewals handled</h4>
+                        <p>Motor Ambos can handle renewals for you (a renewal fee may apply).</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>SMS reminders</h4>
+                        <p>Text messages before insurance, roadworthy or licence expire.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Smart QR card</h4>
+                        <p>A sticker that opens help with the car's details, plus a phone number backup.</p>
+                    </div>
+                </div>
             </section>
 
             <!-- Pagination -->

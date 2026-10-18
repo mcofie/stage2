@@ -695,6 +695,334 @@ body {
     line-height: 1.45;
 }
 
+/* Problem → Solution Table */
+.ps-table {
+    margin: 1.25rem 0;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.ps-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.ps-row + .ps-row {
+    border-top: 1px solid var(--border-color);
+}
+
+.ps-cell {
+    padding: 0.8rem 1rem;
+    font-size: .8125rem;
+    font-weight: 460;
+    line-height: 1.5;
+    letter-spacing: -.00563rem;
+    color: var(--muted-color);
+}
+
+.ps-cell + .ps-cell {
+    border-left: 1px solid var(--border-color);
+    background: var(--card-bg);
+}
+
+.ps-cell strong {
+    display: block;
+    font-weight: 600;
+    color: var(--body-color);
+    margin-bottom: 0.15rem;
+}
+
+.ps-head .ps-cell {
+    padding: 0.55rem 1rem;
+    font-size: .6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+@media screen and (max-width: 520px) {
+    .ps-row {
+        grid-template-columns: 1fr;
+    }
+
+    .ps-cell + .ps-cell {
+        border-left: 0;
+        border-top: 1px dashed var(--border-color);
+    }
+
+    .ps-head {
+        display: none;
+    }
+
+    .ps-cell[data-label]:before {
+        content: attr(data-label);
+        display: block;
+        font-size: .625rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.2rem;
+    }
+}
+
+/* Wireframes */
+.wf {
+    margin: 1.5rem 0;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 1.15rem;
+}
+
+.wf-screens {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+    align-items: start;
+}
+
+@media screen and (max-width: 600px) {
+    .wf-screens {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.wf-screens.wide {
+    grid-template-columns: 1fr;
+}
+
+.wf-screen {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 0;
+}
+
+.wf-frame {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    min-height: 17rem;
+    padding: 0.65rem 0.6rem 0.75rem;
+    background: var(--body-bg);
+    border: 1px solid var(--border-color-strong);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.wf-frame:before {
+    content: "";
+    align-self: center;
+    width: 32%;
+    height: 4px;
+    border-radius: 3px;
+    background: var(--border-color-strong);
+    margin-bottom: 0.2rem;
+}
+
+.wf-frame.browser {
+    min-height: 0;
+    border-radius: 6px;
+}
+
+.wf-frame.browser:before {
+    align-self: flex-start;
+    width: 2rem;
+    height: 6px;
+    background: radial-gradient(circle, var(--border-color-strong) 2.5px, transparent 3px) 0 0 / 10px 6px repeat-x;
+}
+
+.wf-screen-label {
+    font-size: .6875rem;
+    font-weight: 600;
+    color: var(--body-color);
+    line-height: 1.35;
+}
+
+.wf-screen-label span {
+    display: block;
+    font-weight: 460;
+    color: var(--muted-color);
+}
+
+.wf-caption {
+    margin-top: 0.95rem;
+    padding-top: 0.65rem;
+    border-top: 1px solid var(--border-color);
+    font-size: .725rem;
+    font-weight: 460;
+    color: var(--muted-color);
+    line-height: 1.45;
+}
+
+.wf-t {
+    font-size: .625rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--body-color);
+}
+
+.wf-t.lg {
+    font-size: .75rem;
+    letter-spacing: -0.01em;
+}
+
+.wf-t.sm {
+    font-size: .5625rem;
+    font-weight: 460;
+    color: var(--muted-color);
+}
+
+.wf-ln {
+    height: 5px;
+    border-radius: 3px;
+    background: var(--border-color-strong);
+    width: 100%;
+}
+
+.wf-ln.w30 { width: 30%; }
+.wf-ln.w50 { width: 50%; }
+.wf-ln.w70 { width: 70%; }
+
+.wf-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    border-radius: 4px;
+    background: repeating-linear-gradient(45deg, var(--accent-bg) 0 6px, var(--border-color) 6px 12px);
+    border: 1px solid var(--border-color);
+    font-family: var(--font-mono);
+    font-size: .5rem;
+    color: var(--muted-color);
+    text-align: center;
+}
+
+.wf-img.tall { height: 6.5rem; }
+.wf-img.sq { height: 2.5rem; }
+
+.wf-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.4rem 0.45rem;
+    border: 1px solid var(--border-color-strong);
+    border-radius: 5px;
+}
+
+.wf-box.on {
+    border-color: var(--body-color);
+}
+
+.wf-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.35rem;
+}
+
+.wf-row.start {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.wf-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.wf-grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.3rem;
+}
+
+.wf-spacer {
+    flex-grow: 1;
+}
+
+.wf-btn {
+    padding: 0.35rem 0.4rem;
+    border-radius: 4px;
+    background: var(--body-color);
+    color: var(--body-bg);
+    font-size: .5625rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.wf-btn.ghost {
+    background: transparent;
+    color: var(--body-color);
+    border: 1px solid var(--border-color-strong);
+}
+
+.wf-chip {
+    padding: 0.1rem 0.35rem;
+    border-radius: 3px;
+    background: var(--badge-bg);
+    border: 1px solid var(--border-color);
+    color: var(--badge-color);
+    font-size: .5rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.wf-chip.on {
+    background: var(--body-color);
+    border-color: var(--body-color);
+    color: var(--body-bg);
+}
+
+.wf-input {
+    padding: 0.3rem 0.4rem;
+    border: 1px dashed var(--border-color-strong);
+    border-radius: 4px;
+    font-size: .5625rem;
+    color: var(--muted-color);
+}
+
+.wf-avatar {
+    flex-shrink: 0;
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 50%;
+    background: var(--border-color-strong);
+}
+
+.wf-avatar.lg {
+    width: 2rem;
+    height: 2rem;
+}
+
+.wf-progress {
+    height: 3px;
+    border-radius: 2px;
+    background: var(--border-color);
+    overflow: hidden;
+}
+
+.wf-progress span {
+    display: block;
+    height: 100%;
+    background: var(--body-color);
+}
+
+.wf-qr {
+    align-self: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    border: 1px solid var(--border-color-strong);
+    border-radius: 4px;
+    background:
+        conic-gradient(var(--body-color) 25%, transparent 0 50%, var(--body-color) 0 75%, transparent 0) 0 0 / 12px 12px,
+        var(--body-bg);
+    opacity: 0.85;
+}
+
 /* Post Pagination */
 .doc-pagination {
     display: flex;

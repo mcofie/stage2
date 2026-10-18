@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     
-    <title>GrayDocket — Research & Product Documentation | Stage 2 Labs</title>
-    <meta name="title" content="GrayDocket — Research & Product Documentation | Stage 2 Labs">
-    <meta name="description" content="Field research and architectural documentation for GrayDocket: Business-in-a-Box automating company incorporation, tax compliance, and banking in Ghana.">
+    <title>GrayDocket — Problem, Solution & Wireframes | Stage 2 Labs</title>
+    <meta name="title" content="GrayDocket — Problem, Solution & Wireframes | Stage 2 Labs">
+    <meta name="description" content="GrayDocket helps entrepreneurs in Ghana register a business with the ORC and stay compliant with annual returns, renewals and a secure document vault.">
     
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,11 +36,11 @@
                 <div class="doc-meta-pills">
                     <span class="doc-pill active">Platform</span>
                     <span class="doc-pill">2026</span>
-                    <span class="doc-pill">Accra • LegalTech & GovTech</span>
+                    <span class="doc-pill">Ghana • LegalTech</span>
                 </div>
                 <h1 class="doc-title">GrayDocket</h1>
                 <p class="doc-lead">
-                    Business-in-a-Box automating company formation, Ghana Revenue Authority (GRA) tax filings, SSNIT registrations, and corporate banking setup in Ghana.
+                    Start your business. We'll handle the paperwork. GrayDocket checks your name, files your registration with Ghana's Office of the Registrar of Companies, and keeps you compliant afterwards.
                 </p>
                 <div class="doc-actions">
                     <a href="https://graydocket.com" target="_blank" rel="noopener noreferrer" class="action-btn-primary">
@@ -50,7 +50,7 @@
                             <polyline points="7 7 17 7 17 17"></polyline>
                         </svg>
                     </a>
-                    <a href="#pipeline" class="action-btn-secondary">Filing Pipeline</a>
+                    <a href="#wireframes" class="action-btn-secondary">View Wireframes</a>
                 </div>
             </header>
 
@@ -58,7 +58,7 @@
             <div class="specs-grid">
                 <div class="spec-item">
                     <span class="spec-label">Status</span>
-                    <span class="spec-val">Active Beta</span>
+                    <span class="spec-val">Live</span>
                 </div>
                 <div class="spec-item">
                     <span class="spec-label">Domain</span>
@@ -66,154 +66,260 @@
                 </div>
                 <div class="spec-item">
                     <span class="spec-label">Market</span>
-                    <span class="spec-val">Ghana & West Africa</span>
+                    <span class="spec-val">Ghana</span>
                 </div>
                 <div class="spec-item">
-                    <span class="spec-label">Regulatory Body</span>
-                    <span class="spec-val">ORC • GRA • SSNIT</span>
+                    <span class="spec-label">Products</span>
+                    <span class="spec-val">Start · Agent · Name ideas</span>
                 </div>
             </div>
 
-            <!-- 01. Overview -->
+            <!-- 01. The Problem -->
             <section class="doc-section">
-                <div class="section-eyebrow">01 / The Problem Context</div>
-                <h2 class="section-title">The High Friction of Starting Up in Ghana</h2>
+                <div class="section-eyebrow">01 / The Problem</div>
+                <h2 class="section-title">Registering a business shouldn't mean a week of office visits</h2>
                 <p>
-                    Forming a limited liability company (LLC) or external company in Ghana should take days, not months. Historically, founders faced a fragmented bureaucratic gauntlet: visiting the Office of the Registrar of Companies (ORC) in Accra, paying unofficial expediters ("goro boys") to retrieve physical files, filing separately with the Ghana Revenue Authority (GRA) for a Tax Clearance Certificate and TIN, and enduring weeks of compliance hurdles to open a standard commercial bank account.
+                    For a first-time founder in Ghana, formalising a business means a chain of steps across institutions: checking that a name is available at the Office of the Registrar of Companies (ORC), preparing and filing the registration, getting a TIN, and then remembering recurring obligations like annual returns and name renewals.
                 </p>
                 <p>
-                    For international founders and diaspora entrepreneurs, this friction frequently derailed investment rounds and vendor partnerships before operations even started.
-                </p>
-                <p>
-                    GrayDocket re-engineers this journey as modern software infrastructure: one unified onboarding flow that handles name reservation, incorporation forms (Form 3 / Regulations), digital officer signatures, GRA and SSNIT registration, and direct corporate bank account provisioning.
-                </p>
-            </section>
-
-            <!-- 02. Field Research -->
-            <section class="doc-section">
-                <div class="section-eyebrow">02 / Field Research & Discovery</div>
-                <h2 class="section-title">Field Audit of 65 Business Registrations</h2>
-                <p>
-                    Our research team shadowed company formation workflows across Greater Accra between 2024 and 2026:
+                    Each step is easy to get wrong when you are doing it for the first time, and mistakes are costly: a rejected name sends you back to the start, and a missed deadline quietly puts the business out of good standing.
                 </p>
 
                 <div class="callout-box">
-                    <div class="callout-title">Bottleneck #1: Name Rejections & Lost Filings</div>
+                    <div class="callout-title">Name rejections</div>
                     <p>
-                        43% of initial name searches at ORC were rejected due to minor typographical ambiguity or unwritten naming constraints, forcing manual re-submission fees and 2-week delays per round.
+                        Exact matches and look-alike names in the ORC register get applications rejected after you have already filed.
                     </p>
                 </div>
 
                 <div class="callout-box">
-                    <div class="callout-title">Bottleneck #2: Post-Incorporation Compliance Lapse</div>
+                    <div class="callout-title">Forms and queues</div>
                     <p>
-                        Over 72% of registered entities in Ghana fail to file mandatory annual returns or acquire GRA TIN registrations within their first 12 months, resulting in retroactive compound penalty fees and blacklisting during bank compliance checks.
+                        Printed forms, in-person visits and unclear status updates make a simple registration feel opaque.
                     </p>
                 </div>
 
                 <div class="callout-box">
-                    <div class="callout-title">Bottleneck #3: Corporate Banking Gridlock</div>
+                    <div class="callout-title">Compliance after day one</div>
                     <p>
-                        Opening a multi-currency corporate bank account in Ghana typically requires 8 distinct notarized physical forms, board resolutions, and in-person verification of all directors, taking an average of 26 business days post-incorporation.
+                        Annual returns, renewals and tax registrations recur every year, and it is easy to lose track while running the business.
+                    </p>
+                </div>
+
+                <div class="callout-box">
+                    <div class="callout-title">Scattered documents</div>
+                    <p>
+                        Certificates, constitutions and TIN certificates end up spread across email, paper folders and phones.
                     </p>
                 </div>
             </section>
 
-            <!-- 03. Architecture & Pipeline -->
-            <section class="doc-section" id="pipeline">
-                <div class="section-eyebrow">03 / System Architecture</div>
-                <h2 class="section-title">Automated Government Registry Orchestration</h2>
+            <!-- 02. The Solution -->
+            <section class="doc-section">
+                <div class="section-eyebrow">02 / The Solution</div>
+                <h2 class="section-title">Registration and compliance as one service</h2>
                 <p>
-                    GrayDocket bridges legacy registry workflows with a fault-tolerant state machine:
+                    GrayDocket turns registration into a 15-minute questionnaire. The team checks the details, files with the ORC, and posts every update to a dashboard. Once the certificate is issued, the same account keeps tracking what is due next.
+                </p>
+                <p>
+                    It supports sole proprietorships, companies limited by shares, and companies limited by guarantee (non-profits). Existing businesses can be added too, so their filings are tracked from then on.
                 </p>
 
-                <div class="feature-cards">
-                    <div class="feature-card">
-                        <h4>Smart Name Clearance Engine</h4>
-                        <p>Pre-screens proposed company names against active ORC records, trademark databases, and prohibited word dictionaries using phonetic matching algorithms.</p>
+                <div class="ps-table">
+                    <div class="ps-row ps-head">
+                        <div class="ps-cell">Problem</div>
+                        <div class="ps-cell">How we solve it</div>
                     </div>
-                    <div class="feature-card">
-                        <h4>Ghana Card NIR Verification</h4>
-                        <p>Instant biometric credential and TIN resolution for Ghanaian directors and shareholders via official National Identification Authority verification rails.</p>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Choosing a name blind</strong>Look-alikes cause rejections.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Name search first</strong>Checks the ORC register for exact and similar names before filing.</div>
                     </div>
-                    <div class="feature-card">
-                        <h4>Automated Document Synthesizer</h4>
-                        <p>Generates statutory company constitutions, consent letters, board resolutions, and beneficial ownership declarations ready for digital execution.</p>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Paper forms, office visits</strong>Hard to start, hard to track.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Online questionnaire</strong>About 15 minutes of simple questions; filing is handled for you.</div>
                     </div>
-                    <div class="feature-card">
-                        <h4>Banking Integration Bridge</h4>
-                        <p>Secure webhook dispatching verified incorporation dossiers directly to partner tier-1 banks and fintechs for same-week corporate account issuance.</p>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>No visibility on status</strong>Founders chase updates.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Live dashboard</strong>Each step (name cleared, filed, certificate issued) shows up as it happens.</div>
+                    </div>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Missed deadlines</strong>Annual returns and renewals slip.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Compliance tracking</strong>Early reminders, then filing on your approval.</div>
+                    </div>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Documents everywhere</strong>Hard to find when a bank asks.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Document Vault</strong>Encrypted storage with secure sharing to invited people.</div>
                     </div>
                 </div>
+            </section>
 
+            <!-- 03. How It Works -->
+            <section class="doc-section" id="how-it-works">
+                <div class="section-eyebrow">03 / How It Works</div>
+                <h2 class="section-title">From idea to certificate in three steps</h2>
                 <div class="flow-diagram">
                     <div class="flow-header">
-                        <span class="flow-title">Workflow: GrayDocket Pipeline State Machine</span>
-                        <span class="flow-badge">ORC • GRA • Banking Bridge</span>
+                        <span class="flow-title">GrayDocket Registration Flow</span>
+                        <span class="flow-badge">Processing time depends on ORC</span>
                     </div>
                     <div class="flow-steps">
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">01</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Client Profile & Equity Structuring</div>
-                                <div class="step-desc">Captures shareholder percentages, director consents, and commercial objects under Companies Act 992</div>
+                                <div class="step-title">Find your business type</div>
+                                <div class="step-desc">A 1-minute quiz recommends sole proprietorship, company limited by shares, or company limited by guarantee.</div>
                             </div>
                         </div>
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">02</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Pre-Flight Name Search & Biometric NIR Resolution</div>
-                                <div class="step-desc">Phonetic clearance against ORC database; instant Ghana Card NIR verification and TIN resolution</div>
+                                <div class="step-title">Tell us about your business</div>
+                                <div class="step-desc">Answer simple questions in about 15 minutes. No forms to print, no office visits.</div>
                             </div>
                         </div>
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">03</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Statutory Document Synthesis & Digital Signing</div>
-                                <div class="step-desc">Generates Form 3, Beneficial Ownership schedules, and automated digital officer signature packets</div>
+                                <div class="step-title">Name check and filing</div>
+                                <div class="step-desc">GrayDocket checks the name against the ORC register, verifies details and files the registration.</div>
                             </div>
                         </div>
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">04</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">ORC Digital Registry Ingestion & Tax Registration</div>
-                                <div class="step-desc">Direct ORC filing pipeline with simultaneous GRA Tax Identification & SSNIT employer registration</div>
+                                <div class="step-title">Certificate ready</div>
+                                <div class="step-desc">The certificate of registration lands in Documents. For example: name cleared Monday, filed Tuesday, certificate Thursday.</div>
                             </div>
                         </div>
                         <div class="flow-step flow-step-final">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">05</span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Partner Banking API Dispatch</div>
-                                <div class="step-desc">Verified incorporation dossier auto-provisioned into multi-currency corporate IBAN and MoMo merchant rails</div>
+                                <div class="step-title">Compliance runs itself</div>
+                                <div class="step-desc">Deadlines for annual returns and renewals are tracked, with reminders and filing on your approval.</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 04. Validation -->
+            <!-- 04. Wireframes -->
+            <section class="doc-section" id="wireframes">
+                <div class="section-eyebrow">04 / Wireframes</div>
+                <h2 class="section-title">Key screens</h2>
+                <p>
+                    Wireframes of the four surfaces a founder touches: choosing a structure, checking a name, tracking the filing, and storing the results.
+                </p>
+
+                <figure class="wf">
+                    <div class="flow-header">
+                        <span class="flow-title">Founder journey</span>
+                        <span class="flow-badge">4 screens</span>
+                    </div>
+                    <div class="wf-screens">
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-progress"><span style="width:50%"></span></div>
+                                <div class="wf-t lg">Will you run it alone or with partners?</div>
+                                <div class="wf-box on"><span class="wf-t">Just me</span></div>
+                                <div class="wf-box"><span class="wf-t">With co-founders</span></div>
+                                <div class="wf-box"><span class="wf-t">It's a non-profit</span></div>
+                                <div class="wf-spacer"></div>
+                                <div class="wf-btn">Next</div>
+                            </div>
+                            <div class="wf-screen-label">Business type quiz<span>1-minute recommendation</span></div>
+                        </div>
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-t lg">Pick your name with confidence</div>
+                                <div class="wf-input">Kente Ventures</div>
+                                <div class="wf-box on"><div class="wf-row"><span class="wf-t">Looks available</span><span class="wf-chip on">OK</span></div></div>
+                                <div class="wf-t sm">Similar names on the register</div>
+                                <div class="wf-row"><span class="wf-ln w50"></span><span class="wf-chip">Taken</span></div>
+                                <div class="wf-row"><span class="wf-ln w70"></span><span class="wf-chip">Similar</span></div>
+                                <div class="wf-spacer"></div>
+                                <div class="wf-btn">Start my business</div>
+                            </div>
+                            <div class="wf-screen-label">Name search<span>Checked before filing</span></div>
+                        </div>
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-t lg">Your business</div>
+                                <div class="wf-box">
+                                    <div class="wf-row"><span class="wf-t">Name cleared</span><span class="wf-t sm">Mon</span></div>
+                                    <div class="wf-row"><span class="wf-t">Filed with ORC</span><span class="wf-t sm">Tue</span></div>
+                                    <div class="wf-row"><span class="wf-t">Certificate issued</span><span class="wf-t sm">Thu</span></div>
+                                </div>
+                                <div class="wf-t sm">Compliance</div>
+                                <div class="wf-row"><span class="wf-t">Annual return</span><span class="wf-chip">On track</span></div>
+                                <div class="wf-row"><span class="wf-t">Name renewal</span><span class="wf-chip on">14 days</span></div>
+                            </div>
+                            <div class="wf-screen-label">Dashboard<span>Filing + compliance</span></div>
+                        </div>
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-t lg">Documents</div>
+                                <div class="wf-row start"><div class="wf-img sq" style="width:1.8rem"></div><span class="wf-t">Certificate of registration</span></div>
+                                <div class="wf-row start"><div class="wf-img sq" style="width:1.8rem"></div><span class="wf-t">Constitution</span></div>
+                                <div class="wf-row start"><div class="wf-img sq" style="width:1.8rem"></div><span class="wf-t">TIN certificate</span></div>
+                                <div class="wf-row start"><div class="wf-img sq" style="width:1.8rem"></div><span class="wf-t">Annual return</span></div>
+                                <div class="wf-spacer"></div>
+                                <div class="wf-btn ghost">Share securely</div>
+                            </div>
+                            <div class="wf-screen-label">Documents<span>Encrypted vault</span></div>
+                        </div>
+                    </div>
+                    <figcaption class="wf-caption">The dashboard is the product's centre of gravity: it starts as a filing tracker and becomes the compliance calendar once the business is registered.</figcaption>
+                </figure>
+            </section>
+
+            <!-- 05. Key Features -->
             <section class="doc-section">
-                <div class="section-eyebrow">04 / Impact & Traction</div>
-                <h2 class="section-title">Milestones & Efficiency Gains</h2>
-                <ul class="doc-list">
-                    <li><strong>Turnaround Cut from 28 Days to 72 Hours:</strong> Digital validation reduces median registration time from nearly a month to under 3 business days.</li>
-                    <li><strong>120+ Companies Registered:</strong> Supported seed-stage tech ventures, diaspora trade companies, and boutique creative agencies.</li>
-                    <li><strong>Continuous Annual Compliance:</strong> Automated calendar daemon reminding directors of GRA monthly withholding taxes and ORC annual return deadlines.</li>
-                </ul>
+                <div class="section-eyebrow">05 / Key Features</div>
+                <h2 class="section-title">What's in the box</h2>
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <h4>Start (registration)</h4>
+                        <p>Guided registration for sole proprietorships and companies limited by shares or guarantee.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Agent (compliance)</h4>
+                        <p>Tracks annual returns, renewals and filings, sends early reminders and files on your approval.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Name search & ideas</h4>
+                        <p>Free name checking against the ORC register, plus a name-ideas tool.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Document Vault</h4>
+                        <p>Certificates, constitutions, TIN certificates and filed returns, encrypted and visible only to you and invited people.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Real people</h4>
+                        <p>Support from a person over WhatsApp or email.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Existing businesses</h4>
+                        <p>Already registered? Add the business and GrayDocket tracks its filings going forward.</p>
+                    </div>
+                </div>
+
+                <p class="text-muted">
+                    GrayDocket handles filings and reminders; it does not provide legal advice.
+                </p>
             </section>
 
             <!-- Pagination -->

@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     
-    <title>Amigo Lease — Research & Product Documentation | Stage 2 Labs</title>
-    <meta name="title" content="Amigo Lease — Research & Product Documentation | Stage 2 Labs">
-    <meta name="description" content="Field research and architectural documentation for Amigo Lease: Verified roommate matching platform and co-living infrastructure for urban Accra.">
+    <title>Amigo Lease — Problem, Solution & Wireframes | Stage 2 Labs</title>
+    <meta name="title" content="Amigo Lease — Problem, Solution & Wireframes | Stage 2 Labs">
+    <meta name="description" content="Amigo Lease matches roommates in Accra by lifestyle: a compatibility quiz, roommate archetypes, room listings from hosts, and in-app chat.">
     
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,11 +36,11 @@
                 <div class="doc-meta-pills">
                     <span class="doc-pill active">Marketplace</span>
                     <span class="doc-pill">2025</span>
-                    <span class="doc-pill">Accra • PropTech & Trust</span>
+                    <span class="doc-pill">Accra • PropTech</span>
                 </div>
                 <h1 class="doc-title">Amigo Lease</h1>
                 <p class="doc-lead">
-                    Verified roommate matching and co-living platform solving Accra's multi-year advance rent crisis through trusted peer vetting and escrow rails.
+                    Roommate matching for Accra. Take a lifestyle quiz, discover your roommate archetype, and find compatible people and rooms before you commit to sharing a home.
                 </p>
                 <div class="doc-actions">
                     <a href="https://amigolease.com" target="_blank" rel="noopener noreferrer" class="action-btn-primary">
@@ -50,7 +50,7 @@
                             <polyline points="7 7 17 7 17 17"></polyline>
                         </svg>
                     </a>
-                    <a href="#matching-model" class="action-btn-secondary">Matching Protocol</a>
+                    <a href="#wireframes" class="action-btn-secondary">View Wireframes</a>
                 </div>
             </header>
 
@@ -58,7 +58,7 @@
             <div class="specs-grid">
                 <div class="spec-item">
                     <span class="spec-label">Status</span>
-                    <span class="spec-val">Active Scaling</span>
+                    <span class="spec-val">Live</span>
                 </div>
                 <div class="spec-item">
                     <span class="spec-label">Domain</span>
@@ -69,151 +69,250 @@
                     <span class="spec-val">Accra, Ghana</span>
                 </div>
                 <div class="spec-item">
-                    <span class="spec-label">Verification</span>
-                    <span class="spec-val">Ghana Card + Work Proof</span>
+                    <span class="spec-label">Roles</span>
+                    <span class="spec-val">Hosts & Seekers</span>
                 </div>
             </div>
 
-            <!-- 01. Overview -->
+            <!-- 01. The Problem -->
             <section class="doc-section">
-                <div class="section-eyebrow">01 / The Urban Friction</div>
-                <h2 class="section-title">The Advance Rent Crisis in Accra</h2>
+                <div class="section-eyebrow">01 / The Problem</div>
+                <h2 class="section-title">A room is easy to find. A good roommate isn't.</h2>
                 <p>
-                    In Ghana's capital, landlords routinely demand 1 to 2 years of advance rent upfront in a single lump sum, despite the statutory provisions of the Rent Act 1963 (Act 220). For early-career software developers, bankers, creative directors, and remote workers earning monthly salaries between GH₵ 5,000 and GH₵ 20,000, paying GH₵ 80,000 to GH₵ 180,000 upfront for a studio or 1-bedroom flat in Cantonments, Osu, or East Legon is virtually impossible.
+                    Sharing a home is one of the most practical ways for young professionals and students to afford rent in neighbourhoods like East Legon and Osu. But listings only describe the room: price, location, amenities. They say nothing about the person you will share a kitchen with.
                 </p>
                 <p>
-                    Room-sharing and co-living would mathematically resolve this math—turning a luxury 3-bedroom apartment into affordable monthly per-person obligations. But in practice, roommate searching in Accra is hindered by a profound trust deficit: fear of stranger theft, non-payment of electricity (ECG prepayment tokens), lifestyle friction, and ghosting.
-                </p>
-                <p>
-                    Amigo Lease is built to solve this mutual trust deficit by combining verified identity credentials with lifestyle compatibility algorithms and split-rent escrow protection.
-                </p>
-            </section>
-
-            <!-- 02. Field Research -->
-            <section class="doc-section">
-                <div class="section-eyebrow">02 / Field Research & Data</div>
-                <h2 class="section-title">Interviews with 120 Urban Renters</h2>
-                <p>
-                    Our product design team conducted detailed field interviews across 120 young professionals and 15 property brokers in Accra:
+                    Most roommate conflict comes from everyday habits that nobody discusses up front: sleep schedules, guests, noise, tidiness, smoking, pets and who works from home.
                 </p>
 
                 <div class="callout-box">
-                    <div class="callout-title">Insight #1: The Trust Deficit Outweighs Price</div>
+                    <div class="callout-title">Listings hide the lifestyle</div>
                     <p>
-                        89% of participants stated they would prefer to share an apartment to save 50%+ on rent, but 74% refused to look on Twitter or classifieds because "you cannot verify who you are moving in with or whether they have a criminal record."
+                        A room post tells you about AC and distance to shops, not whether the other person blends smoothies at 6 AM while you're falling asleep.
                     </p>
                 </div>
 
                 <div class="callout-box">
-                    <div class="callout-title">Insight #2: Micro-Frictions (Utilities & House Rules)</div>
+                    <div class="callout-title">Awkward conversations</div>
                     <p>
-                        Among those who had previously shared flats, 68% of roommate breakups were triggered by unequal electricity and water bill distribution, unannounced long-term overnight guests, and conflicting remote work noise schedules.
+                        Expectations about guests, cleaning rosters and quiet hours are hard to raise with a stranger, so they don't get raised until there is a problem.
                     </p>
                 </div>
 
                 <div class="callout-box">
-                    <div class="callout-title">Insight #3: Sub-lease Legal Ambiguity</div>
+                    <div class="callout-title">Cold outreach</div>
                     <p>
-                        Standard head-tenancy agreements in Ghana prohibit unauthorized subletting without landlord consent. Most shared arrangements exist informally without legally enforceable contracts, exposing tenants to sudden eviction.
+                        Seekers message hosts across WhatsApp groups and social posts with no context about whether they would actually get along.
                     </p>
                 </div>
             </section>
 
-            <!-- 03. Architecture & Matching Protocol -->
-            <section class="doc-section" id="matching-model">
-                <div class="section-eyebrow">03 / Platform Architecture</div>
-                <h2 class="section-title">Verified Trust Infrastructure & Co-Tenancy</h2>
+            <!-- 02. The Solution -->
+            <section class="doc-section">
+                <div class="section-eyebrow">02 / The Solution</div>
+                <h2 class="section-title">Match on how people live, not just where</h2>
                 <p>
-                    Amigo Lease transforms unverified social listings into a structured peer-matching market:
+                    Amigo Lease builds a compatibility profile from a short lifestyle quiz and places each person into a friendly roommate archetype. Matches and listings are then ranked by compatibility, and people can chat in-app before meeting.
+                </p>
+                <p>
+                    Archetypes are a conversation starter, not a box: they give two strangers shared language for expectations. The exact quiz scores stay private and are only used to calculate compatibility and flag potential friction points.
                 </p>
 
-                <div class="feature-cards">
-                    <div class="feature-card">
-                        <h4>Multi-Tier Identity Verification</h4>
-                        <p>Mandatory government ID validation (Ghana Card) cross-referenced with LinkedIn employment history, social presence, and emergency contact verification.</p>
+                <div class="ps-table">
+                    <div class="ps-row ps-head">
+                        <div class="ps-cell">Problem</div>
+                        <div class="ps-cell">How we solve it</div>
                     </div>
-                    <div class="feature-card">
-                        <h4>Lifestyle Matrix Compatibility</h4>
-                        <p>Algorithmic matching across 18 living dimensions: work-from-home schedule, smoking/alcohol, sleep chronotype, cleanliness threshold, and guest policies.</p>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Unknown habits</strong>Sleep, noise, guests, mess.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Lifestyle quiz</strong>Questions on schedule, tidiness, hosting, noise, smoking, pets and work routine.</div>
                     </div>
-                    <div class="feature-card">
-                        <h4>Standard Co-Tenancy Contracts</h4>
-                        <p>Automated legally binding roommate agreements specifying rent contribution ratios, quiet hours, and formal dispute mediation protocols.</p>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>No shared language</strong>Hard to describe what you need.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Roommate archetypes</strong>Eight archetypes, each with who they live well with and who they clash with.</div>
                     </div>
-                    <div class="feature-card">
-                        <h4>Split Utility & Escrow Ledger</h4>
-                        <p>Integrated micro-ledger tracking monthly ECG power, water, Wi-Fi, and cleaning fees, with automated Mobile Money reminders and split payments.</p>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Hidden friction</strong>Problems surface after move-in.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Compatibility scores</strong>Answers are compared privately to surface matches and friction points.</div>
+                    </div>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Room-only listings</strong>Price and photos, no context.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Host listings</strong>Price in GHS, amenities, house rules and pet-friendly filters, linked to the host's profile.</div>
+                    </div>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Cold, scattered outreach</strong>DMs across groups.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>In-app chat</strong>Start a conversation from a match or listing with suggested openers.</div>
                     </div>
                 </div>
+            </section>
 
+            <!-- 03. How It Works -->
+            <section class="doc-section" id="how-it-works">
+                <div class="section-eyebrow">03 / How It Works</div>
+                <h2 class="section-title">Onboarding builds the compatibility profile</h2>
                 <div class="flow-diagram">
                     <div class="flow-header">
-                        <span class="flow-title">Matching & Verification Pipeline</span>
-                        <span class="flow-badge">Protocol v2.0</span>
+                        <span class="flow-title">Amigo Lease Onboarding</span>
+                        <span class="flow-badge">Host · Seeker · Both</span>
                     </div>
                     <div class="flow-steps">
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">01</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Biometric Ghana Card & Income Verification</div>
-                                <div class="step-desc">Direct NIR API identity check cross-referenced with employer verification and proof of steady income</div>
+                                <div class="step-title">Choose your role</div>
+                                <div class="step-desc">Seeker looking for a room, Host with a room to fill, or both.</div>
                             </div>
                         </div>
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">02</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">18-Dimension Lifestyle Matrix Evaluation</div>
-                                <div class="step-desc">Quantifies living habits: sleep schedule, noise tolerance, remote work hours, cleanliness, and guest policies</div>
+                                <div class="step-title">Basic details</div>
+                                <div class="step-desc">Name, area (e.g. East Legon, Osu) and a short bio about who you are outside the house.</div>
                             </div>
                         </div>
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">03</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Vector Similarity & Blind Chat Introduction</div>
-                                <div class="step-desc">Recommends top compatible peers (> 85% score) into private, anonymous in-app introductory chat</div>
+                                <div class="step-title">Lifestyle quiz</div>
+                                <div class="step-desc">Early bird or night owl? How tidy are shared spaces? How often do you host? Noise tolerance, smoking, pets, work-from-home.</div>
                             </div>
                         </div>
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">04</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Standardized Digital Co-Tenancy Agreement</div>
-                                <div class="step-desc">Bespoke sub-lease contract stipulating rent proportions, utility rules, and formal conflict resolution steps</div>
+                                <div class="step-title">Set preferences</div>
+                                <div class="step-desc">Describe your ideal roommate or place, including whether you only want pet-friendly homes.</div>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-marker">
+                                <span class="step-num">05</span>
+                                <span class="step-line"></span>
+                            </div>
+                            <div class="step-content">
+                                <div class="step-title">Meet your archetype</div>
+                                <div class="step-desc">A summary of your home vibe and an archetype such as The Quiet Professional or The Warm Host.</div>
                             </div>
                         </div>
                         <div class="flow-step flow-step-final">
-                            <div class="step-indicator">
-                                <span class="step-num">05</span>
+                            <div class="step-marker">
+                                <span class="step-num">06</span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Split Escrow Deposit & Landlord Release</div>
-                                <div class="step-desc">Roommates fund their portions into secure escrow; funds released to landlord with automated recurring utility billing enabled</div>
+                                <div class="step-title">Browse matches & chat</div>
+                                <div class="step-desc">Compatible roommates and listings, saved favourites, and private conversations.</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 04. Validation -->
+            <!-- 04. Wireframes -->
+            <section class="doc-section" id="wireframes">
+                <div class="section-eyebrow">04 / Wireframes</div>
+                <h2 class="section-title">Key screens</h2>
+                <p>
+                    Wireframes of the seeker journey, from role selection through the archetype reveal to a match with a listing.
+                </p>
+
+                <figure class="wf">
+                    <div class="flow-header">
+                        <span class="flow-title">Seeker journey</span>
+                        <span class="flow-badge">4 screens</span>
+                    </div>
+                    <div class="wf-screens">
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-t lg">How will you use Amigo Lease?</div>
+                                <div class="wf-box on"><span class="wf-t">I'm looking for a room</span><span class="wf-t sm">Seeker</span></div>
+                                <div class="wf-box"><span class="wf-t">I have a room to fill</span><span class="wf-t sm">Host</span></div>
+                                <div class="wf-box"><span class="wf-t">Both</span><span class="wf-t sm">Host &amp; Seeker</span></div>
+                                <div class="wf-spacer"></div>
+                                <div class="wf-btn">Continue</div>
+                            </div>
+                            <div class="wf-screen-label">Choose your role<span>Onboarding step 1</span></div>
+                        </div>
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-progress"><span style="width:40%"></span></div>
+                                <div class="wf-t lg">Are you an early bird or night owl?</div>
+                                <div class="wf-box"><span class="wf-t">Early bird</span></div>
+                                <div class="wf-box on"><span class="wf-t">Night owl</span><span class="wf-t sm">Active when the world is asleep</span></div>
+                                <div class="wf-box"><span class="wf-t">Somewhere in between</span></div>
+                                <div class="wf-spacer"></div>
+                                <div class="wf-btn">Next</div>
+                            </div>
+                            <div class="wf-screen-label">Lifestyle quiz<span>One habit at a time</span></div>
+                        </div>
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-avatar lg" style="align-self:center"></div>
+                                <div class="wf-t lg" style="text-align:center">The Quiet Professional</div>
+                                <div class="wf-t sm" style="text-align:center">Home is your base for rest and work.</div>
+                                <div class="wf-box"><span class="wf-t sm">Best with</span><span class="wf-t">Professionals who respect quiet hours</span></div>
+                                <div class="wf-box"><span class="wf-t sm">Tough with</span><span class="wf-t">Party animals</span></div>
+                                <div class="wf-btn">See my matches</div>
+                            </div>
+                            <div class="wf-screen-label">Archetype reveal<span>Shared language</span></div>
+                        </div>
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-img">room photo</div>
+                                <div class="wf-row"><span class="wf-t">Room in East Legon</span><span class="wf-t">₵ GHS</span></div>
+                                <div class="wf-wrap"><span class="wf-chip">AC</span><span class="wf-chip">Wi-Fi</span><span class="wf-chip">Pet-friendly</span></div>
+                                <div class="wf-row start"><div class="wf-avatar"></div><span class="wf-t">Host · The Neat Planner</span></div>
+                                <div class="wf-input">Hi! Is the room still available?</div>
+                                <div class="wf-btn">Message host</div>
+                            </div>
+                            <div class="wf-screen-label">Match + listing<span>Chat before you commit</span></div>
+                        </div>
+                    </div>
+                    <figcaption class="wf-caption">Hosts get the mirror image: a dashboard to create and edit listings (basics, price, amenities, rules) and see seekers' profiles.</figcaption>
+                </figure>
+            </section>
+
+            <!-- 05. Key Features -->
             <section class="doc-section">
-                <div class="section-eyebrow">04 / Traction & Pilot Results</div>
-                <h2 class="section-title">Results from the Accra Pilot</h2>
-                <ul class="doc-list">
-                    <li><strong>350+ Matched Roommates:</strong> Successfully facilitated co-living arrangements across Airport Residential, Osu, Dzorwulu, and East Legon.</li>
-                    <li><strong>GH₵ 4.8M Saved in Advance Rent:</strong> Enabled young professionals to upgrade their living conditions while reducing their capital lock-up by 60%.</li>
-                    <li><strong>0 Reported Security Incidents:</strong> Strict vetting and mutual contract accountability maintained a 98% positive co-tenancy completion rate.</li>
-                </ul>
+                <div class="section-eyebrow">05 / Key Features</div>
+                <h2 class="section-title">What Amigo Lease offers</h2>
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <h4>Compatibility profile</h4>
+                        <p>Built from quiz answers on schedule, cleanliness, guests, noise, smoking, pets and work routine.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Eight archetypes</h4>
+                        <p>Calm Minimalist, Chill Creative, Cool Independent, Easygoing Socialite, Neat Planner, Night Owl Thinker, Quiet Professional, Warm Host.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Listings for hosts</h4>
+                        <p>Create and manage rooms with photos, price, amenities and house rules.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Matches & favourites</h4>
+                        <p>Roommate matches ranked by lifestyle compatibility; save listings for later.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Private chat</h4>
+                        <p>Conversations between seekers and hosts, started from a profile or listing.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Clear boundaries</h4>
+                        <p>Amigo Lease is a matching and discovery platform. It does not process rent; agreements stay between host and seeker.</p>
+                    </div>
+                </div>
             </section>
 
             <!-- Pagination -->

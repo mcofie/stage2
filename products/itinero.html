@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     
-    <title>Itinero — Research & Product Documentation | Stage 2 Labs</title>
-    <meta name="title" content="Itinero — Research & Product Documentation | Stage 2 Labs">
-    <meta name="description" content="Field research and architectural documentation for Itinero: AI-powered travel ecosystem and contextual itinerary engine for Africa.">
+    <title>Itinero — Problem, Solution & Wireframes | Stage 2 Labs</title>
+    <meta name="title" content="Itinero — Problem, Solution & Wireframes | Stage 2 Labs">
+    <meta name="description" content="Itinero turns the travel photos on your phone into a printed hardcover album: pick your photos, choose a cover, add captions, and get it delivered in Accra.">
     
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,13 +34,13 @@
             <!-- Header -->
             <header class="doc-header">
                 <div class="doc-meta-pills">
-                    <span class="doc-pill active">AI Travel</span>
+                    <span class="doc-pill active">Consumer</span>
                     <span class="doc-pill">2025</span>
-                    <span class="doc-pill">Pan-Africa • Generative AI</span>
+                    <span class="doc-pill">Accra • Travel & Print</span>
                 </div>
                 <h1 class="doc-title">Itinero</h1>
                 <p class="doc-lead">
-                    Contextual AI-powered travel ecosystem for Africa, transforming fragmented local knowledge into curated, bookable multi-day urban and safari itineraries.
+                    For the trips that stay with you. Itinero turns the travel photos sitting in your camera roll into a printed, hardcover album, designed in minutes and delivered in Accra.
                 </p>
                 <div class="doc-actions">
                     <a href="https://tryitinero.com" target="_blank" rel="noopener noreferrer" class="action-btn-primary">
@@ -50,7 +50,7 @@
                             <polyline points="7 7 17 7 17 17"></polyline>
                         </svg>
                     </a>
-                    <a href="#ai-engine" class="action-btn-secondary">Itinerary Engine</a>
+                    <a href="#wireframes" class="action-btn-secondary">View Wireframes</a>
                 </div>
             </header>
 
@@ -58,162 +58,246 @@
             <div class="specs-grid">
                 <div class="spec-item">
                     <span class="spec-label">Status</span>
-                    <span class="spec-val">Public Beta</span>
+                    <span class="spec-val">Live</span>
                 </div>
                 <div class="spec-item">
                     <span class="spec-label">Domain</span>
                     <span class="spec-val">tryitinero.com</span>
                 </div>
                 <div class="spec-item">
-                    <span class="spec-label">Market</span>
-                    <span class="spec-val">Pan-Africa</span>
+                    <span class="spec-label">Product</span>
+                    <span class="spec-val">8 × 10 in hardcover</span>
                 </div>
                 <div class="spec-item">
-                    <span class="spec-label">Coverage</span>
-                    <span class="spec-val">Accra • Nairobi • Kigali</span>
+                    <span class="spec-label">Price</span>
+                    <span class="spec-val">GHS 650</span>
                 </div>
             </div>
 
-            <!-- 01. Overview -->
+            <!-- 01. The Problem -->
             <section class="doc-section">
-                <div class="section-eyebrow">01 / The Travel Knowledge Gap</div>
-                <h2 class="section-title">The Fragmented African Travel Landscape</h2>
+                <div class="section-eyebrow">01 / The Problem</div>
+                <h2 class="section-title">Our best trips end up buried in a camera roll</h2>
                 <p>
-                    Planning a trip to major African tech and cultural capitals like Accra, Nairobi, Cape Town, or Kigali is notoriously difficult on Western platforms. Legacy travel aggregators (TripAdvisor, Lonely Planet, Expedia) focus heavily on traditional safari lodges or dated colonial landmarks. They completely miss the pulsating underground culinary scene, private supper clubs, contemporary gallery spaces, co-working ecosystems, and bespoke coastal retreats.
+                    People take hundreds of photos on a honeymoon, a big adventure or a weekend away, and then almost never look at them again. They sit between screenshots and receipts on a phone, or in a cloud folder no one opens.
                 </p>
                 <p>
-                    First-time visitors and returning diaspora travelers spend 30+ hours stitching together recommendations from chaotic TikTok bookmarks, scattered WhatsApp group notes, and Instagram DMs with local friends.
-                </p>
-                <p>
-                    Itinero was engineered to solve this through a fine-tuned multimodal travel AI that combines curated on-the-ground intelligence from vetted local culture creators with real-time transit and safety telemetry.
-                </p>
-            </section>
-
-            <!-- 02. Field Research -->
-            <section class="doc-section">
-                <div class="section-eyebrow">02 / Field Research & Traveler Surveys</div>
-                <h2 class="section-title">Field Insights Across 210 Continental Travelers</h2>
-                <p>
-                    We surveyed international diaspora travelers visiting Ghana and Kenya during high tourist seasons:
+                    Photo books fix that, but most tools feel like design software: dozens of templates, fiddly layouts, and uncertainty about whether a phone photo will actually print well.
                 </p>
 
                 <div class="callout-box">
-                    <div class="callout-title">Pain Point #1: The Vibe vs. Reality Disconnect</div>
+                    <div class="callout-title">Out of sight, out of mind</div>
                     <p>
-                        78% of travelers reported booking a hotel or activity through conventional booking engines that turned out to be completely misaligned with the cultural vibe they sought or located in an isolated logistics bottleneck.
+                        Digital photos don't get revisited, shared at the dinner table, or passed on.
                     </p>
                 </div>
 
                 <div class="callout-box">
-                    <div class="callout-title">Pain Point #2: Transit Friction in Accra & Nairobi</div>
+                    <div class="callout-title">Design is work</div>
                     <p>
-                        Urban traffic in African metros does not follow standard Google Maps estimates during peak hours. Tourists frequently over-scheduled their days (e.g. attempting 4 geographically dispersed stops in Accra between 2 PM and 7 PM), resulting in 5+ hours stranded in traffic.
+                        Laying out pages, picking fonts and arranging a story takes time and skill most people don't have.
                     </p>
                 </div>
 
                 <div class="callout-box">
-                    <div class="callout-title">Pain Point #3: Currency & Mobile Money Disconnect</div>
+                    <div class="callout-title">Print anxiety</div>
                     <p>
-                        Most artisanal venues, pop-up art fairs, and local tours do not accept international credit cards, requiring Mobile Money (MoMo/M-Pesa) or exact local cash denominations.
+                        Low-resolution or cropped files often look fine on a phone and disappointing on paper.
                     </p>
                 </div>
             </section>
 
-            <!-- 03. Architecture & Engine -->
-            <section class="doc-section" id="ai-engine">
-                <div class="section-eyebrow">03 / Platform Architecture</div>
-                <h2 class="section-title">Curated Knowledge Graph & Contextual Routing</h2>
+            <!-- 02. The Solution -->
+            <section class="doc-section">
+                <div class="section-eyebrow">02 / The Solution</div>
+                <h2 class="section-title">A photobook workshop that does the hard parts</h2>
                 <p>
-                    Itinero combines ground-truth curator databases with real-time constraint solvers:
+                    Itinero Goods is, in its own words, "a tiny photobook workshop + travel shop + itinerary lab." You pick the moments, choose a destination cover and add your own words. Layouts are ready-made but rearrangeable, and every page can be previewed before ordering.
+                </p>
+                <p>
+                    Before anything is printed, a person checks the print file and gets in touch if a photo or page needs attention. Then the album is printed, bound and delivered.
                 </p>
 
-                <div class="feature-cards">
-                    <div class="feature-card">
-                        <h4>Local Curator Knowledge Graph</h4>
-                        <p>Database of 1,200+ verified locations across Accra, Nairobi, and Kigali with verified attributes: Wi-Fi speeds, accepted payment methods, vibe tags, and dress codes.</p>
+                <div class="ps-table">
+                    <div class="ps-row ps-head">
+                        <div class="ps-cell">Problem</div>
+                        <div class="ps-cell">How we solve it</div>
                     </div>
-                    <div class="feature-card">
-                        <h4>Traffic-Aware Sequencing Engine</h4>
-                        <p>Dynamic traveling-salesman route optimizer calibrated against empirical African rush-hour corridors (e.g., Accra Tetteh Quarshie / Nairobi Uhuru Highway congestion patterns).</p>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Photos stuck on the phone</strong>Never revisited.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Camera-roll picker</strong>Select your favourite moments and add them in one go.</div>
                     </div>
-                    <div class="feature-card">
-                        <h4>Collaborative Group Canvas</h4>
-                        <p>Real-time collaborative itinerary workspace allowing travel companions to vote on day plans, split budgets, and export synchronized Google Calendar and Apple Wallet schedules.</p>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>No design skills</strong>Layouts feel daunting.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Ready layouts</strong>Full-page and editorial layouts you can change or rearrange.</div>
                     </div>
-                    <div class="feature-card">
-                        <h4>Offline Pocket Companion</h4>
-                        <p>PWA caching maps, emergency contacts, local language phrases (Twi, Swahili), and offline taxi instructions without requiring continuous roaming data.</p>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>The story gets lost</strong>Just a pile of pictures.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Your own words</strong>A title, captions and a destination cover.</div>
+                    </div>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Will it print well?</strong>Surprises on paper.</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Human file check</strong>The team reviews every print file before printing.</div>
+                    </div>
+                    <div class="ps-row">
+                        <div class="ps-cell" data-label="Problem"><strong>Ordering is opaque</strong>Where is my book?</div>
+                        <div class="ps-cell" data-label="Solution"><strong>Order tracking</strong>Follow print, bind and delivery in My Albums.</div>
                     </div>
                 </div>
+            </section>
 
+            <!-- 03. How It Works -->
+            <section class="doc-section" id="how-it-works">
+                <div class="section-eyebrow">03 / How It Works</div>
+                <h2 class="section-title">From camera roll to coffee table</h2>
                 <div class="flow-diagram">
                     <div class="flow-header">
-                        <span class="flow-title">Generation Pipeline: Contextual Prompt to Route</span>
-                        <span class="flow-badge">LLM + Spatial Graph</span>
+                        <span class="flow-title">Itinero Album Flow</span>
+                        <span class="flow-badge">Delivered in Accra</span>
                     </div>
                     <div class="flow-steps">
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">01</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Contextual Query Ingestion</div>
-                                <div class="step-desc">Traveler Persona: Remote Founder • 5 Days • $200/day • Art & Design Focus • Accra Metro</div>
+                                <div class="step-title">Build your album</div>
+                                <div class="step-desc">Pick photos, choose a cover, put the story in order, add your words, and preview every page.</div>
                             </div>
                         </div>
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">02</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Spatial Knowledge Graph Filter</div>
-                                <div class="step-desc">Matches verified local tastemaker database, operational hours, MoMo/card rails, and dress codes</div>
+                                <div class="step-title">We check the files</div>
+                                <div class="step-desc">The team reviews the print file and contacts you if a photo or page needs attention.</div>
                             </div>
                         </div>
                         <div class="flow-step">
-                            <div class="step-indicator">
+                            <div class="step-marker">
                                 <span class="step-num">03</span>
                                 <span class="step-line"></span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Traffic Matrix & Velocity Evaluation</div>
-                                <div class="step-desc">Dynamic travel time calculation across Osu, Airport City, and Jamestown peak-hour transit corridors</div>
-                            </div>
-                        </div>
-                        <div class="flow-step">
-                            <div class="step-indicator">
-                                <span class="step-num">04</span>
-                                <span class="step-line"></span>
-                            </div>
-                            <div class="step-content">
-                                <div class="step-title">Constraint Satisfaction Solver</div>
-                                <div class="step-desc">Computes day-by-day feasible sequence ensuring &lt; 45 min transit per leg with buffer time</div>
+                                <div class="step-title">We print and bind</div>
+                                <div class="step-desc">Printing starts after payment and file review. Track progress in My Albums.</div>
                             </div>
                         </div>
                         <div class="flow-step flow-step-final">
-                            <div class="step-indicator">
-                                <span class="step-num">05</span>
+                            <div class="step-marker">
+                                <span class="step-num">04</span>
                             </div>
                             <div class="step-content">
-                                <div class="step-title">Interactive Deployment & Sync</div>
-                                <div class="step-desc">Exports interactive web itinerary, one-tap Apple/Google Calendar sync, and offline PWA cache</div>
+                                <div class="step-title">Delivered in Accra</div>
+                                <div class="step-desc">An 8 × 10 in hardcover album, delivered to your door.</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 04. Validation -->
+            <!-- 04. Wireframes -->
+            <section class="doc-section" id="wireframes">
+                <div class="section-eyebrow">04 / Wireframes</div>
+                <h2 class="section-title">Key screens</h2>
+                <p>
+                    Wireframes of the album builder, the core of the product, plus the order tracker.
+                </p>
+
+                <figure class="wf">
+                    <div class="flow-header">
+                        <span class="flow-title">Album builder</span>
+                        <span class="flow-badge">4 screens</span>
+                    </div>
+                    <div class="wf-screens">
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-row"><span class="wf-t">Camera roll</span><span class="wf-chip on">12 selected</span></div>
+                                <div class="wf-grid2">
+                                    <div class="wf-img sq">✓</div><div class="wf-img sq">✓</div>
+                                    <div class="wf-img sq"></div><div class="wf-img sq">✓</div>
+                                    <div class="wf-img sq">✓</div><div class="wf-img sq"></div>
+                                </div>
+                                <div class="wf-spacer"></div>
+                                <div class="wf-btn">Add these moments</div>
+                            </div>
+                            <div class="wf-screen-label">Camera roll<span>Pick the moments</span></div>
+                        </div>
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-t lg">Choose a cover</div>
+                                <div class="wf-grid2">
+                                    <div class="wf-box on"><div class="wf-img sq"></div><span class="wf-t sm">Fiji</span></div>
+                                    <div class="wf-box"><div class="wf-img sq"></div><span class="wf-t sm">Zambia</span></div>
+                                    <div class="wf-box"><div class="wf-img sq"></div><span class="wf-t sm">Armenia</span></div>
+                                    <div class="wf-box"><div class="wf-img sq"></div><span class="wf-t sm">Hungary</span></div>
+                                </div>
+                                <div class="wf-input">Album title</div>
+                                <div class="wf-btn">Next</div>
+                            </div>
+                            <div class="wf-screen-label">Choose a cover<span>Destination covers</span></div>
+                        </div>
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-row"><span class="wf-t">Page 4 of 20</span><span class="wf-t sm">Preview</span></div>
+                                <div class="wf-img tall">full-page photo</div>
+                                <div class="wf-input">Add a caption…</div>
+                                <div class="wf-wrap"><span class="wf-chip on">Full page</span><span class="wf-chip">Editorial</span></div>
+                                <div class="wf-spacer"></div>
+                                <div class="wf-btn">Order · GHS 650</div>
+                            </div>
+                            <div class="wf-screen-label">Page editor<span>Layouts + captions</span></div>
+                        </div>
+                        <div class="wf-screen">
+                            <div class="wf-frame">
+                                <div class="wf-t lg">My albums</div>
+                                <div class="wf-row start"><div class="wf-img sq" style="width:2rem"></div><div><div class="wf-t">Honeymoon</div><div class="wf-t sm">8 × 10 hardcover</div></div></div>
+                                <div class="wf-box">
+                                    <div class="wf-row"><span class="wf-t">File review</span><span class="wf-chip on">Done</span></div>
+                                    <div class="wf-row"><span class="wf-t">Print &amp; bind</span><span class="wf-chip">In progress</span></div>
+                                    <div class="wf-row"><span class="wf-t">Delivery</span><span class="wf-ln w30"></span></div>
+                                </div>
+                            </div>
+                            <div class="wf-screen-label">My Albums<span>Order tracking</span></div>
+                        </div>
+                    </div>
+                    <figcaption class="wf-caption">The builder walks through five steps (I–V) so the album feels like telling a story rather than filling a template.</figcaption>
+                </figure>
+            </section>
+
+            <!-- 05. Key Features -->
             <section class="doc-section">
-                <div class="section-eyebrow">04 / Traction & Results</div>
-                <h2 class="section-title">Platform Traction</h2>
-                <ul class="doc-list">
-                    <li><strong>14,000+ Generated Itineraries:</strong> Powering travel plans for visitors across the US, UK, Nigeria, and South Africa.</li>
-                    <li><strong>4.9 / 5.0 Average Rating:</strong> 92% of travelers cited our transit optimization saved them at least 2 hours of wasted transit time per day.</li>
-                    <li><strong>Curator Network:</strong> Over 45 on-the-ground cultural tastemakers contributing continuously updated hidden gems.</li>
-                </ul>
+                <div class="section-eyebrow">05 / Key Features</div>
+                <h2 class="section-title">What you get</h2>
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <h4>Hardcover album</h4>
+                        <p>An 8 × 10 in hardcover book, made to keep.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Flexible layouts</h4>
+                        <p>Full-page and editorial spreads you can change or rearrange.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Destination covers</h4>
+                        <p>Covers for places like Fiji, Ukraine, Armenia, Hungary and Zambia.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Captions & titles</h4>
+                        <p>Tell the story in your own words, page by page.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Print-ready checks</h4>
+                        <p>A human review of every file, with advice to upload original, full-resolution photos.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Albums as gifts</h4>
+                        <p>Make a book for someone else using photos you have permission to print.</p>
+                    </div>
+                </div>
             </section>
 
             <!-- Pagination -->
