@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4254dac8-31db-4758-a1a6-89a6066b7619" name="Changes" comment="initial">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/product-doc.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/product-doc.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/amigo-lease.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/amigo-lease.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/gatepass.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/gatepass.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/graydocket.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/graydocket.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/itinero.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/itinero.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/minutes-2-match.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/minutes-2-match.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/motor-ambos.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/motor-ambos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/vellum.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/vellum.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -83,7 +75,7 @@
       <workItem from="1791279823981" duration="5389000" />
       <workItem from="1791672219682" duration="232000" />
       <workItem from="1792346407932" duration="2918000" />
-      <workItem from="1792730338591" duration="1230000" />
+      <workItem from="1792730338591" duration="1902000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <option name="closed" value="true" />
@@ -253,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1792348711252</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="initial">
+      <option name="closed" value="true" />
+      <created>1792734051442</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1792734051442</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
