@@ -490,6 +490,10 @@ body {
     margin-bottom: 0.3rem;
 }
 
+.callout-box .basic-link {
+    white-space: nowrap;
+}
+
 .callout-box p {
     font-size: .8125rem;
     font-weight: 460;
@@ -779,6 +783,31 @@ body {
     height: auto;
     margin: 0 auto;
     font-family: var(--font-inter);
+}
+
+/* A narrower layout of the same chart replaces the wide one on phones */
+.fc-narrow {
+    display: none;
+}
+
+@media screen and (max-width: 540px) {
+    .fc-wide {
+        display: none;
+    }
+
+    .fc-narrow {
+        display: block;
+        min-width: 0;
+    }
+
+    .fc-narrow .fc-text,
+    .fc-narrow .fc-term-text {
+        font-size: 11.5px;
+    }
+
+    .fc-narrow .fc-edge-label {
+        font-size: 10.5px;
+    }
 }
 
 .fc-proc {
@@ -1089,6 +1118,105 @@ body {
         conic-gradient(var(--body-color) 25%, transparent 0 50%, var(--body-color) 0 75%, transparent 0) 0 0 / 12px 12px,
         var(--body-bg);
     opacity: 0.85;
+}
+
+/* Team Cards */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+    margin-bottom: 2.75rem;
+}
+
+@media screen and (max-width: 600px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 1rem 1.05rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.team-avatar {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 0.75rem;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--accent-bg);
+    border: 1px solid var(--border-color);
+}
+
+.team-name {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: .875rem;
+    font-weight: 600;
+    letter-spacing: -.00563rem;
+    color: var(--body-color);
+}
+
+.team-role {
+    font-size: .75rem;
+    font-weight: 460;
+    letter-spacing: -.00563rem;
+    color: var(--muted-color);
+}
+
+.team-desc {
+    margin-top: 0.35rem;
+    font-size: .8125rem;
+    font-weight: 460;
+    line-height: 1.5;
+    letter-spacing: -.00563rem;
+    color: var(--body-color);
+    opacity: 0.92;
+}
+
+.team-links {
+    display: flex;
+    gap: 0.85rem;
+    margin-top: 0.5rem;
+    font-size: .75rem;
+    font-weight: 460;
+}
+
+/* Phones: avatar beside name and role, description full width below */
+@media screen and (max-width: 600px) {
+    .team-card {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 0.85rem;
+        row-gap: 0.15rem;
+    }
+
+    .team-avatar {
+        grid-row: 1 / span 2;
+        width: 3.5rem;
+        height: 3.5rem;
+        margin-bottom: 0;
+    }
+
+    .team-name {
+        align-self: end;
+    }
+
+    .team-role {
+        align-self: start;
+    }
+
+    .team-desc,
+    .team-links {
+        grid-column: 1 / -1;
+    }
 }
 
 /* Post Pagination */
