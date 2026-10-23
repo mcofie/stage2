@@ -24,3 +24,14 @@ The site will be live at `https://<your-username>.github.io/<repo-name>/` in a f
 ## Customization
 - **New Projects**: Add new `<article class="project-card">` blocks in `index.html`.
 - **Colors**: Edit the CSS variables in `assets/css/style.css` (e.g., `--primary-green`) to change the theme.
+
+## Shared header and footer
+The top bar and footer are kept in one place each, in `_partials/`:
+
+- `_partials/header.html`: the top bar on the Team and product pages (the homepage has its own header)
+- `_partials/footer.html`: the footer on every page
+
+1. Edit the partial. Use `{{root}}` for links back to the site root (it becomes `./` or `../` depending on the page).
+2. Run `python3 scripts/sync_partials.py` to copy it into every page.
+
+`python3 scripts/sync_partials.py --check` lists any page that is out of date. The deploy workflow also runs the sync before publishing, so the live site always gets the current header and footer.
